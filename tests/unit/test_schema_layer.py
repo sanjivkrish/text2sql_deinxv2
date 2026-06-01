@@ -52,3 +52,40 @@ def test_extractor_flags_soft_delete_tables():
     schema = extractor.extract()
     assert schema["tables"]["staff"]["has_soft_delete"] is True
     assert schema["tables"]["students"]["has_soft_delete"] is False
+
+
+from core.schema_layer.graph_builder import GraphBuilder
+import networkx as nx
+
+SAMPLE_SCHEMA = {
+    "tables": {
+        "schools": {"columns": [{"name": "id", "type": "uuid", "nullable": False}], "has_soft_delete": False, "has_school_id": False},
+        "students": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "full_name", "type": "text", "nullable": True}], "has_soft_delete": False, "has_school_id": True},
+        "staff": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "deleted_at", "type": "timestamp with time zone", "nullable": True}], "has_soft_delete": True, "has_school_id": True},
+    },
+    "foreign_keys": [
+        {"from_table": "students", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+        {"from_table": "staff", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+    ],
+}
+
+def test_graph_has_table_nodes():
+    g = GraphBuilder(SAMPLE_SCHEMA).build()
+    assert "tbl_schools" in g.nodes
+    assert "tbl_students" in g.nodes
+
+def test_graph_has_column_nodes():
+    g = GraphBuilder(SAMPLE_SCHEMA).build()
+    assert "col_students.full_name" in g.nodes
+    assert "col_students.school_id" in g.nodes
+
+def test_graph_fk_edge_has_join_sql():
+    g = GraphBuilder(SAMPLE_SCHEMA).build()
+    assert g.has_edge("tbl_students", "tbl_schools")
+    edge = g["tbl_students"]["tbl_schools"]
+    assert "students.school_id = schools.id" in edge["join_sql"]
+
+def test_graph_soft_delete_flag():
+    g = GraphBuilder(SAMPLE_SCHEMA).build()
+    assert g.nodes["tbl_staff"]["has_soft_delete"] is True
+    assert g.nodes["tbl_schools"]["has_soft_delete"] is False
