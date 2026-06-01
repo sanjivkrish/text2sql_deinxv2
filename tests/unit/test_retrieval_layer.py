@@ -1,0 +1,53 @@
+import pytest
+import networkx as nx
+from core.schema_layer.graph_builder import GraphBuilder
+from core.retrieval_layer.semantic_mapper import SemanticMapper
+
+SCHEMA = {
+    "tables": {
+        "schools": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "name", "type": "text", "nullable": False}], "has_soft_delete": False, "has_school_id": False},
+        "students": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "full_name", "type": "text", "nullable": True}, {"name": "class_section_id", "type": "uuid", "nullable": True}, {"name": "date_of_birth", "type": "date", "nullable": True}], "has_soft_delete": False, "has_school_id": True},
+        "staff": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "first_name", "type": "text", "nullable": False}, {"name": "designation", "type": "text", "nullable": True}, {"name": "deleted_at", "type": "timestamp with time zone", "nullable": True}], "has_soft_delete": True, "has_school_id": True},
+        "classes": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "name", "type": "text", "nullable": False}, {"name": "grade_level", "type": "smallint", "nullable": False}], "has_soft_delete": False, "has_school_id": True},
+        "academic_years": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "name", "type": "text", "nullable": False}, {"name": "is_current", "type": "boolean", "nullable": False}], "has_soft_delete": False, "has_school_id": True},
+    },
+    "foreign_keys": [
+        {"from_table": "students", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+        {"from_table": "staff", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+        {"from_table": "classes", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+        {"from_table": "academic_years", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+    ],
+}
+
+@pytest.fixture
+def mapper():
+    g = GraphBuilder(SCHEMA).build()
+    return SemanticMapper(g, SCHEMA)
+
+def test_maps_student_token(mapper):
+    results = mapper.map("students")
+    tables = [r.table for r in results]
+    assert "students" in tables
+
+def test_maps_teacher_to_staff(mapper):
+    results = mapper.map("teacher")
+    tables = [r.table for r in results]
+    assert "staff" in tables
+
+def test_maps_class_token(mapper):
+    results = mapper.map("class")
+    tables = [r.table for r in results]
+    assert "classes" in tables
+
+def test_maps_academic_year(mapper):
+    results = mapper.map("academic year")
+    tables = [r.table for r in results]
+    assert "academic_years" in tables
+
+def test_maps_dob_column(mapper):
+    results = mapper.map("date of birth")
+    assert any(r.column == "date_of_birth" for r in results)
+
+def test_confidence_range(mapper):
+    results = mapper.map("students")
+    assert all(0.0 <= r.confidence <= 1.0 for r in results)
