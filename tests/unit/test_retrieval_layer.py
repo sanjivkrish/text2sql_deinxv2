@@ -150,7 +150,7 @@ def test_planner_discovers_join_path(planner):
 # ---------------------------------------------------------------------------
 from unittest.mock import patch
 from core.retrieval_layer.intent_classifier import IntentClassifier
-from core.models.intent import QueryIntentJSON
+from core.models.intent import QueryIntentJSON, QueryMetadata, StructuralPlan
 from core.models.query import QueryPlan, ResolvedEntity, TraversalResult
 
 EMPTY_PLAN = QueryPlan(resolved_entities=[], join_paths=[], recommended_tables=["students"], recommended_joins=[], confidence=0.8)
@@ -184,3 +184,32 @@ def test_intent_has_structural_plan(classifier):
     intent = classifier.classify("list all students", EMPTY_PLAN)
     assert isinstance(intent.structural_plan.tables, list)
     assert len(intent.structural_plan.tables) > 0
+
+def test_llm_fallback_called_for_ambiguous_query(classifier):
+    with patch("core.retrieval_layer.intent_classifier._llm_classify") as mock_llm:
+        mock_llm.return_value = QueryIntentJSON(
+            query_metadata=QueryMetadata(
+                raw_query="who is the principal",
+                primary_domain="staff_management",
+                operational_intent="POINT_LOOKUP",
+                confidence=0.70,
+            ),
+            structural_plan=StructuralPlan(tables=["staff"], join_conditions=[], select_columns=["staff.*"]),
+            filters=[],
+            aggregations=[],
+            ordering=[],
+        )
+        plan = QueryPlan(resolved_entities=[], join_paths=[], recommended_tables=["staff"], recommended_joins=[], confidence=0.8)
+        intent = classifier.classify("who is the principal", plan)
+        mock_llm.assert_called_once()
+        assert intent.query_metadata.operational_intent == "POINT_LOOKUP"
+        assert intent.query_metadata.confidence == 0.70
+
+def test_detect_domain_by_table(classifier):
+    from core.retrieval_layer.intent_classifier import _detect_domain
+    student_plan = QueryPlan(resolved_entities=[], join_paths=[], recommended_tables=["students"], recommended_joins=[], confidence=0.8)
+    staff_plan = QueryPlan(resolved_entities=[], join_paths=[], recommended_tables=["staff"], recommended_joins=[], confidence=0.8)
+    general_plan = QueryPlan(resolved_entities=[], join_paths=[], recommended_tables=["timetables"], recommended_joins=[], confidence=0.8)
+    assert _detect_domain("q", student_plan) == "student_management"
+    assert _detect_domain("q", staff_plan) == "staff_management"
+    assert _detect_domain("q", general_plan) == "general"

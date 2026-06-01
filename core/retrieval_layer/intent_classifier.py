@@ -39,6 +39,7 @@ def _rule_classify(query: str) -> tuple[str, float] | None:
 def _llm_classify(query: str, plan: QueryPlan) -> QueryIntentJSON:
     """LiteLLM fallback — structured output via JSON mode."""
     import litellm, os
+    VALID_INTENTS = {"POINT_LOOKUP", "FILTERED_LIST", "AGGREGATION", "COMPARATIVE", "TEMPORAL"}
     prompt = f"""Classify this school ERP query into one of: POINT_LOOKUP, FILTERED_LIST, AGGREGATION, COMPARATIVE, TEMPORAL.
 Query: {query}
 Tables likely involved: {plan.recommended_tables}
@@ -48,9 +49,15 @@ Return JSON: {{"intent": "...", "primary_domain": "...", "tables": [...], "filte
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_object"},
     )
-    data = json.loads(resp.choices[0].message.content)
+    content = resp.choices[0].message.content
+    try:
+        data = json.loads(content) if content else {}
+    except (json.JSONDecodeError, TypeError):
+        data = {}
     intent_str = data.get("intent", "FILTERED_LIST")
-    tables = data.get("tables", plan.recommended_tables)
+    if intent_str not in VALID_INTENTS:
+        intent_str = "FILTERED_LIST"
+    tables = data.get("tables", plan.recommended_tables) or plan.recommended_tables
     return QueryIntentJSON(
         query_metadata=QueryMetadata(
             raw_query=query,
