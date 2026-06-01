@@ -4,8 +4,8 @@ from core.retrieval_layer.semantic_mapper import SemanticMapper
 from core.retrieval_layer.traversal import TraversalEngine
 
 def _tokenize(query: str) -> list[str]:
-    tokens = re.findall(r'\b\w[\w\s]*\b', query.lower())
-    return [t.strip() for t in tokens if len(t.strip()) > 2]
+    tokens = re.findall(r'\b\w+\b', query.lower())
+    return [t for t in tokens if len(t) > 2]
 
 class QueryGraphPlanner:
     def __init__(self, mapper: SemanticMapper, engine: TraversalEngine, schema: dict):
@@ -33,7 +33,8 @@ class QueryGraphPlanner:
 
         for i in range(len(tables)):
             for j in range(i + 1, len(tables)):
-                path = self._engine.find_path(tables[i], tables[j])
+                path = (self._engine.find_path(tables[i], tables[j]) or
+                        self._engine.find_path(tables[j], tables[i]))
                 if path and path.hop_count > 0:
                     join_paths.append(path)
                     recommended_joins.extend(path.join_sql)

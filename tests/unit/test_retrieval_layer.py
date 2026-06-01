@@ -130,8 +130,16 @@ def test_planner_single_table_query(planner):
 def test_planner_multi_table_query(planner):
     plan = planner.plan("show students in each class")
     tables = set(plan.recommended_tables)
-    assert "students" in tables or "classes" in tables
+    assert "students" in tables
+    assert "classes" in tables
 
 def test_planner_plan_has_confidence(planner):
     plan = planner.plan("list all students")
     assert 0.0 < plan.confidence <= 1.0
+
+def test_planner_discovers_join_path(planner):
+    plan = planner.plan("students classes")
+    tables = set(plan.recommended_tables)
+    assert "students" in tables
+    assert "classes" in tables
+    assert len(plan.recommended_joins) > 0
