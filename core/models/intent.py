@@ -1,10 +1,17 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 class QueryMetadata(BaseModel):
     raw_query: str
     primary_domain: str
     operational_intent: str
     confidence: float
+
+    @field_validator('confidence')
+    @classmethod
+    def validate_confidence(cls, v: float) -> float:
+        if not 0.0 <= v <= 1.0:
+            raise ValueError('confidence must be between 0.0 and 1.0')
+        return v
 
 class FilterCondition(BaseModel):
     table: str
