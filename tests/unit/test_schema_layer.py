@@ -89,3 +89,26 @@ def test_graph_soft_delete_flag():
     g = GraphBuilder(SAMPLE_SCHEMA).build()
     assert g.nodes["tbl_staff"]["has_soft_delete"] is True
     assert g.nodes["tbl_schools"]["has_soft_delete"] is False
+
+import json, tempfile, os
+from core.schema_layer.graph_store import GraphStore
+
+def test_graph_store_save_and_load(tmp_path):
+    g = GraphBuilder(SAMPLE_SCHEMA).build()
+    path = str(tmp_path / "schema_index.json")
+    store = GraphStore(path)
+    store.save(g, SAMPLE_SCHEMA)
+    loaded_g, loaded_schema = store.load()
+    assert "tbl_students" in loaded_g.nodes
+    assert "students" in loaded_schema["tables"]
+
+def test_graph_store_singleton_returns_same_instance(tmp_path):
+    g = GraphBuilder(SAMPLE_SCHEMA).build()
+    path = str(tmp_path / "schema_index.json")
+    store = GraphStore(path)
+    store.save(g, SAMPLE_SCHEMA)
+    store.load()
+    g1 = store.graph
+    store.load()
+    g2 = store.graph
+    assert g1 is g2
