@@ -89,6 +89,10 @@ def test_two_hop_path(engine):
     result = engine.find_path("students", "classes")
     assert result is not None
     assert result.hop_count == 2
+    assert result.path == ["students", "class_sections", "classes"]
+    assert len(result.join_sql) == 2
+    assert "students.class_section_id = class_sections.id" in result.join_sql
+    assert "class_sections.class_id = classes.id" in result.join_sql
 
 def test_no_path_returns_none(engine):
     result = engine.find_path("students", "nonexistent_table")
@@ -99,3 +103,8 @@ def test_same_table_returns_empty(engine):
     assert result is not None
     assert result.hop_count == 0
     assert result.join_sql == []
+
+def test_no_fk_path_between_real_tables(engine):
+    # All FKs in TRAVERSAL_SCHEMA point to 'schools' — no outgoing path from schools
+    result = engine.find_path("schools", "students")
+    assert result is None
