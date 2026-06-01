@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+.uv/
+dist/
+*.egg-info/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/
+
+# Cloudflare / Wrangler
+edge/.wrangler/
+edge/node_modules/
+edge/dist/
+
+# Generated — rebuild via scripts/build_graph.py
+# db/schema_index.json is intentionally COMMITTED, not ignored

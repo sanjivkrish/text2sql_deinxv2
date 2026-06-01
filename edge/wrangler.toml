@@ -1,0 +1,7 @@
+name = "text-sql-v2-edge"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "REPLACE_WITH_KV_ID"

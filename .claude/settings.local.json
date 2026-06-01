@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType File -Path \"core/__init__.py\",\"core/pipeline/__init__.py\",\"core/schema_layer/__init__.py\",\"core/retrieval_layer/__init__.py\",\"core/generation_layer/__init__.py\",\"core/execution_layer/__init__.py\",\"core/models/__init__.py\",\"core/api/__init__.py\" -Force)",
+      "Bash(Out-Null)",
+      "PowerShell(cd \"C:\\\\Users\\\\asus\\\\Desktop\\\\DEINX\\\\deinx_prjv2\"; $files = @\\(\"core/__init__.py\",\"core/pipeline/__init__.py\",\"core/schema_layer/__init__.py\",\"core/retrieval_layer/__init__.py\",\"core/generation_layer/__init__.py\",\"core/execution_layer/__init__.py\",\"core/models/__init__.py\",\"core/api/__init__.py\",\"core/api/routes/__init__.py\",\"core/api/middleware/__init__.py\"\\); foreach \\($f in $files\\) { New-Item -ItemType File -Path $f -Force | Out-Null }; \"done\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\asus\\\\Desktop\\\\DEINX\\\\deinx_prjv2\\\\docs\\\\superpowers\\\\plans\")",
+      "PowerShell(\"ok\")"
+    ]
+  }
+}
