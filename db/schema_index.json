@@ -1,0 +1,4736 @@
+{
+  "graph": {
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+      {
+        "type": "table",
+        "table": "academic_years",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_academic_years"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_academic_years.id"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_academic_years.school_id"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_academic_years.name"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "start_date",
+        "dtype": "date",
+        "nullable": false,
+        "id": "col_academic_years.start_date"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "end_date",
+        "dtype": "date",
+        "nullable": false,
+        "id": "col_academic_years.end_date"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "status",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_academic_years.status"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "is_current",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_academic_years.is_current"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "is_locked",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_academic_years.is_locked"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "created_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_academic_years.created_by"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_academic_years.created_at"
+      },
+      {
+        "type": "column",
+        "table": "academic_years",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_academic_years.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "admission_applications",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_admission_applications"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_admission_applications.id"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_admission_applications.school_id"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "student_name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_admission_applications.student_name"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "date_of_birth",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_admission_applications.date_of_birth"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "class_applied",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_admission_applications.class_applied"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "section_applied",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_admission_applications.section_applied"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "parent_name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_admission_applications.parent_name"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "parent_phone",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_admission_applications.parent_phone"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "parent_email",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_admission_applications.parent_email"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "notes",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_admission_applications.notes"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "status",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_admission_applications.status"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "form_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_admission_applications.form_number"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "date_of_issue",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_admission_applications.date_of_issue"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "registration_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_admission_applications.registration_number"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "created_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_admission_applications.created_by"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_admission_applications.created_at"
+      },
+      {
+        "type": "column",
+        "table": "admission_applications",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_admission_applications.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "class_section_years",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_class_section_years"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_class_section_years.id"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_class_section_years.school_id"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "section_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_class_section_years.section_id"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "academic_year",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_class_section_years.academic_year"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "class_teacher_id",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_class_section_years.class_teacher_id"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "capacity",
+        "dtype": "integer",
+        "nullable": true,
+        "id": "col_class_section_years.capacity"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "is_active",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_class_section_years.is_active"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "created_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_class_section_years.created_by"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_class_section_years.created_at"
+      },
+      {
+        "type": "column",
+        "table": "class_section_years",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_class_section_years.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "class_sections",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_class_sections"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_class_sections.id"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_class_sections.school_id"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "class_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_class_sections.class_id"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_class_sections.name"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "display_order",
+        "dtype": "integer",
+        "nullable": false,
+        "id": "col_class_sections.display_order"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "is_active",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_class_sections.is_active"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "created_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_class_sections.created_by"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_class_sections.created_at"
+      },
+      {
+        "type": "column",
+        "table": "class_sections",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_class_sections.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "classes",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_classes"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_classes.id"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_classes.school_id"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_classes.name"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "grade_level",
+        "dtype": "smallint",
+        "nullable": false,
+        "id": "col_classes.grade_level"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "display_order",
+        "dtype": "integer",
+        "nullable": false,
+        "id": "col_classes.display_order"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "description",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_classes.description"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "is_active",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_classes.is_active"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "created_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_classes.created_by"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_classes.created_at"
+      },
+      {
+        "type": "column",
+        "table": "classes",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_classes.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "schools",
+        "has_soft_delete": false,
+        "has_school_id": false,
+        "id": "tbl_schools"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_schools.id"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_schools.name"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "address",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_schools.address"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "phone",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_schools.phone"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "email",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_schools.email"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "logo_url",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_schools.logo_url"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "school_code",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_schools.school_code"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "settings",
+        "dtype": "jsonb",
+        "nullable": false,
+        "id": "col_schools.settings"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_schools.created_at"
+      },
+      {
+        "type": "column",
+        "table": "schools",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_schools.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "staff",
+        "has_soft_delete": true,
+        "has_school_id": true,
+        "id": "tbl_staff"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff.id"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff.school_id"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "user_id",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_staff.user_id"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "employee_id",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff.employee_id"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "first_name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff.first_name"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "last_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.last_name"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "preferred_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.preferred_name"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "father_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.father_name"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "dob",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff.dob"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "gender",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.gender"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "blood_group",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.blood_group"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "marital_status",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.marital_status"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "nationality",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.nationality"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "religion",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.religion"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "caste_category",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.caste_category"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "sub_caste",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.sub_caste"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "aadhar_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.aadhar_number"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "pan_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.pan_number"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "profile_photo_path",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.profile_photo_path"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "personal_mobile",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.personal_mobile"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "alternate_mobile",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.alternate_mobile"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "emergency_contact_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.emergency_contact_name"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "emergency_contact_relationship",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.emergency_contact_relationship"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "emergency_contact_phone",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.emergency_contact_phone"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "personal_email",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.personal_email"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "official_email",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.official_email"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "whatsapp_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.whatsapp_number"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "preferred_language",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff.preferred_language"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "current_address",
+        "dtype": "jsonb",
+        "nullable": false,
+        "id": "col_staff.current_address"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "permanent_address",
+        "dtype": "jsonb",
+        "nullable": false,
+        "id": "col_staff.permanent_address"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "staff_category",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff.staff_category"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "designation",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.designation"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "department",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.department"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "employment_type",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff.employment_type"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "probation_period_months",
+        "dtype": "integer",
+        "nullable": true,
+        "id": "col_staff.probation_period_months"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "contract_start",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff.contract_start"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "contract_end",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff.contract_end"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "date_of_joining",
+        "dtype": "date",
+        "nullable": false,
+        "id": "col_staff.date_of_joining"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "date_of_confirmation",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff.date_of_confirmation"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "work_location",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.work_location"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "reporting_manager_id",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_staff.reporting_manager_id"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "shift_timing",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.shift_timing"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "weekly_off_days",
+        "dtype": "ARRAY",
+        "nullable": false,
+        "id": "col_staff.weekly_off_days"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "pay_grade",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.pay_grade"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "ctc",
+        "dtype": "numeric",
+        "nullable": true,
+        "id": "col_staff.ctc"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "in_hand_salary",
+        "dtype": "numeric",
+        "nullable": true,
+        "id": "col_staff.in_hand_salary"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "pf_account_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.pf_account_number"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "uan",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.uan"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "esi_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.esi_number"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "bank_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.bank_name"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "bank_account_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.bank_account_number"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "ifsc",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.ifsc"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "bank_account_holder_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff.bank_account_holder_name"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "has_system_access",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_staff.has_system_access"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "blacklist",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_staff.blacklist"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "status",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff.status"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "created_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_staff.created_by"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff.created_at"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff.updated_at"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "deleted_at",
+        "dtype": "timestamp with time zone",
+        "nullable": true,
+        "id": "col_staff.deleted_at"
+      },
+      {
+        "type": "column",
+        "table": "staff",
+        "column": "deleted_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_staff.deleted_by"
+      },
+      {
+        "type": "table",
+        "table": "staff_certifications",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_staff_certifications"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_certifications.id"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_certifications.school_id"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "staff_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_certifications.staff_id"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "cert_type",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff_certifications.cert_type"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "cert_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_certifications.cert_name"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "cert_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_certifications.cert_number"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "issue_date",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff_certifications.issue_date"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "validity_date",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff_certifications.validity_date"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "level",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_certifications.level"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "doc_path",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_certifications.doc_path"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff_certifications.created_at"
+      },
+      {
+        "type": "column",
+        "table": "staff_certifications",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff_certifications.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "staff_experience",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_staff_experience"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_experience.id"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_experience.school_id"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "staff_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_experience.staff_id"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "institution",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff_experience.institution"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "designation",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_experience.designation"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "from_date",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff_experience.from_date"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "to_date",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_staff_experience.to_date"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "subjects_taught",
+        "dtype": "ARRAY",
+        "nullable": true,
+        "id": "col_staff_experience.subjects_taught"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "reason_for_leaving",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_experience.reason_for_leaving"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff_experience.created_at"
+      },
+      {
+        "type": "column",
+        "table": "staff_experience",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff_experience.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "staff_qualifications",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_staff_qualifications"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_qualifications.id"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_qualifications.school_id"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "staff_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_staff_qualifications.staff_id"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "level",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff_qualifications.level"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "qualification_name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_staff_qualifications.qualification_name"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "specialization",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_qualifications.specialization"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "university",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_qualifications.university"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "institution",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_qualifications.institution"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "year_of_passing",
+        "dtype": "integer",
+        "nullable": true,
+        "id": "col_staff_qualifications.year_of_passing"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "grade",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_qualifications.grade"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "mode",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_qualifications.mode"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "certificate_doc_path",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_staff_qualifications.certificate_doc_path"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff_qualifications.created_at"
+      },
+      {
+        "type": "column",
+        "table": "staff_qualifications",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_staff_qualifications.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "student_addresses",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_student_addresses"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_student_addresses.id"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_student_addresses.school_id"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "student_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_student_addresses.student_id"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "address_line",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_student_addresses.address_line"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "city",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_student_addresses.city"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "district",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_student_addresses.district"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "state",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_student_addresses.state"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "pincode",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_student_addresses.pincode"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_student_addresses.created_at"
+      },
+      {
+        "type": "column",
+        "table": "student_addresses",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_student_addresses.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "students",
+        "has_soft_delete": false,
+        "has_school_id": true,
+        "id": "tbl_students"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_students.id"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_students.school_id"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "full_name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_students.full_name"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "surname",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.surname"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "date_of_birth",
+        "dtype": "date",
+        "nullable": true,
+        "id": "col_students.date_of_birth"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "class",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.class"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "section",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.section"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "class_section_id",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_students.class_section_id"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "roll_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.roll_number"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "registration_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.registration_number"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "father_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.father_name"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "father_phone",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.father_phone"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "father_email",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.father_email"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "father_occupation",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.father_occupation"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "father_qualification",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.father_qualification"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "father_annual_income",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.father_annual_income"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "father_office_address",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.father_office_address"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_name",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_name"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_phone",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_phone"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_email",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_email"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_occupation",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_occupation"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_qualification",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_qualification"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_annual_income",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_annual_income"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_office_address",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_office_address"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "aadhaar_number",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.aadhaar_number"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "place_of_birth",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.place_of_birth"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "city",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.city"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "district",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.district"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "state",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.state"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "disability",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.disability"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "caste",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.caste"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "mother_tongue",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.mother_tongue"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "category",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.category"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "religion",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.religion"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "last_school",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.last_school"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "admission_class",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.admission_class"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "blood_group",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.blood_group"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "identification_mark",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.identification_mark"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "photo_path",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.photo_path"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "status",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_students.status"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_students.created_at"
+      },
+      {
+        "type": "column",
+        "table": "students",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_students.updated_at"
+      },
+      {
+        "type": "table",
+        "table": "subjects",
+        "has_soft_delete": true,
+        "has_school_id": true,
+        "id": "tbl_subjects"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_subjects.id"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "school_id",
+        "dtype": "uuid",
+        "nullable": false,
+        "id": "col_subjects.school_id"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "name",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_subjects.name"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "code",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_subjects.code"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "category",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_subjects.category"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "is_special_activity",
+        "dtype": "boolean",
+        "nullable": false,
+        "id": "col_subjects.is_special_activity"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "assessment_type",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_subjects.assessment_type"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "max_marks",
+        "dtype": "integer",
+        "nullable": true,
+        "id": "col_subjects.max_marks"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "pass_marks",
+        "dtype": "integer",
+        "nullable": true,
+        "id": "col_subjects.pass_marks"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "from_grade",
+        "dtype": "integer",
+        "nullable": false,
+        "id": "col_subjects.from_grade"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "to_grade",
+        "dtype": "integer",
+        "nullable": false,
+        "id": "col_subjects.to_grade"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "periods_per_week",
+        "dtype": "integer",
+        "nullable": true,
+        "id": "col_subjects.periods_per_week"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "color",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_subjects.color"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "description",
+        "dtype": "text",
+        "nullable": true,
+        "id": "col_subjects.description"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "status",
+        "dtype": "text",
+        "nullable": false,
+        "id": "col_subjects.status"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "display_order",
+        "dtype": "integer",
+        "nullable": false,
+        "id": "col_subjects.display_order"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "created_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_subjects.created_by"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "created_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_subjects.created_at"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "updated_at",
+        "dtype": "timestamp with time zone",
+        "nullable": false,
+        "id": "col_subjects.updated_at"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "deleted_at",
+        "dtype": "timestamp with time zone",
+        "nullable": true,
+        "id": "col_subjects.deleted_at"
+      },
+      {
+        "type": "column",
+        "table": "subjects",
+        "column": "deleted_by",
+        "dtype": "uuid",
+        "nullable": true,
+        "id": "col_subjects.deleted_by"
+      }
+    ],
+    "edges": [
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.start_date"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.end_date"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.status"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.is_current"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.is_locked"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.created_by"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_academic_years",
+        "target": "col_academic_years.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "academic_years.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_academic_years",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.student_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.date_of_birth"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.class_applied"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.section_applied"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.parent_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.parent_phone"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.parent_email"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.notes"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.status"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.form_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.date_of_issue"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.registration_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.created_by"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_admission_applications",
+        "target": "col_admission_applications.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "admission_applications.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_admission_applications",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.section_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.academic_year"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.class_teacher_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.capacity"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.is_active"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.created_by"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_section_years",
+        "target": "col_class_section_years.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "class_section_years.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_class_section_years",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "class_section_years.section_id = class_sections.id",
+        "from_col": "section_id",
+        "to_col": "id",
+        "source": "tbl_class_section_years",
+        "target": "tbl_class_sections"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.class_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.display_order"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.is_active"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.created_by"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_class_sections",
+        "target": "col_class_sections.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "class_sections.class_id = classes.id",
+        "from_col": "class_id",
+        "to_col": "id",
+        "source": "tbl_class_sections",
+        "target": "tbl_classes"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "class_sections.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_class_sections",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.grade_level"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.display_order"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.description"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.is_active"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.created_by"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_classes",
+        "target": "col_classes.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "classes.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_classes",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.address"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.phone"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.email"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.logo_url"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.school_code"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.settings"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_schools",
+        "target": "col_schools.updated_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.user_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.employee_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.first_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.last_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.preferred_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.father_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.dob"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.gender"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.blood_group"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.marital_status"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.nationality"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.religion"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.caste_category"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.sub_caste"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.aadhar_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.pan_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.profile_photo_path"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.personal_mobile"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.alternate_mobile"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.emergency_contact_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.emergency_contact_relationship"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.emergency_contact_phone"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.personal_email"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.official_email"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.whatsapp_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.preferred_language"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.current_address"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.permanent_address"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.staff_category"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.designation"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.department"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.employment_type"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.probation_period_months"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.contract_start"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.contract_end"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.date_of_joining"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.date_of_confirmation"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.work_location"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.reporting_manager_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.shift_timing"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.weekly_off_days"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.pay_grade"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.ctc"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.in_hand_salary"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.pf_account_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.uan"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.esi_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.bank_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.bank_account_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.ifsc"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.bank_account_holder_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.has_system_access"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.blacklist"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.status"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.created_by"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.updated_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.deleted_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff",
+        "target": "col_staff.deleted_by"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "staff.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_staff",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.staff_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.cert_type"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.cert_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.cert_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.issue_date"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.validity_date"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.level"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.doc_path"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_certifications",
+        "target": "col_staff_certifications.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "staff_certifications.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_staff_certifications",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "staff_certifications.staff_id = staff.id",
+        "from_col": "staff_id",
+        "to_col": "id",
+        "source": "tbl_staff_certifications",
+        "target": "tbl_staff"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.staff_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.institution"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.designation"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.from_date"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.to_date"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.subjects_taught"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.reason_for_leaving"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_experience",
+        "target": "col_staff_experience.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "staff_experience.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_staff_experience",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "staff_experience.staff_id = staff.id",
+        "from_col": "staff_id",
+        "to_col": "id",
+        "source": "tbl_staff_experience",
+        "target": "tbl_staff"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.staff_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.level"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.qualification_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.specialization"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.university"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.institution"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.year_of_passing"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.grade"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.mode"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.certificate_doc_path"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_staff_qualifications",
+        "target": "col_staff_qualifications.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "staff_qualifications.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_staff_qualifications",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "staff_qualifications.staff_id = staff.id",
+        "from_col": "staff_id",
+        "to_col": "id",
+        "source": "tbl_staff_qualifications",
+        "target": "tbl_staff"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.student_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.address_line"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.city"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.district"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.state"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.pincode"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_student_addresses",
+        "target": "col_student_addresses.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "student_addresses.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_student_addresses",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "student_addresses.student_id = students.id",
+        "from_col": "student_id",
+        "to_col": "id",
+        "source": "tbl_student_addresses",
+        "target": "tbl_students"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.full_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.surname"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.date_of_birth"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.class"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.section"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.class_section_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.roll_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.registration_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.father_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.father_phone"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.father_email"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.father_occupation"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.father_qualification"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.father_annual_income"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.father_office_address"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_phone"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_email"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_occupation"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_qualification"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_annual_income"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_office_address"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.aadhaar_number"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.place_of_birth"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.city"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.district"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.state"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.disability"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.caste"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.mother_tongue"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.category"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.religion"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.last_school"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.admission_class"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.blood_group"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.identification_mark"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.photo_path"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.status"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_students",
+        "target": "col_students.updated_at"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "students.class_section_id = class_sections.id",
+        "from_col": "class_section_id",
+        "to_col": "id",
+        "source": "tbl_students",
+        "target": "tbl_class_sections"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "students.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_students",
+        "target": "tbl_schools"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.school_id"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.name"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.code"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.category"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.is_special_activity"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.assessment_type"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.max_marks"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.pass_marks"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.from_grade"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.to_grade"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.periods_per_week"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.color"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.description"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.status"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.display_order"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.created_by"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.created_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.updated_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.deleted_at"
+      },
+      {
+        "rel": "has_column",
+        "source": "tbl_subjects",
+        "target": "col_subjects.deleted_by"
+      },
+      {
+        "rel": "fk",
+        "join_sql": "subjects.school_id = schools.id",
+        "from_col": "school_id",
+        "to_col": "id",
+        "source": "tbl_subjects",
+        "target": "tbl_schools"
+      }
+    ]
+  },
+  "schema": {
+    "tables": {
+      "academic_years": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "start_date",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "end_date",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "is_current",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "is_locked",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "created_by",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "admission_applications": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "student_name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "date_of_birth",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "class_applied",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "section_applied",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "parent_name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "parent_phone",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "parent_email",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "notes",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "form_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "date_of_issue",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "registration_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "created_by",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "class_section_years": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "section_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "academic_year",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "class_teacher_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "capacity",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "created_by",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "class_sections": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "class_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "display_order",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "created_by",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "classes": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "grade_level",
+            "type": "smallint",
+            "nullable": false
+          },
+          {
+            "name": "display_order",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "created_by",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "schools": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "address",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "phone",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "email",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "logo_url",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "school_code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "settings",
+            "type": "jsonb",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": false
+      },
+      "staff": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "user_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "employee_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "first_name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "last_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "preferred_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "dob",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "gender",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "blood_group",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "marital_status",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "nationality",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "religion",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "caste_category",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "sub_caste",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "aadhar_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "pan_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "profile_photo_path",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "personal_mobile",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "alternate_mobile",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "emergency_contact_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "emergency_contact_relationship",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "emergency_contact_phone",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "personal_email",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "official_email",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "whatsapp_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "preferred_language",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "current_address",
+            "type": "jsonb",
+            "nullable": false
+          },
+          {
+            "name": "permanent_address",
+            "type": "jsonb",
+            "nullable": false
+          },
+          {
+            "name": "staff_category",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "designation",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "department",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "employment_type",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "probation_period_months",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "contract_start",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "contract_end",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "date_of_joining",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "date_of_confirmation",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "work_location",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "reporting_manager_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "shift_timing",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "weekly_off_days",
+            "type": "ARRAY",
+            "nullable": false
+          },
+          {
+            "name": "pay_grade",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ctc",
+            "type": "numeric",
+            "nullable": true
+          },
+          {
+            "name": "in_hand_salary",
+            "type": "numeric",
+            "nullable": true
+          },
+          {
+            "name": "pf_account_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "uan",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "esi_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "bank_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "bank_account_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "ifsc",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "bank_account_holder_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "has_system_access",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "blacklist",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "created_by",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "deleted_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "deleted_by",
+            "type": "uuid",
+            "nullable": true
+          }
+        ],
+        "has_soft_delete": true,
+        "has_school_id": true
+      },
+      "staff_certifications": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "staff_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "cert_type",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "cert_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "cert_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "issue_date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "validity_date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "level",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "doc_path",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "staff_experience": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "staff_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "institution",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "designation",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "from_date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "to_date",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "subjects_taught",
+            "type": "ARRAY",
+            "nullable": true
+          },
+          {
+            "name": "reason_for_leaving",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "staff_qualifications": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "staff_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "level",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "qualification_name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "specialization",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "university",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "institution",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "year_of_passing",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "grade",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "certificate_doc_path",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "student_addresses": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "student_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "address_line",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "city",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "district",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "state",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "pincode",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "students": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "full_name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "surname",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "date_of_birth",
+            "type": "date",
+            "nullable": true
+          },
+          {
+            "name": "class",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "section",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "class_section_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "roll_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "registration_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_phone",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_email",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_occupation",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_qualification",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_annual_income",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "father_office_address",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_phone",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_email",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_occupation",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_qualification",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_annual_income",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_office_address",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "aadhaar_number",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "place_of_birth",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "city",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "district",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "state",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "disability",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "caste",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "mother_tongue",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "religion",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "last_school",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "admission_class",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "blood_group",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "identification_mark",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "photo_path",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "has_soft_delete": false,
+        "has_school_id": true
+      },
+      "subjects": {
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "school_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "is_special_activity",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "assessment_type",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "max_marks",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "pass_marks",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "from_grade",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "to_grade",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "periods_per_week",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "color",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "display_order",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "created_by",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "deleted_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "deleted_by",
+            "type": "uuid",
+            "nullable": true
+          }
+        ],
+        "has_soft_delete": true,
+        "has_school_id": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "from_table": "academic_years",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "admission_applications",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "class_section_years",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "class_section_years",
+        "from_column": "section_id",
+        "to_table": "class_sections",
+        "to_column": "id"
+      },
+      {
+        "from_table": "class_sections",
+        "from_column": "class_id",
+        "to_table": "classes",
+        "to_column": "id"
+      },
+      {
+        "from_table": "class_sections",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "classes",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "staff",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "staff_certifications",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "staff_certifications",
+        "from_column": "staff_id",
+        "to_table": "staff",
+        "to_column": "id"
+      },
+      {
+        "from_table": "staff_experience",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "staff_experience",
+        "from_column": "staff_id",
+        "to_table": "staff",
+        "to_column": "id"
+      },
+      {
+        "from_table": "staff_qualifications",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "staff_qualifications",
+        "from_column": "staff_id",
+        "to_table": "staff",
+        "to_column": "id"
+      },
+      {
+        "from_table": "student_addresses",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "student_addresses",
+        "from_column": "student_id",
+        "to_table": "students",
+        "to_column": "id"
+      },
+      {
+        "from_table": "students",
+        "from_column": "class_section_id",
+        "to_table": "class_sections",
+        "to_column": "id"
+      },
+      {
+        "from_table": "students",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      },
+      {
+        "from_table": "subjects",
+        "from_column": "school_id",
+        "to_table": "schools",
+        "to_column": "id"
+      }
+    ]
+  }
+}
