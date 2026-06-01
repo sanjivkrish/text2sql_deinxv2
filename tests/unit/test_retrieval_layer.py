@@ -51,3 +51,51 @@ def test_maps_dob_column(mapper):
 def test_confidence_range(mapper):
     results = mapper.map("students")
     assert all(0.0 <= r.confidence <= 1.0 for r in results)
+
+
+# ---------------------------------------------------------------------------
+# TraversalEngine tests
+# ---------------------------------------------------------------------------
+from core.retrieval_layer.traversal import TraversalEngine
+
+TRAVERSAL_SCHEMA = {
+    "tables": {
+        "schools": {"columns": [{"name": "id", "type": "uuid", "nullable": False}], "has_soft_delete": False, "has_school_id": False},
+        "classes": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}], "has_soft_delete": False, "has_school_id": True},
+        "class_sections": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "class_id", "type": "uuid", "nullable": False}], "has_soft_delete": False, "has_school_id": True},
+        "students": {"columns": [{"name": "id", "type": "uuid", "nullable": False}, {"name": "school_id", "type": "uuid", "nullable": False}, {"name": "class_section_id", "type": "uuid", "nullable": True}], "has_soft_delete": False, "has_school_id": True},
+    },
+    "foreign_keys": [
+        {"from_table": "classes", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+        {"from_table": "class_sections", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+        {"from_table": "class_sections", "from_column": "class_id", "to_table": "classes", "to_column": "id"},
+        {"from_table": "students", "from_column": "school_id", "to_table": "schools", "to_column": "id"},
+        {"from_table": "students", "from_column": "class_section_id", "to_table": "class_sections", "to_column": "id"},
+    ],
+}
+
+@pytest.fixture
+def engine():
+    g = GraphBuilder(TRAVERSAL_SCHEMA).build()
+    return TraversalEngine(g)
+
+def test_direct_fk_path(engine):
+    result = engine.find_path("class_sections", "classes")
+    assert result is not None
+    assert result.hop_count == 1
+    assert "class_sections.class_id = classes.id" in result.join_sql
+
+def test_two_hop_path(engine):
+    result = engine.find_path("students", "classes")
+    assert result is not None
+    assert result.hop_count == 2
+
+def test_no_path_returns_none(engine):
+    result = engine.find_path("students", "nonexistent_table")
+    assert result is None
+
+def test_same_table_returns_empty(engine):
+    result = engine.find_path("students", "students")
+    assert result is not None
+    assert result.hop_count == 0
+    assert result.join_sql == []
