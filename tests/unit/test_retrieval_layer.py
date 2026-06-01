@@ -143,3 +143,44 @@ def test_planner_discovers_join_path(planner):
     assert "students" in tables
     assert "classes" in tables
     assert len(plan.recommended_joins) > 0
+
+
+# ---------------------------------------------------------------------------
+# IntentClassifier tests
+# ---------------------------------------------------------------------------
+from unittest.mock import patch
+from core.retrieval_layer.intent_classifier import IntentClassifier
+from core.models.intent import QueryIntentJSON
+from core.models.query import QueryPlan, ResolvedEntity, TraversalResult
+
+EMPTY_PLAN = QueryPlan(resolved_entities=[], join_paths=[], recommended_tables=["students"], recommended_joins=[], confidence=0.8)
+
+@pytest.fixture
+def classifier():
+    return IntentClassifier()
+
+def test_aggregation_rule(classifier):
+    intent = classifier.classify("how many students are in each class", EMPTY_PLAN)
+    assert intent.query_metadata.operational_intent == "AGGREGATION"
+    assert intent.query_metadata.confidence >= 0.75
+
+def test_point_lookup_rule(classifier):
+    intent = classifier.classify("find student with roll number 42", EMPTY_PLAN)
+    assert intent.query_metadata.operational_intent == "POINT_LOOKUP"
+
+def test_filtered_list_rule(classifier):
+    intent = classifier.classify("show all active staff members", EMPTY_PLAN)
+    assert intent.query_metadata.operational_intent == "FILTERED_LIST"
+
+def test_temporal_rule(classifier):
+    intent = classifier.classify("how many students joined this academic year", EMPTY_PLAN)
+    assert intent.query_metadata.operational_intent in ("TEMPORAL", "AGGREGATION")
+
+def test_comparative_rule(classifier):
+    intent = classifier.classify("which class has the most students", EMPTY_PLAN)
+    assert intent.query_metadata.operational_intent == "COMPARATIVE"
+
+def test_intent_has_structural_plan(classifier):
+    intent = classifier.classify("list all students", EMPTY_PLAN)
+    assert isinstance(intent.structural_plan.tables, list)
+    assert len(intent.structural_plan.tables) > 0
