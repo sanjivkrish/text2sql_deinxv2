@@ -108,3 +108,30 @@ def test_no_fk_path_between_real_tables(engine):
     # All FKs in TRAVERSAL_SCHEMA point to 'schools' — no outgoing path from schools
     result = engine.find_path("schools", "students")
     assert result is None
+
+
+# ---------------------------------------------------------------------------
+# QueryGraphPlanner tests
+# ---------------------------------------------------------------------------
+from core.retrieval_layer.query_planner import QueryGraphPlanner
+
+@pytest.fixture
+def planner():
+    g = GraphBuilder(TRAVERSAL_SCHEMA).build()
+    mapper = SemanticMapper(g, TRAVERSAL_SCHEMA)
+    engine = TraversalEngine(g)
+    return QueryGraphPlanner(mapper, engine, TRAVERSAL_SCHEMA)
+
+def test_planner_single_table_query(planner):
+    plan = planner.plan("show all students")
+    assert "students" in plan.recommended_tables
+    assert plan.confidence > 0.5
+
+def test_planner_multi_table_query(planner):
+    plan = planner.plan("show students in each class")
+    tables = set(plan.recommended_tables)
+    assert "students" in tables or "classes" in tables
+
+def test_planner_plan_has_confidence(planner):
+    plan = planner.plan("list all students")
+    assert 0.0 < plan.confidence <= 1.0
