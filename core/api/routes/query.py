@@ -1,24 +1,31 @@
 import time
-import os
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from core.pipeline.graph import build_pipeline
 from core.models.result import QueryResponse, TokenUsage
+from core.schema_layer.graph_store import GraphStore
 
 router = APIRouter()
 _pipeline = None
+_store: GraphStore | None = None
 
-def init(pipeline):
-    global _pipeline
+
+def init(pipeline, store: GraphStore):
+    global _pipeline, _store
     _pipeline = pipeline
+    _store = store
+
 
 class QueryRequest(BaseModel):
     query: str
     school_id: str
     limit: int = 100
 
+
 @router.post("/query", response_model=QueryResponse)
 def run_query(req: QueryRequest):
+    if _pipeline is None:
+        raise HTTPException(status_code=503, detail="Service not ready")
+    from core.api.routes import health as health_routes
     t0 = time.monotonic()
     try:
         state = _pipeline.invoke({
@@ -27,13 +34,26 @@ def run_query(req: QueryRequest):
             "limit": req.limit,
         })
     except Exception as e:
+        total_ms = (time.monotonic() - t0) * 1000
+        health_routes.record(success=False, latency_ms=total_ms)
         raise HTTPException(status_code=500, detail=str(e))
 
+    total_ms = (time.monotonic() - t0) * 1000
+
     if state.get("error"):
+        health_routes.record(success=False, latency_ms=total_ms)
         raise HTTPException(status_code=400, detail=state["error"])
 
-    total_ms = (time.monotonic() - t0) * 1000
-    usage = state.get("token_usage") or TokenUsage(input_tokens=0, output_tokens=0, total_tokens=0, estimated_cost_usd=0.0)
+    usage = state.get("token_usage") or TokenUsage(
+        input_tokens=0, output_tokens=0, total_tokens=0, estimated_cost_usd=0.0
+    )
+    health_routes.record(
+        success=True,
+        latency_ms=total_ms,
+        cost_usd=usage.estimated_cost_usd,
+        rule_hit=True,
+    )
+
     plan = state.get("query_plan")
     sql_result = state.get("sql_result")
 
@@ -47,17 +67,17 @@ def run_query(req: QueryRequest):
         timing={"total_ms": total_ms},
     )
 
+
 @router.post("/query/plan")
 def query_plan(req: QueryRequest):
     """Dry-run: plan + classify only, no execution."""
-    from core.schema_layer.graph_store import GraphStore
+    if _store is None:
+        raise HTTPException(status_code=503, detail="Service not ready")
     from core.retrieval_layer.semantic_mapper import SemanticMapper
     from core.retrieval_layer.traversal import TraversalEngine
     from core.retrieval_layer.query_planner import QueryGraphPlanner
     from core.retrieval_layer.intent_classifier import IntentClassifier
-    schema_path = os.environ.get("SCHEMA_PATH", "db/schema_index.json")
-    store = GraphStore(schema_path)
-    g, schema = store.load()
+    g, schema = _store.graph, _store.schema
     mapper = SemanticMapper(g, schema)
     engine = TraversalEngine(g)
     planner = QueryGraphPlanner(mapper, engine, schema)

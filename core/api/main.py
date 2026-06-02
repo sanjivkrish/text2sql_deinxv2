@@ -18,7 +18,7 @@ async def lifespan(app: FastAPI):
     _store = GraphStore(schema_path)
     _store.load()
     _pipeline = build_pipeline(schema_path=schema_path, db_url=db_url)
-    query_routes.init(_pipeline)
+    query_routes.init(_pipeline, _store)
     schema_routes.init(_store)
     health_routes.init(_store, db_url)
     yield
