@@ -220,3 +220,38 @@ def test_forbidden_keyword_in_from_table_fails():
     report = v.validate(make_result("SELECT id FROM students UNION SELECT id FROM staff LIMIT 10"))
     assert report["is_valid"] is False
     assert any("union" in w.lower() or "Rule 5" in w for w in report["warnings"])
+
+
+# ---------------------------------------------------------------------------
+# ValueExtractor + SQLGenerator tests
+# ---------------------------------------------------------------------------
+from unittest.mock import MagicMock, patch
+from core.generation_layer.value_extractor import ValueExtractor
+from core.generation_layer.sql_generator import SQLGenerator
+
+def test_value_extractor_fills_empty_values():
+    with patch("litellm.completion") as mock_llm:
+        mock_llm.return_value.choices = [MagicMock(message=MagicMock(content='{"values": {"students.full_name": "John Smith"}}'))]
+        extractor = ValueExtractor()
+        filters = [FilterCondition(table="students", column="full_name", operator="=", value="", value_type="string")]
+        filled = extractor.fill_values(filters, "find student named John Smith")
+        assert any(f.value == "John Smith" for f in filled)
+
+def test_sql_generator_returns_sql_result():
+    intent = make_intent(["students"])
+    gen = SQLGenerator(SCHEMA)
+    result = gen.generate(intent, limit=10)
+    assert result.sql != ""
+    assert "SELECT" in result.sql
+
+def test_sql_generator_propagates_validation_warnings():
+    bad_intent = make_intent(
+        ["students"],
+        filters=[FilterCondition(table="students", column="full_name", operator="=", value="'; DROP TABLE students; --", value_type="string")]
+    )
+    gen = SQLGenerator(SCHEMA)
+    result = gen.generate(bad_intent, limit=10)
+    # Injection is contained inside a quoted string literal — SQL still starts with SELECT
+    # The validator catches semicolons and marks confidence 0.0
+    assert result.sql.strip().upper().startswith("SELECT")
+    assert result.confidence_score == 0.0  # validator invalidates due to semicolons/comments
