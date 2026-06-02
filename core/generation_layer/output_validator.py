@@ -41,6 +41,11 @@ class OutputValidator:
         if "--" in sql or "/*" in sql:
             issues.append("Rule 6: SQL must not contain comment sequences")
 
+        # Rule 8: students.class is a reserved-keyword column reference — reject it
+        # The students table has no 'class' column; class-based queries must join through class_sections → classes
+        if re.search(r'\bstudents\s*\.\s*class\b', sql, re.IGNORECASE):
+            issues.append("Rule 8: students.class is invalid — 'class' is a reserved SQL keyword and not a column on students; join through class_sections and classes instead")
+
         # Rule 7: Low confidence warning (non-blocking)
         if result.confidence_score < 0.5:
             warnings.append(f"Rule 7: Low confidence score ({result.confidence_score:.2f}) — review SQL before use")
