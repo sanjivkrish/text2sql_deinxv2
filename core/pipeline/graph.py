@@ -44,15 +44,23 @@ def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
         return {**state, "query_plan": plan}
 
     def classifier_node(state: PipelineState) -> PipelineState:
-        intent = classifier.classify(state["query"], state["query_plan"])
-        return {**state, "intent": intent}
+        try:
+            intent = classifier.classify(state["query"], state["query_plan"])
+            return {**state, "intent": intent}
+        except Exception as e:
+            return {**state, "error": str(e)}
 
     def generator_node(state: PipelineState) -> PipelineState:
-        result = generator.generate(state["intent"], limit=state.get("limit", 100))
-        return {**state, "sql_result": result}
+        try:
+            result = generator.generate(state["intent"], limit=state.get("limit", 100))
+            return {**state, "sql_result": result}
+        except Exception as e:
+            return {**state, "error": str(e)}
 
     def validator_router(state: PipelineState) -> str:
         """Routing function for conditional edges after 'validator' pass-through node."""
+        if state.get("sql_result") is None or state.get("error"):
+            return "error_node"
         from core.generation_layer.output_validator import OutputValidator
         report = OutputValidator().validate(state["sql_result"])
         if report["is_valid"]:
@@ -70,7 +78,9 @@ def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
 
     def summarizer_node(state: PipelineState) -> PipelineState:
         if state.get("error"):
-            return state
+            return {**state,
+                    "summary": f"Error: {state['error']}",
+                    "token_usage": TokenUsage(input_tokens=0, output_tokens=0, total_tokens=0, estimated_cost_usd=0.0)}
         summary, usage = summarizer.summarize(state["query"], state["run_result"])
         return {**state, "summary": summary, "token_usage": usage}
 

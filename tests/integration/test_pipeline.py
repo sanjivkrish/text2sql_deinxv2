@@ -84,3 +84,18 @@ def test_pipeline_returns_query_response(mock_components):
         assert result.get("summary") is not None
         assert result.get("token_usage") is not None
         assert result.get("error") is None
+
+
+def test_pipeline_validation_failure_returns_error_summary(mock_components):
+    """When OutputValidator rejects the SQL, pipeline routes to error_node and returns complete state."""
+    with patch("core.generation_layer.output_validator.OutputValidator.validate") as mock_validate:
+        mock_validate.return_value = {"is_valid": False, "warnings": ["Rule 1: SQL must start with SELECT"]}
+        pipeline = build_pipeline(schema_path=mock_components, db_url="postgresql://mock")
+        result = pipeline.invoke({
+            "query": "list all students",
+            "school_id": "a0000000-0000-0000-0000-000000000001",
+            "limit": 10,
+        })
+        assert result.get("summary") is not None
+        assert "Error" in result.get("summary", "")
+        assert result.get("token_usage") is not None
