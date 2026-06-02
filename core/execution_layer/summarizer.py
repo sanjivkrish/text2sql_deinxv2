@@ -15,8 +15,11 @@ class ResultSummarizer:
             f"The user asked: \"{query}\"\n"
             f"The query returned {run_result.row_count} rows.\n"
             f"Sample rows (up to 20): {json.dumps(rows_preview, default=str)}\n\n"
-            "Write a concise natural-language summary of the results. "
-            "Do not mention SQL or technical details. "
+            "Answer the user's question directly using only the information in the rows above. "
+            "Focus strictly on what was asked — if the question is about academic details, "
+            "report academic fields (class, section, academic year, subjects) and skip unrelated fields. "
+            "If the question is about a specific person, lead with that person's details. "
+            "Do not mention SQL, row counts, or technical details. "
             "If rows are empty, say no results were found."
         )
         try:

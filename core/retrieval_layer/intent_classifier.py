@@ -39,11 +39,48 @@ def _rule_classify(query: str) -> tuple[str, float] | None:
 def _llm_classify(query: str, plan: QueryPlan) -> QueryIntentJSON:
     """LiteLLM fallback — structured output via JSON mode."""
     import litellm, os
+    from core.schema_layer.graph_store import GraphStore
     VALID_INTENTS = {"POINT_LOOKUP", "FILTERED_LIST", "AGGREGATION", "COMPARATIVE", "TEMPORAL"}
-    prompt = f"""Classify this school ERP query into one of: POINT_LOOKUP, FILTERED_LIST, AGGREGATION, COMPARATIVE, TEMPORAL.
-Query: {query}
+
+    # Build a compact table→columns reference so the LLM uses real column names
+    schema_hint = ""
+    try:
+        store = GraphStore(os.environ.get("SCHEMA_PATH", "db/schema_index.json"))
+        _, schema = store.load()
+        relevant = [t for t in plan.recommended_tables if t in schema.get("tables", {})]
+        lines = []
+        for t in relevant[:4]:  # cap to avoid bloating the prompt
+            cols = [c["name"] for c in schema["tables"][t]["columns"]]
+            lines.append(f"  {t}: {cols}")
+        schema_hint = "Available columns:\n" + "\n".join(lines) + "\n\n"
+    except Exception:
+        pass
+
+    prompt = f"""You are classifying a school ERP natural-language query.
+
+Query: "{query}"
 Tables likely involved: {plan.recommended_tables}
-Return JSON: {{"intent": "...", "primary_domain": "...", "tables": [...], "filters": [], "aggregations": [], "ordering": []}}"""
+{schema_hint}Intent types:
+- POINT_LOOKUP: query about a specific named person or record (e.g. "find student Amudha", "details about teacher Ravi")
+- FILTERED_LIST: list filtered by one or more conditions (e.g. "all active students in grade 5")
+- AGGREGATION: count, sum, or average (e.g. "how many students", "total staff")
+- COMPARATIVE: ranking or comparison (e.g. "which class has the most students")
+- TEMPORAL: time-based query (e.g. "students enrolled this year")
+
+Rules:
+- For POINT_LOOKUP: always include a filter on the person's name column (use the exact column name from the schema above) using ILIKE with %name% pattern.
+- For FILTERED_LIST: include filters for any explicit conditions mentioned.
+- filters must have: table, column (must be an exact column name from the schema), operator (=, ILIKE, >, <, etc.), value, value_type (string/int/bool).
+
+Return valid JSON only:
+{{
+  "intent": "...",
+  "primary_domain": "...",
+  "tables": ["..."],
+  "filters": [{{"table": "...", "column": "...", "operator": "ILIKE", "value": "%...%", "value_type": "string"}}],
+  "aggregations": [],
+  "ordering": []
+}}"""
     resp = litellm.completion(
         model=os.environ.get("LLM_MODEL", "claude-sonnet-4-6"),
         messages=[{"role": "user", "content": prompt}],
@@ -58,6 +95,21 @@ Return JSON: {{"intent": "...", "primary_domain": "...", "tables": [...], "filte
     if intent_str not in VALID_INTENTS:
         intent_str = "FILTERED_LIST"
     tables = data.get("tables", plan.recommended_tables) or plan.recommended_tables
+
+    raw_filters = data.get("filters") or []
+    filters: list[FilterCondition] = []
+    for f in raw_filters:
+        try:
+            filters.append(FilterCondition(
+                table=f["table"],
+                column=f["column"],
+                operator=f["operator"],
+                value=str(f.get("value", "")),
+                value_type=f.get("value_type", "string"),
+            ))
+        except (KeyError, TypeError):
+            continue
+
     return QueryIntentJSON(
         query_metadata=QueryMetadata(
             raw_query=query,
@@ -70,7 +122,7 @@ Return JSON: {{"intent": "...", "primary_domain": "...", "tables": [...], "filte
             join_conditions=plan.recommended_joins,
             select_columns=[f"{t}.*" for t in tables[:1]],
         ),
-        filters=[],
+        filters=filters,
         aggregations=[],
         ordering=[],
     )
