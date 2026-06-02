@@ -1,0 +1,4501 @@
+[
+  {
+    "id": "00000000-0000-4000-a000-000000000158",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000154",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Computer Lab Assistant",
+    "from_date": "2000-03-01",
+    "to_date": "2007-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000168",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000166",
+    "institution": "Private Higher Secondary School",
+    "designation": "Cook",
+    "from_date": "2004-09-01",
+    "to_date": "2008-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000169",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000166",
+    "institution": "Matriculation Primary School",
+    "designation": "Canteen Helper",
+    "from_date": "2011-07-01",
+    "to_date": "2016-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000178",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000175",
+    "institution": "Aided School",
+    "designation": "Graduate Teacher",
+    "from_date": "2014-09-01",
+    "to_date": "2016-02-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000179",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000175",
+    "institution": "Aided Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2002-06-01",
+    "to_date": "2003-06-01",
+    "subjects_taught": [
+      "Biology"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000185",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000182",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2003-12-01",
+    "to_date": "2004-02-01",
+    "subjects_taught": [
+      "Tamil",
+      "Commerce"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000186",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000182",
+    "institution": "Aided Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2015-04-01",
+    "to_date": "2015-03-01",
+    "subjects_taught": [
+      "Physical Education",
+      "Physics"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000190",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000187",
+    "institution": "Government Primary School",
+    "designation": "PGT Teacher",
+    "from_date": "2015-12-01",
+    "to_date": "2015-09-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000191",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000187",
+    "institution": "Government Primary School",
+    "designation": "Senior Lecturer",
+    "from_date": "2003-02-01",
+    "to_date": "2011-01-01",
+    "subjects_taught": [
+      "Mathematics"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000200",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000196",
+    "institution": "Aided School",
+    "designation": "Junior Accountant",
+    "from_date": "2018-11-01",
+    "to_date": "2021-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000204",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000201",
+    "institution": "Government Middle School",
+    "designation": "Clerk",
+    "from_date": "2017-01-01",
+    "to_date": "2015-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000207",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000205",
+    "institution": "Government Primary School",
+    "designation": "Sweeper",
+    "from_date": "2018-11-01",
+    "to_date": "2021-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000212",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000208",
+    "institution": "Matriculation School",
+    "designation": "Primary Teacher",
+    "from_date": "2014-09-01",
+    "to_date": "2015-10-01",
+    "subjects_taught": [
+      "English"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000213",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000208",
+    "institution": "Government Primary School",
+    "designation": null,
+    "from_date": "2010-12-01",
+    "to_date": "2014-06-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000218",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000214",
+    "institution": "Panchayat Union School",
+    "designation": "TGT Teacher",
+    "from_date": "2001-01-01",
+    "to_date": "2008-10-01",
+    "subjects_taught": [
+      "History"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000222",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000219",
+    "institution": "Government Higher Secondary School",
+    "designation": "Primary Teacher",
+    "from_date": "2006-02-01",
+    "to_date": "2011-11-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000223",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000219",
+    "institution": "Government School",
+    "designation": "Primary Teacher",
+    "from_date": "2015-12-01",
+    "to_date": "2021-07-01",
+    "subjects_taught": [
+      "History",
+      "Geography"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000232",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000228",
+    "institution": "Matriculation School",
+    "designation": "Senior Lecturer",
+    "from_date": "2011-08-01",
+    "to_date": "2013-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000237",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000233",
+    "institution": "Aided Middle School",
+    "designation": "Principal",
+    "from_date": "2000-11-01",
+    "to_date": "2006-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000246",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000242",
+    "institution": "Aided Primary School",
+    "designation": "PGT Teacher",
+    "from_date": "2009-05-01",
+    "to_date": "2013-12-01",
+    "subjects_taught": [
+      "History",
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000254",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000249",
+    "institution": "Aided Middle School",
+    "designation": null,
+    "from_date": "2018-07-01",
+    "to_date": "2013-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000259",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000255",
+    "institution": "Aided Middle School",
+    "designation": "TGT Teacher",
+    "from_date": "2014-12-01",
+    "to_date": "2013-08-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000260",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000255",
+    "institution": "Private School",
+    "designation": "Graduate Teacher",
+    "from_date": "2007-07-01",
+    "to_date": "2009-06-01",
+    "subjects_taught": [
+      "Physical Education"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000273",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000271",
+    "institution": "Government Higher Secondary School",
+    "designation": "Peon",
+    "from_date": "2018-07-01",
+    "to_date": "2019-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000277",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000274",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Cook",
+    "from_date": "2005-04-01",
+    "to_date": "2010-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000286",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000282",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Library Assistant",
+    "from_date": "2009-06-01",
+    "to_date": "2010-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000287",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000282",
+    "institution": "Panchayat Union School",
+    "designation": "Library Assistant",
+    "from_date": "2000-09-01",
+    "to_date": "2001-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000292",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000288",
+    "institution": "Aided School",
+    "designation": "TGT Teacher",
+    "from_date": "2005-01-01",
+    "to_date": "2010-04-01",
+    "subjects_taught": [
+      "History",
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000293",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000288",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2016-01-01",
+    "to_date": "2021-09-01",
+    "subjects_taught": [
+      "Geography",
+      "Commerce"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000302",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000298",
+    "institution": "Matriculation Primary School",
+    "designation": "Primary Teacher",
+    "from_date": "2007-01-01",
+    "to_date": "2014-12-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000305",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000303",
+    "institution": "Aided School",
+    "designation": "Admin Officer",
+    "from_date": "2007-04-01",
+    "to_date": "2008-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000309",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000306",
+    "institution": "Matriculation School",
+    "designation": "Primary Teacher",
+    "from_date": "2004-03-01",
+    "to_date": "2011-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000310",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000306",
+    "institution": "Private Middle School",
+    "designation": "Primary Teacher",
+    "from_date": "2005-03-01",
+    "to_date": "2008-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000314",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000311",
+    "institution": "Private School",
+    "designation": "TGT Teacher",
+    "from_date": "2010-03-01",
+    "to_date": "2011-03-01",
+    "subjects_taught": [
+      "Biology",
+      "Geography"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000319",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000315",
+    "institution": "Matriculation Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2012-03-01",
+    "to_date": "2015-06-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000323",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000320",
+    "institution": "Private Higher Secondary School",
+    "designation": "Peon",
+    "from_date": "2011-12-01",
+    "to_date": "2017-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000324",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000320",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Peon",
+    "from_date": "2015-03-01",
+    "to_date": "2017-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000330",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000327",
+    "institution": "Matriculation School",
+    "designation": "TGT Teacher",
+    "from_date": "2014-04-01",
+    "to_date": "2015-06-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000331",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000327",
+    "institution": "Private School",
+    "designation": "TGT Teacher",
+    "from_date": "2003-06-01",
+    "to_date": "2011-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000334",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000332",
+    "institution": "Panchayat Union School",
+    "designation": null,
+    "from_date": "2016-11-01",
+    "to_date": "2016-11-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000338",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000335",
+    "institution": "Private School",
+    "designation": "Primary Teacher",
+    "from_date": "2007-08-01",
+    "to_date": "2015-08-01",
+    "subjects_taught": [
+      "Physical Education",
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000339",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000335",
+    "institution": "Matriculation Middle School",
+    "designation": "Primary Teacher",
+    "from_date": "2006-06-01",
+    "to_date": "2008-04-01",
+    "subjects_taught": [
+      "Mathematics"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000343",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000340",
+    "institution": "Matriculation School",
+    "designation": "Senior Lecturer",
+    "from_date": "2002-08-01",
+    "to_date": "2003-06-01",
+    "subjects_taught": [
+      "Physical Education"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000344",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000340",
+    "institution": "Aided Primary School",
+    "designation": null,
+    "from_date": "2008-03-01",
+    "to_date": "2012-07-01",
+    "subjects_taught": [
+      "Geography",
+      "Physics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000357",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000353",
+    "institution": "Matriculation School",
+    "designation": null,
+    "from_date": "2012-06-01",
+    "to_date": "2018-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000360",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000358",
+    "institution": "Panchayat Union Middle School",
+    "designation": null,
+    "from_date": "2008-06-01",
+    "to_date": "2012-02-01",
+    "subjects_taught": [
+      "Computer Science",
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000368",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000364",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Senior Lecturer",
+    "from_date": "2007-06-01",
+    "to_date": "2008-05-01",
+    "subjects_taught": [
+      "Computer Science",
+      "Biology"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000369",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000364",
+    "institution": "Matriculation School",
+    "designation": null,
+    "from_date": "2004-09-01",
+    "to_date": "2005-10-01",
+    "subjects_taught": [
+      "Mathematics"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000377",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000375",
+    "institution": "Panchayat Union School",
+    "designation": "Head Mistress",
+    "from_date": "2014-08-01",
+    "to_date": "2021-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000384",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000381",
+    "institution": "Matriculation Middle School",
+    "designation": "TGT Teacher",
+    "from_date": "2018-02-01",
+    "to_date": "2018-03-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000385",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000381",
+    "institution": "Private Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2008-01-01",
+    "to_date": "2010-09-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000393",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000389",
+    "institution": "Government Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2000-09-01",
+    "to_date": "2007-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000398",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000394",
+    "institution": "Aided School",
+    "designation": "Peon",
+    "from_date": "2017-08-01",
+    "to_date": "2024-02-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000408",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000403",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2009-04-01",
+    "to_date": "2010-09-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000424",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000422",
+    "institution": "Government School",
+    "designation": "Watchman",
+    "from_date": "2014-09-01",
+    "to_date": "2013-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000429",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000425",
+    "institution": "Aided School",
+    "designation": "Computer Lab Assistant",
+    "from_date": "2012-12-01",
+    "to_date": "2013-09-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000434",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000430",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2009-10-01",
+    "to_date": "2013-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000435",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000430",
+    "institution": "Government Higher Secondary School",
+    "designation": null,
+    "from_date": "2014-04-01",
+    "to_date": "2017-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000438",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000436",
+    "institution": "Panchayat Union School",
+    "designation": null,
+    "from_date": "2014-11-01",
+    "to_date": "2020-07-01",
+    "subjects_taught": [
+      "Computer Science",
+      "Computer Science"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000439",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000436",
+    "institution": "Matriculation Higher Secondary School",
+    "designation": "Primary Teacher",
+    "from_date": "2011-12-01",
+    "to_date": "2015-01-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000443",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000440",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Watchman",
+    "from_date": "2016-05-01",
+    "to_date": "2014-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000444",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000440",
+    "institution": "Private Primary School",
+    "designation": "Security Guard",
+    "from_date": "2013-12-01",
+    "to_date": "2013-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000448",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000445",
+    "institution": "Matriculation Middle School",
+    "designation": "Nursery Teacher",
+    "from_date": "2014-07-01",
+    "to_date": "2014-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000452",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000449",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Primary Teacher",
+    "from_date": "2013-01-01",
+    "to_date": "2015-02-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000453",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000449",
+    "institution": "Aided School",
+    "designation": "Primary Teacher",
+    "from_date": "2013-05-01",
+    "to_date": "2018-02-01",
+    "subjects_taught": [
+      "Biology"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000462",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000459",
+    "institution": "Government Higher Secondary School",
+    "designation": "Watchman",
+    "from_date": "2013-01-01",
+    "to_date": "2011-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000463",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000459",
+    "institution": "Panchayat Union School",
+    "designation": "Security Guard",
+    "from_date": "2004-07-01",
+    "to_date": "2006-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000479",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000475",
+    "institution": "Government School",
+    "designation": "Nursery Teacher",
+    "from_date": "2000-05-01",
+    "to_date": "2004-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000489",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000485",
+    "institution": "Government Middle School",
+    "designation": "PRT Teacher",
+    "from_date": "2004-12-01",
+    "to_date": "2006-06-01",
+    "subjects_taught": [
+      "Tamil"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000490",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000485",
+    "institution": "Private Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2011-08-01",
+    "to_date": "2015-02-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000496",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000491",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2010-09-01",
+    "to_date": "2012-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000497",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000491",
+    "institution": "Aided School",
+    "designation": "Nursery Teacher",
+    "from_date": "2017-09-01",
+    "to_date": "2019-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000500",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000498",
+    "institution": "Matriculation Middle School",
+    "designation": "Sweeper",
+    "from_date": "2000-01-01",
+    "to_date": "2005-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000501",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000498",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Peon",
+    "from_date": "2014-01-01",
+    "to_date": "2015-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000506",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000502",
+    "institution": "Government Primary School",
+    "designation": "Primary Teacher",
+    "from_date": "2005-11-01",
+    "to_date": "2011-01-01",
+    "subjects_taught": [
+      "History",
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000507",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000502",
+    "institution": "Panchayat Union School",
+    "designation": "Primary Teacher",
+    "from_date": "2014-12-01",
+    "to_date": "2020-09-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000515",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000510",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Nursery Teacher",
+    "from_date": "2000-11-01",
+    "to_date": "2004-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000524",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000520",
+    "institution": "Panchayat Union Middle School",
+    "designation": null,
+    "from_date": "2001-11-01",
+    "to_date": "2003-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000525",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000520",
+    "institution": "Aided Middle School",
+    "designation": "Senior Lab Technician",
+    "from_date": "2004-09-01",
+    "to_date": "2010-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000532",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000528",
+    "institution": "Matriculation School",
+    "designation": "Peon",
+    "from_date": "2002-09-01",
+    "to_date": "2004-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000533",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000528",
+    "institution": "Government Middle School",
+    "designation": "Office Helper",
+    "from_date": "2007-09-01",
+    "to_date": "2012-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000538",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000534",
+    "institution": "Matriculation Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2011-08-01",
+    "to_date": "2012-12-01",
+    "subjects_taught": [
+      "Computer Science",
+      "Geography"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000546",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000543",
+    "institution": "Panchayat Union School",
+    "designation": "Primary Teacher",
+    "from_date": "2002-02-01",
+    "to_date": "2003-10-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000551",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000547",
+    "institution": "Panchayat Union Middle School",
+    "designation": "PRT Teacher",
+    "from_date": "2004-05-01",
+    "to_date": "2005-10-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000555",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000552",
+    "institution": "Aided Middle School",
+    "designation": "Primary Teacher",
+    "from_date": "2001-12-01",
+    "to_date": "2004-11-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000558",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000556",
+    "institution": "Government School",
+    "designation": null,
+    "from_date": "2003-03-01",
+    "to_date": "2008-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000563",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000559",
+    "institution": "Aided Middle School",
+    "designation": "Office Helper",
+    "from_date": "2013-07-01",
+    "to_date": "2019-02-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000564",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000559",
+    "institution": "Matriculation Primary School",
+    "designation": "Office Helper",
+    "from_date": "2006-01-01",
+    "to_date": "2014-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000569",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000565",
+    "institution": "Panchayat Union Primary School",
+    "designation": "PGT Teacher",
+    "from_date": "2010-07-01",
+    "to_date": "2014-10-01",
+    "subjects_taught": [
+      "Geography",
+      "Physical Education"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000576",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000572",
+    "institution": "Aided Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2013-12-01",
+    "to_date": "2015-02-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000580",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000577",
+    "institution": "Private Primary School",
+    "designation": null,
+    "from_date": "2015-01-01",
+    "to_date": "2017-11-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000581",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000577",
+    "institution": "Aided School",
+    "designation": "Primary Teacher",
+    "from_date": "2006-02-01",
+    "to_date": "2009-05-01",
+    "subjects_taught": [
+      "History",
+      "Physical Education"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000586",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000582",
+    "institution": "Government Middle School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2009-03-01",
+    "to_date": "2013-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000587",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000582",
+    "institution": "Private Higher Secondary School",
+    "designation": "Nursery Teacher",
+    "from_date": "2000-06-01",
+    "to_date": "2008-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000595",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000592",
+    "institution": "Aided Primary School",
+    "designation": null,
+    "from_date": "2013-01-01",
+    "to_date": "2014-12-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000596",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000592",
+    "institution": "Panchayat Union Middle School",
+    "designation": null,
+    "from_date": "2015-09-01",
+    "to_date": "2015-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000608",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000605",
+    "institution": "Private Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2002-03-01",
+    "to_date": "2004-10-01",
+    "subjects_taught": [
+      "History",
+      "Physics"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000612",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000609",
+    "institution": "Aided Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2014-06-01",
+    "to_date": "2017-06-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000613",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000609",
+    "institution": "Government Higher Secondary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2011-02-01",
+    "to_date": "2013-02-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000620",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000617",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Security Guard",
+    "from_date": "2008-04-01",
+    "to_date": "2013-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000623",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000621",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2001-03-01",
+    "to_date": "2002-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000629",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000624",
+    "institution": "Government Middle School",
+    "designation": "Primary Teacher",
+    "from_date": "2006-01-01",
+    "to_date": "2007-02-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000633",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000630",
+    "institution": "Private School",
+    "designation": "Security Guard",
+    "from_date": "2006-06-01",
+    "to_date": "2008-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000637",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000634",
+    "institution": "Government School",
+    "designation": null,
+    "from_date": "2016-01-01",
+    "to_date": "2013-09-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000644",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000640",
+    "institution": "Matriculation Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2005-03-01",
+    "to_date": "2007-05-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000645",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000640",
+    "institution": "Private School",
+    "designation": "Primary Teacher",
+    "from_date": "2014-09-01",
+    "to_date": "2020-11-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000648",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000646",
+    "institution": "Government Middle School",
+    "designation": "Canteen Helper",
+    "from_date": "2002-07-01",
+    "to_date": "2004-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000651",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000649",
+    "institution": "Private School",
+    "designation": "Lab Assistant",
+    "from_date": "2006-06-01",
+    "to_date": "2007-09-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000655",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000652",
+    "institution": "Government Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2000-07-01",
+    "to_date": "2003-04-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000668",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000664",
+    "institution": "Aided Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2010-06-01",
+    "to_date": "2011-03-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000672",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000669",
+    "institution": "Matriculation Middle School",
+    "designation": null,
+    "from_date": "2008-02-01",
+    "to_date": "2011-08-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000673",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000669",
+    "institution": "Government Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2017-05-01",
+    "to_date": "2013-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000678",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000674",
+    "institution": "Aided School",
+    "designation": "Security Guard",
+    "from_date": "2009-06-01",
+    "to_date": "2014-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000679",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000674",
+    "institution": "Government Middle School",
+    "designation": "Security Guard",
+    "from_date": "2018-04-01",
+    "to_date": "2024-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000683",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000680",
+    "institution": "Matriculation Higher Secondary School",
+    "designation": "Lab Assistant",
+    "from_date": "2018-09-01",
+    "to_date": "2014-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000684",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000680",
+    "institution": "Private Primary School",
+    "designation": null,
+    "from_date": "2005-07-01",
+    "to_date": "2006-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000688",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000685",
+    "institution": "Aided Primary School",
+    "designation": "Security Guard",
+    "from_date": "2004-07-01",
+    "to_date": "2006-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000691",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000689",
+    "institution": "Government Middle School",
+    "designation": "PGT Teacher",
+    "from_date": "2006-05-01",
+    "to_date": "2009-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000692",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000689",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Senior Lecturer",
+    "from_date": "2014-11-01",
+    "to_date": "2011-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000697",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000693",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Security Guard",
+    "from_date": "2017-12-01",
+    "to_date": "2017-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000698",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000693",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Watchman",
+    "from_date": "2015-08-01",
+    "to_date": "2015-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000703",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000701",
+    "institution": "Matriculation School",
+    "designation": "Primary Teacher",
+    "from_date": "2001-06-01",
+    "to_date": "2003-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000704",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000701",
+    "institution": "Private School",
+    "designation": "Primary Teacher",
+    "from_date": "2018-01-01",
+    "to_date": "2019-09-01",
+    "subjects_taught": [
+      "History"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000707",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000705",
+    "institution": "Matriculation Primary School",
+    "designation": null,
+    "from_date": "2018-03-01",
+    "to_date": "2015-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000714",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000711",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Office Helper",
+    "from_date": "2009-07-01",
+    "to_date": "2011-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000715",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000711",
+    "institution": "Matriculation School",
+    "designation": "Peon",
+    "from_date": "2018-04-01",
+    "to_date": "2022-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000731",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000727",
+    "institution": "Aided Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2000-12-01",
+    "to_date": "2001-11-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000736",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000732",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2001-01-01",
+    "to_date": "2008-11-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000743",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000740",
+    "institution": "Government Primary School",
+    "designation": "Bus Attendant",
+    "from_date": "2006-06-01",
+    "to_date": "2013-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000746",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000744",
+    "institution": "Private Middle School",
+    "designation": "Primary Teacher",
+    "from_date": "2006-01-01",
+    "to_date": "2009-08-01",
+    "subjects_taught": [
+      "History"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000757",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000754",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Principal",
+    "from_date": "2000-02-01",
+    "to_date": "2001-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000758",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000754",
+    "institution": "Private School",
+    "designation": "Principal",
+    "from_date": "2014-06-01",
+    "to_date": "2015-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000767",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000765",
+    "institution": "Matriculation School",
+    "designation": "Office Assistant",
+    "from_date": "2015-12-01",
+    "to_date": "2011-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000773",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000770",
+    "institution": "Government Primary School",
+    "designation": null,
+    "from_date": "2006-10-01",
+    "to_date": "2014-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000774",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000770",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2001-09-01",
+    "to_date": "2007-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000789",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000785",
+    "institution": "Matriculation School",
+    "designation": "PRT Teacher",
+    "from_date": "2017-01-01",
+    "to_date": "2018-04-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000794",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000790",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "IT Coordinator",
+    "from_date": "2002-07-01",
+    "to_date": "2003-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000798",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000795",
+    "institution": "Private Primary School",
+    "designation": null,
+    "from_date": "2002-03-01",
+    "to_date": "2008-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000799",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000795",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Sweeper",
+    "from_date": "2008-01-01",
+    "to_date": "2010-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000805",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000803",
+    "institution": "Government Higher Secondary School",
+    "designation": "Head Mistress",
+    "from_date": "2000-11-01",
+    "to_date": "2003-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000806",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000803",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Head Mistress",
+    "from_date": "2013-10-01",
+    "to_date": "2016-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000813",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000810",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Senior Lab Technician",
+    "from_date": "2018-12-01",
+    "to_date": "2018-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000817",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000814",
+    "institution": "Government Higher Secondary School",
+    "designation": "PGT Teacher",
+    "from_date": "2010-06-01",
+    "to_date": "2017-04-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000820",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000818",
+    "institution": "Aided School",
+    "designation": "Watchman",
+    "from_date": "2005-10-01",
+    "to_date": "2006-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000826",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000821",
+    "institution": "Aided Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2015-10-01",
+    "to_date": "2014-03-01",
+    "subjects_taught": [
+      "Biology"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000827",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000821",
+    "institution": "Private Higher Secondary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2004-01-01",
+    "to_date": "2009-12-01",
+    "subjects_taught": [
+      "Chemistry",
+      "Biology"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000831",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000828",
+    "institution": "Matriculation School",
+    "designation": "Lab Assistant",
+    "from_date": "2008-05-01",
+    "to_date": "2016-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000835",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000832",
+    "institution": "Government Primary School",
+    "designation": "Lab Assistant",
+    "from_date": "2017-05-01",
+    "to_date": "2021-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000842",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000840",
+    "institution": "Panchayat Union Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2016-06-01",
+    "to_date": "2018-06-01",
+    "subjects_taught": [
+      "Tamil"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000843",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000840",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Primary Teacher",
+    "from_date": "2009-09-01",
+    "to_date": "2013-05-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000000847",
+    "school_id": "00000000-0000-4000-a000-000000000001",
+    "staff_id": "00000000-0000-4000-a000-000000000844",
+    "institution": "Panchayat Union Middle School",
+    "designation": null,
+    "from_date": "2014-08-01",
+    "to_date": "2022-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004674",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004671",
+    "institution": "Aided Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2009-10-01",
+    "to_date": "2017-01-01",
+    "subjects_taught": [
+      "History",
+      "History"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004678",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004675",
+    "institution": "Private School",
+    "designation": null,
+    "from_date": "2018-06-01",
+    "to_date": "2018-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004692",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004690",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Primary Teacher",
+    "from_date": "2018-11-01",
+    "to_date": "2020-08-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004695",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004693",
+    "institution": "Private Higher Secondary School",
+    "designation": null,
+    "from_date": "2017-07-01",
+    "to_date": "2013-12-01",
+    "subjects_taught": [
+      "History"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004698",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004696",
+    "institution": "Matriculation Middle School",
+    "designation": "Primary Teacher",
+    "from_date": "2014-05-01",
+    "to_date": "2018-09-01",
+    "subjects_taught": [
+      "English"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004699",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004696",
+    "institution": "Aided School",
+    "designation": "Primary Teacher",
+    "from_date": "2006-06-01",
+    "to_date": "2012-07-01",
+    "subjects_taught": [
+      "Biology"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004706",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004702",
+    "institution": "Government Middle School",
+    "designation": "Cook",
+    "from_date": "2007-06-01",
+    "to_date": "2009-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004709",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004707",
+    "institution": "Private School",
+    "designation": "Primary Teacher",
+    "from_date": "2000-11-01",
+    "to_date": "2002-07-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004714",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004710",
+    "institution": "Matriculation Middle School",
+    "designation": "Security Guard",
+    "from_date": "2009-08-01",
+    "to_date": "2010-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004717",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004715",
+    "institution": "Aided Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2002-05-01",
+    "to_date": "2005-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004718",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004715",
+    "institution": "Government Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2005-07-01",
+    "to_date": "2007-06-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004723",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004719",
+    "institution": "Private Higher Secondary School",
+    "designation": "Sweeper",
+    "from_date": "2001-03-01",
+    "to_date": "2003-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004724",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004719",
+    "institution": "Matriculation School",
+    "designation": "Peon",
+    "from_date": "2015-05-01",
+    "to_date": "2016-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004729",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004725",
+    "institution": "Aided Primary School",
+    "designation": null,
+    "from_date": "2002-08-01",
+    "to_date": "2003-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004730",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004725",
+    "institution": "Aided Primary School",
+    "designation": "Sweeper",
+    "from_date": "2000-10-01",
+    "to_date": "2001-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004733",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004731",
+    "institution": "Private Primary School",
+    "designation": "Office Superintendent",
+    "from_date": "2014-11-01",
+    "to_date": "2015-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004740",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004737",
+    "institution": "Matriculation School",
+    "designation": null,
+    "from_date": "2003-12-01",
+    "to_date": "2005-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004748",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004745",
+    "institution": "Private Higher Secondary School",
+    "designation": "Office Assistant",
+    "from_date": "2017-08-01",
+    "to_date": "2019-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004749",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004745",
+    "institution": "Private Primary School",
+    "designation": null,
+    "from_date": "2005-07-01",
+    "to_date": "2013-02-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004753",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004750",
+    "institution": "Private School",
+    "designation": "Graduate Teacher",
+    "from_date": "2011-01-01",
+    "to_date": "2016-09-01",
+    "subjects_taught": [
+      "Physics",
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004760",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004757",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2003-02-01",
+    "to_date": "2008-05-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004761",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004757",
+    "institution": "Aided School",
+    "designation": "TGT Teacher",
+    "from_date": "2004-04-01",
+    "to_date": "2011-12-01",
+    "subjects_taught": [
+      "Physical Education",
+      "Science"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004766",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004762",
+    "institution": "Government Higher Secondary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2007-07-01",
+    "to_date": "2009-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004771",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004767",
+    "institution": "Government Higher Secondary School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2018-02-01",
+    "to_date": "2018-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004778",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004775",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": null,
+    "from_date": "2005-06-01",
+    "to_date": "2011-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004782",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004779",
+    "institution": "Aided School",
+    "designation": "Primary Teacher",
+    "from_date": "2006-08-01",
+    "to_date": "2011-03-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004783",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004779",
+    "institution": "Private Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2007-04-01",
+    "to_date": "2010-01-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004786",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004784",
+    "institution": "Matriculation Primary School",
+    "designation": null,
+    "from_date": "2013-03-01",
+    "to_date": "2020-05-01",
+    "subjects_taught": [
+      "Mathematics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004790",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004787",
+    "institution": "Aided Middle School",
+    "designation": "Admin Officer",
+    "from_date": "2005-07-01",
+    "to_date": "2013-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004791",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004787",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Office Assistant",
+    "from_date": "2001-03-01",
+    "to_date": "2008-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004796",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004792",
+    "institution": "Government School",
+    "designation": "Primary Teacher",
+    "from_date": "2007-05-01",
+    "to_date": "2008-07-01",
+    "subjects_taught": [
+      "Tamil"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004797",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004792",
+    "institution": "Aided School",
+    "designation": "Primary Teacher",
+    "from_date": "2018-09-01",
+    "to_date": "2016-10-01",
+    "subjects_taught": [
+      "English"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004802",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004798",
+    "institution": "Private School",
+    "designation": null,
+    "from_date": "2005-12-01",
+    "to_date": "2007-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004803",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004798",
+    "institution": "Private Higher Secondary School",
+    "designation": "Accountant",
+    "from_date": "2007-09-01",
+    "to_date": "2008-02-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004810",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004807",
+    "institution": "Government Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2009-11-01",
+    "to_date": "2017-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004814",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004811",
+    "institution": "Matriculation Middle School",
+    "designation": "PRT Teacher",
+    "from_date": "2012-12-01",
+    "to_date": "2013-02-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004824",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004822",
+    "institution": "Panchayat Union School",
+    "designation": "Security Guard",
+    "from_date": "2009-08-01",
+    "to_date": "2014-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004829",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004825",
+    "institution": "Private Higher Secondary School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2013-07-01",
+    "to_date": "2018-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004834",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004830",
+    "institution": "Government Higher Secondary School",
+    "designation": "Driver",
+    "from_date": "2009-06-01",
+    "to_date": "2010-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004840",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004835",
+    "institution": "Private Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2013-10-01",
+    "to_date": "2020-08-01",
+    "subjects_taught": [
+      "English"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004841",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004835",
+    "institution": "Government Middle School",
+    "designation": "Graduate Teacher",
+    "from_date": "2010-02-01",
+    "to_date": "2011-10-01",
+    "subjects_taught": [
+      "History",
+      "Commerce"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004846",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004842",
+    "institution": "Private Higher Secondary School",
+    "designation": "Primary Teacher",
+    "from_date": "2014-06-01",
+    "to_date": "2019-02-01",
+    "subjects_taught": [
+      "History"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004851",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004847",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Clerk",
+    "from_date": "2018-03-01",
+    "to_date": "2018-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004854",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004852",
+    "institution": "Government School",
+    "designation": "TGT Teacher",
+    "from_date": "2005-08-01",
+    "to_date": "2011-07-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004855",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004852",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2016-12-01",
+    "to_date": "2017-01-01",
+    "subjects_taught": [
+      "Physical Education",
+      "Mathematics"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004860",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004856",
+    "institution": "Government Higher Secondary School",
+    "designation": "Nursery Teacher",
+    "from_date": "2017-11-01",
+    "to_date": "2016-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004880",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004877",
+    "institution": "Private Primary School",
+    "designation": "PGT Teacher",
+    "from_date": "2006-01-01",
+    "to_date": "2014-12-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004890",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004888",
+    "institution": "Aided Primary School",
+    "designation": "Peon",
+    "from_date": "2004-12-01",
+    "to_date": "2008-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004891",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004888",
+    "institution": "Private Primary School",
+    "designation": null,
+    "from_date": "2011-11-01",
+    "to_date": "2016-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004900",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004896",
+    "institution": "Private Middle School",
+    "designation": null,
+    "from_date": "2002-07-01",
+    "to_date": "2007-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004901",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004896",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Lab Assistant",
+    "from_date": "2002-03-01",
+    "to_date": "2007-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004915",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004912",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Office Superintendent",
+    "from_date": "2005-08-01",
+    "to_date": "2012-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004920",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004916",
+    "institution": "Private Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2010-03-01",
+    "to_date": "2011-03-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004926",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004923",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2010-11-01",
+    "to_date": "2013-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004927",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004923",
+    "institution": "Matriculation Higher Secondary School",
+    "designation": null,
+    "from_date": "2005-05-01",
+    "to_date": "2012-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004942",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004939",
+    "institution": "Government Primary School",
+    "designation": "Watchman",
+    "from_date": "2016-05-01",
+    "to_date": "2017-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004946",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004943",
+    "institution": "Matriculation Primary School",
+    "designation": "Driver",
+    "from_date": "2008-01-01",
+    "to_date": "2012-02-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004947",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004943",
+    "institution": "Private School",
+    "designation": "Bus Attendant",
+    "from_date": "2018-07-01",
+    "to_date": "2020-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004953",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004951",
+    "institution": "Aided Middle School",
+    "designation": null,
+    "from_date": "2005-01-01",
+    "to_date": "2008-01-01",
+    "subjects_taught": [
+      "Geography"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004954",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004951",
+    "institution": "Aided Middle School",
+    "designation": null,
+    "from_date": "2005-09-01",
+    "to_date": "2006-12-01",
+    "subjects_taught": [
+      "Mathematics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004958",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004955",
+    "institution": "Matriculation Primary School",
+    "designation": "Security Guard",
+    "from_date": "2010-09-01",
+    "to_date": "2011-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004969",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004965",
+    "institution": "Aided Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2010-03-01",
+    "to_date": "2011-05-01",
+    "subjects_taught": [
+      "History"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004974",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004970",
+    "institution": "Aided Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2004-02-01",
+    "to_date": "2007-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004978",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004975",
+    "institution": "Government Higher Secondary School",
+    "designation": "Clerk",
+    "from_date": "2003-02-01",
+    "to_date": "2007-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004987",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004984",
+    "institution": "Aided School",
+    "designation": null,
+    "from_date": "2001-10-01",
+    "to_date": "2002-10-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004988",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004984",
+    "institution": "Government Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2009-11-01",
+    "to_date": "2017-05-01",
+    "subjects_taught": [
+      "Science",
+      "Geography"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004993",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004989",
+    "institution": "Private Primary School",
+    "designation": "PGT Teacher",
+    "from_date": "2005-02-01",
+    "to_date": "2006-04-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000004994",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004989",
+    "institution": "Private Middle School",
+    "designation": "PGT Teacher",
+    "from_date": "2016-08-01",
+    "to_date": "2011-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005002",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004999",
+    "institution": "Matriculation School",
+    "designation": "Admin Officer",
+    "from_date": "2007-01-01",
+    "to_date": "2011-02-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005003",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000004999",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Clerk",
+    "from_date": "2010-06-01",
+    "to_date": "2011-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005026",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005024",
+    "institution": "Private Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2002-02-01",
+    "to_date": "2006-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005027",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005024",
+    "institution": "Private Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2002-02-01",
+    "to_date": "2005-05-01",
+    "subjects_taught": [
+      "Chemistry",
+      "Biology"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005031",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005028",
+    "institution": "Private Primary School",
+    "designation": "Primary Teacher",
+    "from_date": "2015-07-01",
+    "to_date": "2016-09-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005037",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005032",
+    "institution": "Private Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2015-01-01",
+    "to_date": "2016-05-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005038",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005032",
+    "institution": "Matriculation School",
+    "designation": null,
+    "from_date": "2003-09-01",
+    "to_date": "2009-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005045",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005042",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Watchman",
+    "from_date": "2015-06-01",
+    "to_date": "2017-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005046",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005042",
+    "institution": "Private School",
+    "designation": "Watchman",
+    "from_date": "2003-07-01",
+    "to_date": "2007-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005051",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005047",
+    "institution": "Aided School",
+    "designation": "Peon",
+    "from_date": "2012-07-01",
+    "to_date": "2015-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005056",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005052",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Junior Accountant",
+    "from_date": "2011-09-01",
+    "to_date": "2015-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005057",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005052",
+    "institution": "Government Primary School",
+    "designation": "Junior Accountant",
+    "from_date": "2018-06-01",
+    "to_date": "2020-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005072",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005069",
+    "institution": "Aided School",
+    "designation": "Primary Teacher",
+    "from_date": "2009-09-01",
+    "to_date": "2011-05-01",
+    "subjects_taught": [
+      "Tamil",
+      "Physical Education"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005073",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005069",
+    "institution": "Panchayat Union Primary School",
+    "designation": null,
+    "from_date": "2003-08-01",
+    "to_date": "2006-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005084",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005081",
+    "institution": "Private Higher Secondary School",
+    "designation": null,
+    "from_date": "2003-12-01",
+    "to_date": "2007-06-01",
+    "subjects_taught": [
+      "Tamil"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005085",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005081",
+    "institution": "Government Middle School",
+    "designation": "PRT Teacher",
+    "from_date": "2018-01-01",
+    "to_date": "2017-02-01",
+    "subjects_taught": [
+      "History",
+      "Science"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005088",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005086",
+    "institution": "Private Primary School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2014-07-01",
+    "to_date": "2015-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005094",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005092",
+    "institution": "Government Middle School",
+    "designation": "Clerk",
+    "from_date": "2015-06-01",
+    "to_date": "2021-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005095",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005092",
+    "institution": "Panchayat Union Primary School",
+    "designation": null,
+    "from_date": "2012-02-01",
+    "to_date": "2017-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005099",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005096",
+    "institution": "Panchayat Union Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2010-10-01",
+    "to_date": "2011-03-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005100",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005096",
+    "institution": "Aided School",
+    "designation": "TGT Teacher",
+    "from_date": "2012-06-01",
+    "to_date": "2012-09-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005104",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005101",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2005-03-01",
+    "to_date": "2011-12-01",
+    "subjects_taught": [
+      "English"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005110",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005105",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2007-10-01",
+    "to_date": "2015-03-01",
+    "subjects_taught": [
+      "Science",
+      "Mathematics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005111",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005105",
+    "institution": "Panchayat Union Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2015-08-01",
+    "to_date": "2018-09-01",
+    "subjects_taught": [
+      "Tamil",
+      "Chemistry"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005127",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005124",
+    "institution": "Matriculation Primary School",
+    "designation": "Primary Teacher",
+    "from_date": "2001-05-01",
+    "to_date": "2008-05-01",
+    "subjects_taught": [
+      "Biology",
+      "Biology"
+    ],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005128",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005124",
+    "institution": "Government Primary School",
+    "designation": null,
+    "from_date": "2018-09-01",
+    "to_date": "2020-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005139",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005137",
+    "institution": "Aided Middle School",
+    "designation": "PRT Teacher",
+    "from_date": "2002-04-01",
+    "to_date": "2005-09-01",
+    "subjects_taught": [
+      "Tamil"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005140",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005137",
+    "institution": "Private Middle School",
+    "designation": null,
+    "from_date": "2002-08-01",
+    "to_date": "2006-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005144",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005141",
+    "institution": "Panchayat Union School",
+    "designation": "Security Guard",
+    "from_date": "2010-05-01",
+    "to_date": "2011-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005145",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005141",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Watchman",
+    "from_date": "2003-12-01",
+    "to_date": "2008-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005151",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005148",
+    "institution": "Aided Middle School",
+    "designation": "Graduate Teacher",
+    "from_date": "2000-12-01",
+    "to_date": "2006-10-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005156",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005152",
+    "institution": "Aided School",
+    "designation": null,
+    "from_date": "2005-03-01",
+    "to_date": "2006-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005157",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005152",
+    "institution": "Panchayat Union Primary School",
+    "designation": "PRT Teacher",
+    "from_date": "2005-12-01",
+    "to_date": "2009-11-01",
+    "subjects_taught": [
+      "Physical Education"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005161",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005158",
+    "institution": "Matriculation Higher Secondary School",
+    "designation": "Canteen Helper",
+    "from_date": "2005-10-01",
+    "to_date": "2010-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005162",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005158",
+    "institution": "Private Primary School",
+    "designation": "Cook",
+    "from_date": "2002-04-01",
+    "to_date": "2005-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005167",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005163",
+    "institution": "Matriculation School",
+    "designation": "Bus Attendant",
+    "from_date": "2004-11-01",
+    "to_date": "2006-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005168",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005163",
+    "institution": "Government Higher Secondary School",
+    "designation": "Driver",
+    "from_date": "2006-11-01",
+    "to_date": "2008-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005183",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005178",
+    "institution": "Aided Primary School",
+    "designation": "Nursery Teacher",
+    "from_date": "2003-09-01",
+    "to_date": "2004-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005184",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005178",
+    "institution": "Government Higher Secondary School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2006-03-01",
+    "to_date": "2010-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005194",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005189",
+    "institution": "Government Middle School",
+    "designation": "Graduate Teacher",
+    "from_date": "2001-12-01",
+    "to_date": "2007-09-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000005195",
+    "school_id": "00000000-0000-4000-a000-000000004545",
+    "staff_id": "00000000-0000-4000-a000-000000005189",
+    "institution": "Panchayat Union Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2010-02-01",
+    "to_date": "2011-02-01",
+    "subjects_taught": [
+      "Science"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008357",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008355",
+    "institution": "Private Middle School",
+    "designation": "Librarian",
+    "from_date": "2014-04-01",
+    "to_date": "2015-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008363",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008358",
+    "institution": "Private Higher Secondary School",
+    "designation": "PRT Teacher",
+    "from_date": "2001-01-01",
+    "to_date": "2004-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008364",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008358",
+    "institution": "Panchayat Union Middle School",
+    "designation": "PRT Teacher",
+    "from_date": "2000-06-01",
+    "to_date": "2002-12-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008369",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008365",
+    "institution": "Aided School",
+    "designation": null,
+    "from_date": "2013-01-01",
+    "to_date": "2014-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008383",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008379",
+    "institution": "Matriculation School",
+    "designation": "PGT Teacher",
+    "from_date": "2002-06-01",
+    "to_date": "2009-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008384",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008379",
+    "institution": "Government Primary School",
+    "designation": "Senior Lecturer",
+    "from_date": "2017-04-01",
+    "to_date": "2017-11-01",
+    "subjects_taught": [
+      "Tamil",
+      "Geography"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008388",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008385",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Office Superintendent",
+    "from_date": "2000-09-01",
+    "to_date": "2007-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008389",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008385",
+    "institution": "Panchayat Union School",
+    "designation": "Admin Officer",
+    "from_date": "2016-05-01",
+    "to_date": "2016-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008396",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008392",
+    "institution": "Private School",
+    "designation": "Librarian",
+    "from_date": "2004-11-01",
+    "to_date": "2010-09-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008400",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008397",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Primary Teacher",
+    "from_date": "2007-09-01",
+    "to_date": "2008-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008401",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008397",
+    "institution": "Panchayat Union School",
+    "designation": "PRT Teacher",
+    "from_date": "2013-07-01",
+    "to_date": "2018-07-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008408",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008406",
+    "institution": "Private Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2004-08-01",
+    "to_date": "2005-09-01",
+    "subjects_taught": [
+      "Mathematics",
+      "Science"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008409",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008406",
+    "institution": "Aided Middle School",
+    "designation": "TGT Teacher",
+    "from_date": "2001-08-01",
+    "to_date": "2009-04-01",
+    "subjects_taught": [
+      "Tamil"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008413",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008410",
+    "institution": "Matriculation Middle School",
+    "designation": null,
+    "from_date": "2011-10-01",
+    "to_date": "2013-05-01",
+    "subjects_taught": [
+      "Physical Education"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008414",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008410",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": null,
+    "from_date": "2009-01-01",
+    "to_date": "2012-01-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008421",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008418",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Senior Lecturer",
+    "from_date": "2007-03-01",
+    "to_date": "2008-12-01",
+    "subjects_taught": [
+      "Mathematics"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008422",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008418",
+    "institution": "Government Higher Secondary School",
+    "designation": "Senior Lecturer",
+    "from_date": "2009-08-01",
+    "to_date": "2012-12-01",
+    "subjects_taught": [
+      "Physics"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008438",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008435",
+    "institution": "Private Higher Secondary School",
+    "designation": "Driver",
+    "from_date": "2015-11-01",
+    "to_date": "2018-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008441",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008439",
+    "institution": "Private Middle School",
+    "designation": "Sweeper",
+    "from_date": "2008-09-01",
+    "to_date": "2016-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008442",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008439",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Peon",
+    "from_date": "2005-11-01",
+    "to_date": "2006-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008452",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008450",
+    "institution": "Government School",
+    "designation": null,
+    "from_date": "2014-12-01",
+    "to_date": "2011-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008455",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008453",
+    "institution": "Government Middle School",
+    "designation": "TGT Teacher",
+    "from_date": "2016-11-01",
+    "to_date": "2021-09-01",
+    "subjects_taught": [
+      "Chemistry"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008464",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008460",
+    "institution": "Matriculation Higher Secondary School",
+    "designation": "Canteen Helper",
+    "from_date": "2002-04-01",
+    "to_date": "2010-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008465",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008460",
+    "institution": "Matriculation School",
+    "designation": "Cook",
+    "from_date": "2013-08-01",
+    "to_date": "2018-02-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008469",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008466",
+    "institution": "Government Higher Secondary School",
+    "designation": "Bus Attendant",
+    "from_date": "2009-09-01",
+    "to_date": "2011-01-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008470",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008466",
+    "institution": "Private School",
+    "designation": "Transport Coordinator",
+    "from_date": "2016-12-01",
+    "to_date": "2015-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008479",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008475",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2014-05-01",
+    "to_date": "2018-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008484",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008482",
+    "institution": "Matriculation Middle School",
+    "designation": "Office Helper",
+    "from_date": "2013-07-01",
+    "to_date": "2015-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008485",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008482",
+    "institution": "Government Higher Secondary School",
+    "designation": "Peon",
+    "from_date": "2013-08-01",
+    "to_date": "2020-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008488",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008486",
+    "institution": "Private Middle School",
+    "designation": "Senior Lab Technician",
+    "from_date": "2000-06-01",
+    "to_date": "2007-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008489",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008486",
+    "institution": "Government School",
+    "designation": "Lab Assistant",
+    "from_date": "2002-09-01",
+    "to_date": "2003-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008495",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008493",
+    "institution": "Government Primary School",
+    "designation": "Office Helper",
+    "from_date": "2018-10-01",
+    "to_date": "2022-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008496",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008493",
+    "institution": "Matriculation School",
+    "designation": "Sweeper",
+    "from_date": "2015-11-01",
+    "to_date": "2019-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008500",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008497",
+    "institution": "Aided Primary School",
+    "designation": null,
+    "from_date": "2001-10-01",
+    "to_date": "2008-05-01",
+    "subjects_taught": [
+      "Science",
+      "Mathematics"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008507",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008505",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Security Guard",
+    "from_date": "2011-07-01",
+    "to_date": "2016-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008508",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008505",
+    "institution": "Panchayat Union Higher Secondary School",
+    "designation": "Security Guard",
+    "from_date": "2006-07-01",
+    "to_date": "2012-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008519",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008515",
+    "institution": "Aided School",
+    "designation": "Senior Lecturer",
+    "from_date": "2016-12-01",
+    "to_date": "2020-09-01",
+    "subjects_taught": [
+      "Physical Education"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008520",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008515",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Senior Lecturer",
+    "from_date": "2007-06-01",
+    "to_date": "2015-02-01",
+    "subjects_taught": [
+      "Tamil"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008528",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008524",
+    "institution": "Matriculation School",
+    "designation": "Primary Teacher",
+    "from_date": "2002-05-01",
+    "to_date": "2010-07-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008551",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008548",
+    "institution": "Aided School",
+    "designation": "PRT Teacher",
+    "from_date": "2008-05-01",
+    "to_date": "2010-10-01",
+    "subjects_taught": [
+      "English"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008552",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008548",
+    "institution": "Aided School",
+    "designation": "PRT Teacher",
+    "from_date": "2004-04-01",
+    "to_date": "2012-06-01",
+    "subjects_taught": [
+      "Commerce"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008556",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008553",
+    "institution": "Matriculation Higher Secondary School",
+    "designation": "Pre-Primary Teacher",
+    "from_date": "2005-04-01",
+    "to_date": "2012-03-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008561",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008557",
+    "institution": "Government Higher Secondary School",
+    "designation": "Peon",
+    "from_date": "2010-02-01",
+    "to_date": "2011-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Personal reasons",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008562",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008557",
+    "institution": "Government Middle School",
+    "designation": null,
+    "from_date": "2018-08-01",
+    "to_date": "2019-06-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008565",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008563",
+    "institution": "Private School",
+    "designation": "TGT Teacher",
+    "from_date": "2001-07-01",
+    "to_date": "2009-10-01",
+    "subjects_taught": [
+      "Mathematics"
+    ],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008566",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008563",
+    "institution": "Private Higher Secondary School",
+    "designation": "TGT Teacher",
+    "from_date": "2005-06-01",
+    "to_date": "2006-05-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Better opportunity",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008569",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008567",
+    "institution": "Government School",
+    "designation": "Sweeper",
+    "from_date": "2017-08-01",
+    "to_date": "2021-09-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008570",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008567",
+    "institution": "Government Middle School",
+    "designation": "Peon",
+    "from_date": "2016-06-01",
+    "to_date": "2024-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008575",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008571",
+    "institution": "Government School",
+    "designation": null,
+    "from_date": "2012-04-01",
+    "to_date": "2015-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008580",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008576",
+    "institution": "Aided Primary School",
+    "designation": "Peon",
+    "from_date": "2007-01-01",
+    "to_date": "2015-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008598",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008596",
+    "institution": "Matriculation Higher Secondary School",
+    "designation": "Watchman",
+    "from_date": "2012-01-01",
+    "to_date": "2015-10-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008602",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008599",
+    "institution": "Government Primary School",
+    "designation": "Watchman",
+    "from_date": "2015-01-01",
+    "to_date": "2019-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008603",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008599",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Security Guard",
+    "from_date": "2014-11-01",
+    "to_date": "2017-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008611",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008608",
+    "institution": "Aided Primary School",
+    "designation": "Primary Teacher",
+    "from_date": "2003-03-01",
+    "to_date": "2006-01-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008616",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008612",
+    "institution": "Aided Higher Secondary School",
+    "designation": "Bus Attendant",
+    "from_date": "2005-12-01",
+    "to_date": "2011-04-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008617",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008612",
+    "institution": "Government Higher Secondary School",
+    "designation": "Bus Attendant",
+    "from_date": "2005-11-01",
+    "to_date": "2011-05-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008623",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008618",
+    "institution": "Private Primary School",
+    "designation": "Graduate Teacher",
+    "from_date": "2013-01-01",
+    "to_date": "2014-11-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008624",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008618",
+    "institution": "Panchayat Union Middle School",
+    "designation": "Graduate Teacher",
+    "from_date": "2014-10-01",
+    "to_date": "2015-12-01",
+    "subjects_taught": [],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008627",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008625",
+    "institution": "Private Higher Secondary School",
+    "designation": "Primary Teacher",
+    "from_date": "2005-08-01",
+    "to_date": "2012-03-01",
+    "subjects_taught": [
+      "Physical Education"
+    ],
+    "reason_for_leaving": "School closed",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008628",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008625",
+    "institution": "Panchayat Union Middle School",
+    "designation": null,
+    "from_date": "2014-10-01",
+    "to_date": "2014-01-01",
+    "subjects_taught": [
+      "Physical Education",
+      "Mathematics"
+    ],
+    "reason_for_leaving": "Contract ended",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008634",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008629",
+    "institution": "Private Primary School",
+    "designation": "TGT Teacher",
+    "from_date": "2005-12-01",
+    "to_date": "2008-04-01",
+    "subjects_taught": [
+      "Computer Science"
+    ],
+    "reason_for_leaving": null,
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008635",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008629",
+    "institution": "Aided Higher Secondary School",
+    "designation": null,
+    "from_date": "2003-10-01",
+    "to_date": "2006-02-01",
+    "subjects_taught": [
+      "English"
+    ],
+    "reason_for_leaving": "Salary",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  },
+  {
+    "id": "00000000-0000-4000-a000-000000008640",
+    "school_id": "00000000-0000-4000-a000-000000008283",
+    "staff_id": "00000000-0000-4000-a000-000000008636",
+    "institution": "Matriculation Middle School",
+    "designation": "Bus Attendant",
+    "from_date": "2007-08-01",
+    "to_date": "2011-08-01",
+    "subjects_taught": [],
+    "reason_for_leaving": "Location change",
+    "created_at": "2026-04-15T11:00:00+05:30",
+    "updated_at": "2026-06-01T00:00:00+05:30"
+  }
+]
