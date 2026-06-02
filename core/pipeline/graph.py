@@ -51,6 +51,8 @@ def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
             return {**state, "error": str(e)}
 
     def generator_node(state: PipelineState) -> PipelineState:
+        if state.get("error") or state.get("intent") is None:
+            return state
         try:
             result = generator.generate(state["intent"], limit=state.get("limit", 100))
             return {**state, "sql_result": result}
@@ -68,6 +70,8 @@ def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
         return "error_node"
 
     def executor_node(state: PipelineState) -> PipelineState:
+        if state.get("error") or state.get("intent") is None:
+            return state
         try:
             tables = state["intent"].structural_plan.tables
             primary_table = tables[0] if tables else "students"

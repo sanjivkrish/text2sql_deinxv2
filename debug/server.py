@@ -3,6 +3,7 @@
 import os, json
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.request import urlopen, Request as URLRequest
+from urllib.error import HTTPError
 from urllib.parse import urlparse, parse_qs
 
 if os.environ.get("DEBUG", "false").lower() != "true":
@@ -75,8 +76,11 @@ class Handler(BaseHTTPRequestHandler):
             with urlopen(req) as r:
                 data = r.read()
             self._send(200, data, "application/json")
+        except HTTPError as e:
+            # Forward the real status + body so the UI shows FastAPI's error detail
+            self._send(e.code, e.read(), "application/json")
         except Exception as e:
-            self._send(500, json.dumps({"error": str(e)}).encode(), "application/json")
+            self._send(502, json.dumps({"error": str(e)}).encode(), "application/json")
 
     def _send(self, code, body, ct="text/plain"):
         self.send_response(code)
