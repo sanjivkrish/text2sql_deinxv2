@@ -15,16 +15,19 @@ class ValueExtractor:
             f"Extract the filter values for these fields: {keys}\n"
             f"Return JSON: {{\"values\": {{\"table.column\": \"extracted_value\"}}}}"
         )
-        resp = litellm.completion(
-            model=os.environ.get("LLM_MODEL", "claude-sonnet-4-6"),
-            messages=[{"role": "user", "content": prompt}],
-            response_format={"type": "json_object"},
-        )
-        content = resp.choices[0].message.content
         try:
+            resp = litellm.completion(
+                model=os.environ.get("LLM_MODEL", "claude-sonnet-4-6"),
+                messages=[{"role": "user", "content": prompt}],
+                response_format={"type": "json_object"},
+            )
+            content = resp.choices[0].message.content
             data = json.loads(content) if content else {}
         except (json.JSONDecodeError, TypeError):
             data = {}
+        except Exception:
+            # LLM unavailable — return filters as-is rather than failing the pipeline
+            return filters
         extracted: dict[str, str] = data.get("values", {})
 
         updated: list[FilterCondition] = []

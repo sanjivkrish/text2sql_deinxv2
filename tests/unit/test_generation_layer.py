@@ -237,6 +237,21 @@ def test_value_extractor_fills_empty_values():
         filled = extractor.fill_values(filters, "find student named John Smith")
         assert any(f.value == "John Smith" for f in filled)
 
+def test_value_extractor_skips_llm_when_no_empty_filters():
+    with patch("litellm.completion") as mock_llm:
+        extractor = ValueExtractor()
+        filters = [FilterCondition(table="students", column="full_name", operator="=", value="Alice", value_type="string")]
+        result = extractor.fill_values(filters, "find student named Alice")
+        mock_llm.assert_not_called()
+        assert result[0].value == "Alice"
+
+def test_value_extractor_returns_filters_on_llm_error():
+    with patch("litellm.completion", side_effect=Exception("network error")):
+        extractor = ValueExtractor()
+        filters = [FilterCondition(table="students", column="full_name", operator="=", value="", value_type="string")]
+        result = extractor.fill_values(filters, "find a student")
+        assert result[0].value == ""  # unchanged — graceful fallback
+
 def test_sql_generator_returns_sql_result():
     intent = make_intent(["students"])
     gen = SQLGenerator(SCHEMA)
