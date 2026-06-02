@@ -76,3 +76,15 @@ def test_build_index_deduplicates_corpus_entry_ids(tmp_path):
     idx = FAQIndex(**data)
     assert len(idx.corpus) == 3
     assert all(d["entry_id"] == "e1" for d in data["corpus"])
+
+
+def test_build_index_rejects_empty_corpus(tmp_path):
+    src = tmp_path / "faq.jsonl"
+    src.write_text(
+        '{"id": "x", "question": "the a an", "alt_questions": ["of for"], '
+        '"sql": "SELECT 1\\nFROM students\\nLIMIT 100", "primary_table": "students", '
+        '"intent": "AGGREGATION", "domain": "x", "has_variables": false}\n'
+    )
+    dst = tmp_path / "out.json"
+    with pytest.raises(ValueError):
+        build_index(str(src), str(dst))

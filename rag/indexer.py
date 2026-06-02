@@ -44,6 +44,8 @@ def build_index(src_path: str, dst_path: str) -> FAQIndex:
             corpus_docs.append(CorpusDoc(tokens=tokenize(text), entry_id=entry.id))
 
     raw_corpus = [doc.tokens for doc in corpus_docs]
+    if not any(raw_corpus):
+        raise ValueError("All corpus documents tokenized to empty — corpus has no usable tokens")
     bm25 = BM25Okapi(raw_corpus)
 
     # Compute max_self_score: score each doc against its own tokens, take global max
