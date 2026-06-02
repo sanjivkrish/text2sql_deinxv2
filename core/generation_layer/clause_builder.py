@@ -33,14 +33,33 @@ class SQLClauseBuilder:
         if not tables:
             return SQLResult(sql="", confidence_score=0.0, warnings=["No tables resolved"], value_extractions={})
 
-        # Fix 6: sanitize primary table identifier
+        # Prefer a primary table that participates in at least one join condition.
+        # This avoids an orphaned FROM table when the planner/LLM returns an
+        # unrelated table first (e.g. academic_years before students).
+        join_table_mentions: set[str] = set()
+        for jc in sp.join_conditions:
+            jc_sides = re.split(r"\s*=\s*", jc, maxsplit=1)
+            if len(jc_sides) == 2:
+                join_table_mentions.add(jc_sides[0].strip().split(".")[0])
+                join_table_mentions.add(jc_sides[1].strip().split(".")[0])
+
+        raw_primary = tables[0]
+        if join_table_mentions and raw_primary not in join_table_mentions:
+            for t in tables:
+                if t in join_table_mentions:
+                    raw_primary = t
+                    break
+
         try:
-            primary_table = _safe_ident(tables[0])
+            primary_table = _safe_ident(raw_primary)
         except ValueError as e:
             return SQLResult(sql="", confidence_score=0.0, warnings=[str(e)], value_extractions={})
 
-        # SELECT clause
+        # SELECT clause — re-anchor a single wildcard to the resolved primary table
+        # so SELECT doesn't reference a table that was never added to the FROM chain.
         select_parts = sp.select_columns if sp.select_columns else [f"{primary_table}.*"]
+        if len(select_parts) == 1 and select_parts[0].endswith(".*"):
+            select_parts = [f"{primary_table}.*"]
 
         # Fix 3: inject aggregations — replace wildcard if present, otherwise prepend
         for agg in intent.aggregations:
@@ -59,21 +78,34 @@ class SQLClauseBuilder:
 
         select_clause = "SELECT " + ", ".join(select_parts)
 
-        # FROM + LEFT JOINs — always LEFT JOIN to preserve left-side rows
+        # FROM + LEFT JOINs — derive join table from condition, not from tables index
         from_clause = f"FROM {primary_table}"
-        for i, join_sql in enumerate(sp.join_conditions):
-            parts = re.split(r"\s*=\s*", join_sql)
-            if len(parts) == 2:
-                right_tbl = parts[1].split(".")[0]
-                if i + 1 < len(tables) and tables[i + 1] != primary_table:
-                    right_tbl = tables[i + 1]
-                # Fix 6: sanitize the join table identifier
-                try:
-                    right_tbl = _safe_ident(right_tbl)
-                except ValueError as e:
-                    warnings.append(str(e))
-                    continue
-                from_clause += f"\nLEFT JOIN {right_tbl} ON {join_sql}"
+        joined_tables: set[str] = {primary_table}
+        for join_sql in sp.join_conditions:
+            parts = re.split(r"\s*=\s*", join_sql, maxsplit=1)
+            if len(parts) != 2:
+                continue
+            left_tbl = parts[0].strip().split(".")[0]
+            right_tbl = parts[1].strip().split(".")[0]
+            left_in = left_tbl in joined_tables
+            right_in = right_tbl in joined_tables
+            if left_in and right_in:
+                continue  # both already in chain, skip duplicate
+            elif left_in:
+                join_tbl = right_tbl
+            elif right_in:
+                join_tbl = left_tbl
+            else:
+                # Neither side connected to the FROM chain — skip to avoid broken SQL
+                warnings.append(f"Skipped unconnected join: {join_sql!r}")
+                continue
+            try:
+                join_tbl = _safe_ident(join_tbl)
+            except ValueError as e:
+                warnings.append(str(e))
+                continue
+            from_clause += f"\nLEFT JOIN {join_tbl} ON {join_sql}"
+            joined_tables.add(join_tbl)
 
         # WHERE clause
         where_parts: list[str] = []
