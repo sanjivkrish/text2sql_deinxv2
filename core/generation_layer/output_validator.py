@@ -1,7 +1,10 @@
 import re
 from core.models.sql import SQLResult
 
-FORBIDDEN_KEYWORDS = {"insert", "update", "delete", "drop", "truncate", "alter", "create", "grant", "revoke"}
+FORBIDDEN_KEYWORDS = {
+    "insert", "update", "delete", "drop", "truncate",
+    "alter", "create", "grant", "revoke", "union",
+}
 
 class OutputValidator:
     def validate(self, result: SQLResult) -> dict:
@@ -17,16 +20,18 @@ class OutputValidator:
         if "FROM" not in sql.upper():
             issues.append("Rule 2: SQL must contain FROM clause")
 
-        # Rule 3: Must have LIMIT
-        if "LIMIT" not in sql.upper():
-            issues.append("Rule 3: SQL must contain LIMIT")
+        # Rule 3: Must have LIMIT as a clause keyword (not inside a string literal)
+        stripped_for_limit = re.sub(r"'[^']*'", "", sql)
+        if not re.search(r'\bLIMIT\s+\d+', stripped_for_limit, re.IGNORECASE):
+            issues.append("Rule 3: SQL must contain LIMIT clause")
 
         # Rule 4: No semicolons (prevent statement stacking)
         if ";" in sql:
             issues.append("Rule 4: SQL must not contain semicolons")
 
         # Rule 5: No forbidden DML/DDL keywords (strip quoted literals first)
-        stripped = re.sub(r"'[^']*'", "", sql)
+        # Use '? to make closing quote optional so unterminated literals are also stripped
+        stripped = re.sub(r"'[^']*'?", "", sql)
         tokens = set(re.findall(r'\b\w+\b', stripped.lower()))
         bad_tokens = tokens & FORBIDDEN_KEYWORDS
         if bad_tokens:

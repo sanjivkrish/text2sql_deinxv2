@@ -201,3 +201,22 @@ def test_low_confidence_adds_warning():
     assert any("confidence" in w.lower() for w in report["warnings"])
     # Rule 7 is non-blocking — low confidence does not make is_valid False
     assert report["is_valid"] is True
+
+def test_comment_dash_injection_fails():
+    v = OutputValidator()
+    report = v.validate(make_result("SELECT * FROM students -- WHERE school_id=2\nLIMIT 10"))
+    assert report["is_valid"] is False
+    assert any("comment" in w.lower() for w in report["warnings"])
+
+def test_comment_block_injection_fails():
+    v = OutputValidator()
+    report = v.validate(make_result("SELECT * FROM students /* ignore */ LIMIT 10"))
+    assert report["is_valid"] is False
+
+def test_forbidden_keyword_in_from_table_fails():
+    v = OutputValidator()
+    # Rule 5 in isolation — this SQL starts with SELECT and has LIMIT
+    # but contains a forbidden keyword token outside a string literal
+    report = v.validate(make_result("SELECT id FROM students UNION SELECT id FROM staff LIMIT 10"))
+    assert report["is_valid"] is False
+    assert any("union" in w.lower() or "Rule 5" in w for w in report["warnings"])
