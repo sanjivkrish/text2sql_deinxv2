@@ -174,7 +174,10 @@ Return valid JSON only:
         except (KeyError, TypeError):
             continue
 
-    # SELECT: primary table.* + any columns from joined tables that appear in filters
+    # SELECT: primary table.* + any columns from joined tables that appear in filters.
+    # For AGGREGATION, only anchor to primary.id — the clause builder replaces it with
+    # COUNT(*)/SUM/etc. This prevents filter columns (e.g. classes.name) from leaking
+    # into the SELECT and triggering an unintended GROUP BY on every display column.
     primary = tables[0] if tables else "students"
     extra_cols: list[str] = []
     seen: set[str] = set()
@@ -184,7 +187,10 @@ Return valid JSON only:
             if ref not in seen:
                 extra_cols.append(ref)
                 seen.add(ref)
-    select_columns = [f"{primary}.*"] + extra_cols
+    if intent_str == "AGGREGATION":
+        select_columns = [f"{primary}.id"]
+    else:
+        select_columns = [f"{primary}.*"] + extra_cols
 
     raw_aggs = data.get("aggregations") or []
     aggregations: list[Aggregation] = []
