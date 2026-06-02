@@ -157,3 +157,47 @@ def test_no_wildcard_in_group_by():
     )
     result = builder.build(intent, limit=10)
     assert "GROUP BY students.*" not in result.sql
+
+
+# ---------------------------------------------------------------------------
+# OutputValidator tests
+# ---------------------------------------------------------------------------
+from core.generation_layer.output_validator import OutputValidator
+from core.models.sql import SQLResult
+
+def make_result(sql, confidence=0.8):
+    return SQLResult(sql=sql, confidence_score=confidence, warnings=[], value_extractions={})
+
+def test_valid_select_passes():
+    v = OutputValidator()
+    report = v.validate(make_result("SELECT students.* FROM students WHERE students.school_id = 'x' LIMIT 10"))
+    assert report["is_valid"] is True
+
+def test_no_select_fails():
+    v = OutputValidator()
+    report = v.validate(make_result("UPDATE students SET full_name='x'"))
+    assert report["is_valid"] is False
+    assert any("SELECT" in w for w in report["warnings"])
+
+def test_no_from_fails():
+    v = OutputValidator()
+    report = v.validate(make_result("SELECT 1"))
+    assert report["is_valid"] is False
+
+def test_no_limit_fails():
+    v = OutputValidator()
+    report = v.validate(make_result("SELECT * FROM students"))
+    assert report["is_valid"] is False
+    assert any("LIMIT" in w for w in report["warnings"])
+
+def test_semicolon_injection_fails():
+    v = OutputValidator()
+    report = v.validate(make_result("SELECT * FROM students; DROP TABLE students"))
+    assert report["is_valid"] is False
+
+def test_low_confidence_adds_warning():
+    v = OutputValidator()
+    report = v.validate(make_result("SELECT * FROM students LIMIT 10", confidence=0.3))
+    assert any("confidence" in w.lower() for w in report["warnings"])
+    # Rule 7 is non-blocking — low confidence does not make is_valid False
+    assert report["is_valid"] is True
