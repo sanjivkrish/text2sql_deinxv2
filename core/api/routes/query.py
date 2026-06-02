@@ -43,9 +43,7 @@ def init(pipeline, store: GraphStore, runner=None, summarizer=None):
     _pipeline = pipeline
     _store = store
     if runner is not None and summarizer is not None:
-        _rag = RAGInterceptor()
-        _rag._runner = runner
-        _rag._summarizer = summarizer
+        _rag = RAGInterceptor(runner=runner, summarizer=summarizer)
 
 
 class QueryRequest(BaseModel):
@@ -69,7 +67,7 @@ def run_query(req: QueryRequest):
         if _rag is not None:
             state = _rag.intercept(
                 req.query, req.school_id, req.limit,
-                _pipeline, _rag._runner, _rag._summarizer,
+                _pipeline,
             )
         else:
             state = _pipeline.invoke({
