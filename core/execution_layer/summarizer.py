@@ -19,14 +19,20 @@ class ResultSummarizer:
             "Do not mention SQL or technical details. "
             "If rows are empty, say no results were found."
         )
-        resp = litellm.completion(
-            model=os.environ.get("LLM_MODEL", "claude-sonnet-4-6"),
-            messages=[{"role": "user", "content": prompt}],
-        )
-        summary: str = resp.choices[0].message.content
-        in_tok: int = resp.usage.prompt_tokens
-        out_tok: int = resp.usage.completion_tokens
-        total_tok: int = resp.usage.total_tokens
+        try:
+            resp = litellm.completion(
+                model=os.environ.get("LLM_MODEL", "claude-sonnet-4-6"),
+                messages=[{"role": "user", "content": prompt}],
+            )
+        except Exception:
+            return "(summary unavailable)", TokenUsage(
+                input_tokens=0, output_tokens=0, total_tokens=0, estimated_cost_usd=0.0
+            )
+        summary: str = resp.choices[0].message.content or "(no summary available)"
+        usage = resp.usage
+        in_tok: int = getattr(usage, "prompt_tokens", 0) or 0
+        out_tok: int = getattr(usage, "completion_tokens", 0) or 0
+        total_tok: int = getattr(usage, "total_tokens", 0) or 0
         cost = in_tok * _COST_PER_INPUT_TOKEN + out_tok * _COST_PER_OUTPUT_TOKEN
 
         return summary, TokenUsage(

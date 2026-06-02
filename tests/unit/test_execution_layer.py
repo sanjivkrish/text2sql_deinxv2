@@ -96,3 +96,12 @@ def test_summarizer_empty_rows():
         summary, usage = summarizer.summarize("show students", run)
         assert isinstance(summary, str)
         assert usage.total_tokens > 0
+
+def test_summarizer_handles_llm_error_gracefully():
+    with patch("litellm.completion") as mock_llm:
+        mock_llm.side_effect = Exception("Network error")
+        summarizer = ResultSummarizer()
+        run = QueryRunResult(rows=[], row_count=0, execution_time_ms=10.0, sql="SELECT *")
+        summary, usage = summarizer.summarize("show students", run)
+        assert isinstance(summary, str)
+        assert usage.total_tokens == 0
