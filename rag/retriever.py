@@ -16,14 +16,14 @@ class RAGRetriever:
         # Build lookup: entry_id → FAQEntry
         self._entry_map: dict[str, FAQEntry] = {e.id: e for e in self._index.entries}
 
-        # Precompute per-entry self-scores for per-entry normalization
-        self._entry_self_scores: dict[str, float] = {}
+        # Precompute self-score for each corpus doc
+        self._doc_self_scores: list[float] = []
         for i, doc in enumerate(self._index.corpus):
             if doc.tokens:
                 score = float(self._bm25.get_scores(doc.tokens)[i])
-                current = self._entry_self_scores.get(doc.entry_id, 0.0)
-                if score > current:
-                    self._entry_self_scores[doc.entry_id] = score
+                self._doc_self_scores.append(score)
+            else:
+                self._doc_self_scores.append(1.0)
 
     def search(self, query: str) -> MatchResult:
         tokens = tokenize(query)
@@ -32,12 +32,14 @@ class RAGRetriever:
 
         raw_scores = self._bm25.get_scores(tokens)
 
-        # Deduplicate: keep best score per entry_id
+        # Deduplicate: keep best score per entry_id, and track the best doc index
         entry_best: dict[str, float] = {}
+        entry_best_doc_idx: dict[str, int] = {}
         for i, doc in enumerate(self._index.corpus):
             score = float(raw_scores[i])
             if score > entry_best.get(doc.entry_id, 0.0):
                 entry_best[doc.entry_id] = score
+                entry_best_doc_idx[doc.entry_id] = i
 
         if not entry_best or max(entry_best.values()) == 0.0:
             return MatchResult(tier="MISS", entry=None, score=0.0, top_k=[])
@@ -53,9 +55,12 @@ class RAGRetriever:
         top_k = ranked_entries[:3]
         best_raw = entry_best[best_entry.id]
 
-        # Normalize by this entry's own self-score (not global max)
-        entry_self = self._entry_self_scores.get(best_entry.id, self._index.max_self_score)
-        normalized = best_raw / entry_self if entry_self > 0 else 0.0
+        # Normalize by the self-score of the specific corpus doc that best matched
+        best_doc_idx = entry_best_doc_idx[best_entry.id]
+        doc_self = self._doc_self_scores[best_doc_idx]
+        normalized = best_raw / doc_self if doc_self > 0 else 0.0
+        # Cap at 1.0 (floating point can exceed slightly for near-exact matches)
+        normalized = min(normalized, 1.0)
 
         # has_variables entries are capped below DIRECT threshold
         effective_score = normalized
