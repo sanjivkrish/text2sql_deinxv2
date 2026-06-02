@@ -78,6 +78,7 @@ def test_join_uses_left_join():
     assert "JOIN" in result.sql
 
 def test_no_inner_join_used():
+    import re as _re
     builder = SQLClauseBuilder(SCHEMA)
     intent = make_intent(
         ["students", "classes"],
@@ -85,13 +86,10 @@ def test_no_inner_join_used():
         select_cols=["students.*", "classes.name"],
     )
     result = builder.build(intent, limit=10)
-    # Must not generate a bare INNER JOIN or plain JOIN without LEFT
     sql_upper = result.sql.upper()
-    # Acceptable: LEFT JOIN. Not acceptable: plain JOIN without LEFT
     assert "INNER JOIN" not in sql_upper
-    join_idx = sql_upper.find("JOIN")
-    left_idx = sql_upper.find("LEFT JOIN")
-    assert join_idx == left_idx + 5  # every JOIN must be part of a LEFT JOIN
+    # Every JOIN must be part of a LEFT JOIN — no bare JOIN allowed
+    assert not _re.search(r'(?<!LEFT )JOIN', sql_upper)
 
 def test_ordering():
     builder = SQLClauseBuilder(SCHEMA)
@@ -120,3 +118,42 @@ def test_sql_starts_with_select():
     intent = make_intent(["students"])
     result = builder.build(intent, limit=10)
     assert result.sql.strip().upper().startswith("SELECT")
+
+def test_numeric_injection_rejected():
+    builder = SQLClauseBuilder(SCHEMA)
+    intent = make_intent(
+        ["students"],
+        filters=[FilterCondition(table="students", column="grade", operator="=", value="5; DROP TABLE students; --", value_type="int")]
+    )
+    result = builder.build(intent, limit=10)
+    assert "DROP TABLE" not in result.sql
+    assert len(result.warnings) > 0  # non-numeric value should warn
+
+def test_disallowed_operator_skipped():
+    builder = SQLClauseBuilder(SCHEMA)
+    intent = make_intent(
+        ["students"],
+        filters=[FilterCondition(table="students", column="grade", operator="= 1; DELETE FROM students; --", value="5", value_type="int")]
+    )
+    result = builder.build(intent, limit=10)
+    assert "DELETE" not in result.sql
+    assert len(result.warnings) > 0
+
+def test_ordering_direction_allowlisted():
+    builder = SQLClauseBuilder(SCHEMA)
+    intent = make_intent(
+        ["students"],
+        ordering=[Ordering(table="students", column="full_name", direction="ASC; DROP TABLE students")]
+    )
+    result = builder.build(intent, limit=10)
+    assert "DROP TABLE" not in result.sql
+
+def test_no_wildcard_in_group_by():
+    builder = SQLClauseBuilder(SCHEMA)
+    intent = make_intent(
+        ["students"],
+        select_cols=["students.*", "COUNT(students.id)"],
+        aggregations=[Aggregation(table="students", column="id", function="COUNT")],
+    )
+    result = builder.build(intent, limit=10)
+    assert "GROUP BY students.*" not in result.sql
