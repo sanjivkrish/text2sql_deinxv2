@@ -1,0 +1,2579 @@
+{
+  "version": 1,
+  "built_at": "2026-06-02T16:08:08.117014+00:00",
+  "entries": [
+    {
+      "id": "student-count-total",
+      "question": "how many students are enrolled",
+      "alt_questions": [
+        "total student count",
+        "number of students",
+        "how many students do we have",
+        "total students enrolled"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM students\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "AGGREGATION",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-count-active",
+      "question": "how many active students are there",
+      "alt_questions": [
+        "count of active students",
+        "active student count",
+        "number of currently active students"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM students\nWHERE students.status ILIKE 'active'\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "AGGREGATION",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-count-by-class",
+      "question": "how many students in each class",
+      "alt_questions": [
+        "student count per class",
+        "number of students in each class",
+        "students per class"
+      ],
+      "sql": "SELECT classes.name AS class_name, COUNT(students.id) AS student_count\nFROM classes\nLEFT JOIN class_sections ON class_sections.class_id = classes.id\nLEFT JOIN students ON students.class_section_id = class_sections.id\nGROUP BY classes.id, classes.name\nORDER BY classes.grade_level ASC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "AGGREGATION",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-count-by-category",
+      "question": "how many students in each category",
+      "alt_questions": [
+        "student count by caste category",
+        "students per category",
+        "category-wise student count"
+      ],
+      "sql": "SELECT students.category, COUNT(*) AS student_count\nFROM students\nWHERE students.category IS NOT NULL\nGROUP BY students.category\nORDER BY students.category ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "AGGREGATION",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-list-all",
+      "question": "list all students",
+      "alt_questions": [
+        "show all students",
+        "display all students",
+        "get all students",
+        "show student list"
+      ],
+      "sql": "SELECT students.full_name, students.registration_number, students.status, students.created_at\nFROM students\nORDER BY students.full_name ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "FILTERED_LIST",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-list-active",
+      "question": "show all active students",
+      "alt_questions": [
+        "list active students",
+        "active students",
+        "currently active students",
+        "display active students"
+      ],
+      "sql": "SELECT students.full_name, students.registration_number, students.status, students.created_at\nFROM students\nWHERE students.status ILIKE 'active'\nORDER BY students.full_name ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "FILTERED_LIST",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-list-by-class",
+      "question": "show students in a class",
+      "alt_questions": [
+        "list students in class",
+        "students in class 5",
+        "students from class 6",
+        "show students from class"
+      ],
+      "sql": "SELECT students.full_name, classes.name AS class_name, class_sections.name AS section_name, students.roll_number, students.status\nFROM students\nLEFT JOIN class_sections ON class_sections.id = students.class_section_id\nLEFT JOIN classes ON classes.id = class_sections.class_id\nWHERE classes.name ILIKE '%placeholder%'\nORDER BY students.full_name ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "FILTERED_LIST",
+      "domain": "student_management",
+      "has_variables": true
+    },
+    {
+      "id": "student-list-by-section",
+      "question": "list students in a section",
+      "alt_questions": [
+        "students in section A",
+        "show students from section B",
+        "students in section"
+      ],
+      "sql": "SELECT students.full_name, classes.name AS class_name, class_sections.name AS section_name, students.roll_number, students.status\nFROM students\nLEFT JOIN class_sections ON class_sections.id = students.class_section_id\nLEFT JOIN classes ON classes.id = class_sections.class_id\nWHERE class_sections.name ILIKE '%placeholder%'\nORDER BY students.full_name ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "FILTERED_LIST",
+      "domain": "student_management",
+      "has_variables": true
+    },
+    {
+      "id": "student-list-withdrawn",
+      "question": "show withdrawn students",
+      "alt_questions": [
+        "list withdrawn students",
+        "students who have withdrawn",
+        "withdrawn student records"
+      ],
+      "sql": "SELECT students.full_name, students.registration_number, students.status, students.updated_at\nFROM students\nWHERE students.status ILIKE 'withdrawn'\nORDER BY students.full_name ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "FILTERED_LIST",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-count-by-blood-group",
+      "question": "count students by blood group",
+      "alt_questions": [
+        "how many students with each blood group",
+        "student blood group distribution",
+        "blood group count of students"
+      ],
+      "sql": "SELECT students.blood_group, COUNT(*) AS student_count\nFROM students\nWHERE students.blood_group IS NOT NULL\nGROUP BY students.blood_group\nORDER BY students.blood_group ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "AGGREGATION",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-lookup-by-name",
+      "question": "find a student by name",
+      "alt_questions": [
+        "look up student by name",
+        "find student named",
+        "search student by name",
+        "details of a specific student"
+      ],
+      "sql": "SELECT students.full_name, students.surname, students.registration_number, students.roll_number, students.status, students.date_of_birth\nFROM students\nWHERE students.full_name ILIKE '%placeholder%'\nORDER BY students.full_name ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "POINT_LOOKUP",
+      "domain": "student_management",
+      "has_variables": true
+    },
+    {
+      "id": "student-count-new-this-year",
+      "question": "how many students joined this year",
+      "alt_questions": [
+        "new student admissions this year",
+        "students enrolled this academic year",
+        "recently joined students count"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM students\nWHERE EXTRACT(YEAR FROM students.created_at) = EXTRACT(YEAR FROM CURRENT_DATE)\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "TEMPORAL",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-list-no-class",
+      "question": "students not assigned to any class",
+      "alt_questions": [
+        "students without class",
+        "unassigned students",
+        "students with no class assignment"
+      ],
+      "sql": "SELECT students.full_name, students.registration_number, students.status, students.created_at\nFROM students\nWHERE students.class_section_id IS NULL\nORDER BY students.full_name ASC\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "FILTERED_LIST",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-count-withdrawn",
+      "question": "how many students have withdrawn",
+      "alt_questions": [
+        "count of withdrawn students",
+        "total withdrawn students",
+        "withdrawal count"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM students\nWHERE students.status ILIKE 'withdrawn'\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "AGGREGATION",
+      "domain": "student_management",
+      "has_variables": false
+    },
+    {
+      "id": "student-lookup-by-registration",
+      "question": "find student by registration number",
+      "alt_questions": [
+        "look up student by registration number",
+        "student with registration number",
+        "find student registration"
+      ],
+      "sql": "SELECT students.full_name, students.surname, students.registration_number, students.roll_number, students.status, students.date_of_birth\nFROM students\nWHERE students.registration_number ILIKE '%placeholder%'\nLIMIT 100",
+      "primary_table": "students",
+      "intent": "POINT_LOOKUP",
+      "domain": "student_management",
+      "has_variables": true
+    },
+    {
+      "id": "staff-count-total",
+      "question": "how many staff members are there",
+      "alt_questions": [
+        "total staff count",
+        "number of teachers",
+        "how many teachers",
+        "total number of staff"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM staff\nWHERE staff.deleted_at IS NULL\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "AGGREGATION",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-count-active",
+      "question": "how many active staff are there",
+      "alt_questions": [
+        "active staff count",
+        "number of active teachers",
+        "count of active staff members",
+        "total active employees"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM staff\nWHERE staff.status ILIKE 'active'\nAND staff.deleted_at IS NULL\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "AGGREGATION",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-count-by-gender",
+      "question": "how many male and female staff are there",
+      "alt_questions": [
+        "staff count by gender",
+        "gender distribution of staff",
+        "male female staff count",
+        "staff gender breakdown"
+      ],
+      "sql": "SELECT staff.gender, COUNT(*) AS staff_count\nFROM staff\nWHERE staff.deleted_at IS NULL\nGROUP BY staff.gender\nORDER BY staff.gender ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "AGGREGATION",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-count-by-category",
+      "question": "count staff by category",
+      "alt_questions": [
+        "staff breakdown by category",
+        "how many staff in each category",
+        "staff category distribution"
+      ],
+      "sql": "SELECT staff.staff_category, COUNT(*) AS staff_count\nFROM staff\nWHERE staff.deleted_at IS NULL\nGROUP BY staff.staff_category\nORDER BY staff.staff_category ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "AGGREGATION",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-list-all",
+      "question": "list all staff members",
+      "alt_questions": [
+        "show all staff",
+        "display all staff",
+        "get all staff",
+        "show staff list",
+        "all employees"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff.designation, staff.department, staff.status\nFROM staff\nWHERE staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-list-active",
+      "question": "show all active staff members",
+      "alt_questions": [
+        "list active staff",
+        "active staff members",
+        "currently active teachers",
+        "all active employees"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff.designation, staff.department, staff.staff_category\nFROM staff\nWHERE staff.status ILIKE 'active'\nAND staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-list-by-designation",
+      "question": "list staff by designation",
+      "alt_questions": [
+        "all principals",
+        "all vice principals",
+        "show teachers with a specific designation",
+        "staff with designation"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff.designation, staff.department\nFROM staff\nWHERE staff.designation ILIKE '%placeholder%'\nAND staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": true
+    },
+    {
+      "id": "staff-list-by-department",
+      "question": "list staff in a department",
+      "alt_questions": [
+        "staff in science department",
+        "show department staff",
+        "employees in a department"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff.designation, staff.department\nFROM staff\nWHERE staff.department ILIKE '%placeholder%'\nAND staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": true
+    },
+    {
+      "id": "staff-list-contract",
+      "question": "list all contract staff",
+      "alt_questions": [
+        "show contract employees",
+        "contract teachers",
+        "staff on contract",
+        "contract-based employees"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff.employment_type, staff.contract_start, staff.contract_end\nFROM staff\nWHERE staff.employment_type ILIKE 'contract'\nAND staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-list-female",
+      "question": "list all female staff members",
+      "alt_questions": [
+        "show female teachers",
+        "all female staff",
+        "women teachers",
+        "female employees"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff.designation, staff.staff_category\nFROM staff\nWHERE staff.gender ILIKE 'female'\nAND staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-list-tet-certified",
+      "question": "which teachers have TET certification",
+      "alt_questions": [
+        "TET certified staff",
+        "staff with TET certificate",
+        "teachers with TET",
+        "show TET certified teachers"
+      ],
+      "sql": "SELECT staff.first_name, staff.last_name, staff.designation, staff_certifications.cert_type, staff_certifications.cert_name, staff_certifications.validity_date\nFROM staff\nLEFT JOIN staff_certifications ON staff_certifications.staff_id = staff.id\nWHERE staff_certifications.cert_type ILIKE 'tet'\nAND staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-list-with-qualification",
+      "question": "list staff with a specific qualification",
+      "alt_questions": [
+        "staff with B.Ed qualification",
+        "teachers with M.Sc degree",
+        "staff qualification search",
+        "show staff qualifications"
+      ],
+      "sql": "SELECT staff.first_name, staff.last_name, staff.designation, staff_qualifications.qualification_name, staff_qualifications.level, staff_qualifications.university\nFROM staff\nLEFT JOIN staff_qualifications ON staff_qualifications.staff_id = staff.id\nWHERE staff_qualifications.qualification_name ILIKE '%placeholder%'\nAND staff.deleted_at IS NULL\nORDER BY staff.first_name ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": true
+    },
+    {
+      "id": "staff-lookup-by-name",
+      "question": "find a staff member by name",
+      "alt_questions": [
+        "look up a teacher by name",
+        "search staff by name",
+        "find teacher named",
+        "details of a specific teacher"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff.designation, staff.department, staff.staff_category, staff.status, staff.date_of_joining\nFROM staff\nWHERE (staff.first_name ILIKE '%placeholder%' OR staff.last_name ILIKE '%placeholder%')\nAND staff.deleted_at IS NULL\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "POINT_LOOKUP",
+      "domain": "staff_management",
+      "has_variables": true
+    },
+    {
+      "id": "staff-list-class-teachers",
+      "question": "show all class teachers",
+      "alt_questions": [
+        "list class teachers",
+        "who are the class teachers",
+        "teachers assigned as class teacher",
+        "class teacher list"
+      ],
+      "sql": "SELECT staff.employee_id, staff.first_name, staff.last_name, staff_teaching_assignments.class_name, staff_teaching_assignments.section, staff_teaching_assignments.academic_year\nFROM staff\nLEFT JOIN staff_teaching_assignments ON staff_teaching_assignments.staff_id = staff.id\nWHERE staff_teaching_assignments.is_class_teacher = true\nAND staff.deleted_at IS NULL\nORDER BY staff_teaching_assignments.class_name ASC, staff_teaching_assignments.section ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "FILTERED_LIST",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "staff-count-teaching-vs-nonteaching",
+      "question": "how many teaching staff versus non-teaching staff",
+      "alt_questions": [
+        "teaching vs non-teaching count",
+        "teaching and non-teaching staff breakdown",
+        "count of teaching and administrative staff"
+      ],
+      "sql": "SELECT CASE WHEN staff.staff_category ILIKE 'teaching%' THEN 'teaching' ELSE 'non_teaching' END AS category_type, COUNT(*) AS staff_count\nFROM staff\nWHERE staff.deleted_at IS NULL\nGROUP BY 1\nORDER BY category_type ASC\nLIMIT 100",
+      "primary_table": "staff",
+      "intent": "AGGREGATION",
+      "domain": "staff_management",
+      "has_variables": false
+    },
+    {
+      "id": "class-count-total",
+      "question": "how many classes are there",
+      "alt_questions": [
+        "total number of classes",
+        "count of classes",
+        "how many classes in the school"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM classes\nWHERE classes.is_active = true\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "AGGREGATION",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "class-list-all",
+      "question": "list all classes",
+      "alt_questions": [
+        "show all classes",
+        "display all classes",
+        "get list of classes",
+        "what classes are there"
+      ],
+      "sql": "SELECT classes.name, classes.grade_level, classes.is_active\nFROM classes\nORDER BY classes.grade_level ASC, classes.name ASC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "class-list-active",
+      "question": "show all active classes",
+      "alt_questions": [
+        "list active classes",
+        "currently active classes",
+        "classes that are active"
+      ],
+      "sql": "SELECT classes.name, classes.grade_level, classes.description\nFROM classes\nWHERE classes.is_active = true\nORDER BY classes.grade_level ASC, classes.name ASC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "class-section-count",
+      "question": "how many sections does each class have",
+      "alt_questions": [
+        "section count per class",
+        "number of sections in each class",
+        "sections per class breakdown"
+      ],
+      "sql": "SELECT classes.name AS class_name, COUNT(class_sections.id) AS section_count\nFROM classes\nLEFT JOIN class_sections ON class_sections.class_id = classes.id\nWHERE classes.is_active = true\nGROUP BY classes.id, classes.name\nORDER BY classes.grade_level ASC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "AGGREGATION",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "class-most-students",
+      "question": "which class has the most students",
+      "alt_questions": [
+        "class with highest student count",
+        "largest class by students",
+        "which class has the highest number of students"
+      ],
+      "sql": "SELECT classes.name AS class_name, COUNT(students.id) AS student_count\nFROM classes\nLEFT JOIN class_sections ON class_sections.class_id = classes.id\nLEFT JOIN students ON students.class_section_id = class_sections.id\nGROUP BY classes.id, classes.name\nORDER BY student_count DESC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "COMPARATIVE",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "class-fewest-students",
+      "question": "which class has the fewest students",
+      "alt_questions": [
+        "class with lowest student count",
+        "smallest class by students",
+        "class with fewest enrolled students"
+      ],
+      "sql": "SELECT classes.name AS class_name, COUNT(students.id) AS student_count\nFROM classes\nLEFT JOIN class_sections ON class_sections.class_id = classes.id\nLEFT JOIN students ON students.class_section_id = class_sections.id\nGROUP BY classes.id, classes.name\nORDER BY student_count ASC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "COMPARATIVE",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "class-section-list",
+      "question": "list all sections in a class",
+      "alt_questions": [
+        "sections in class 6",
+        "show sections of a class",
+        "what sections are in a class"
+      ],
+      "sql": "SELECT classes.name AS class_name, class_sections.name AS section_name, class_sections.is_active\nFROM classes\nLEFT JOIN class_sections ON class_sections.class_id = classes.id\nWHERE classes.name ILIKE '%placeholder%'\nORDER BY class_sections.name ASC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": true
+    },
+    {
+      "id": "class-student-count-each",
+      "question": "number of students in each class and section",
+      "alt_questions": [
+        "student count by class and section",
+        "section-wise student count",
+        "students per section"
+      ],
+      "sql": "SELECT classes.name AS class_name, class_sections.name AS section_name, COUNT(students.id) AS student_count\nFROM classes\nLEFT JOIN class_sections ON class_sections.class_id = classes.id\nLEFT JOIN students ON students.class_section_id = class_sections.id\nGROUP BY classes.id, classes.name, class_sections.id, class_sections.name\nORDER BY classes.grade_level ASC, class_sections.name ASC\nLIMIT 100",
+      "primary_table": "classes",
+      "intent": "AGGREGATION",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "subject-list-all",
+      "question": "list all subjects",
+      "alt_questions": [
+        "show all subjects",
+        "display all subjects",
+        "what subjects are there",
+        "get subject list"
+      ],
+      "sql": "SELECT subjects.name, subjects.code, subjects.category, subjects.status\nFROM subjects\nWHERE subjects.deleted_at IS NULL\nORDER BY subjects.name ASC\nLIMIT 100",
+      "primary_table": "subjects",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "subject-count-total",
+      "question": "how many subjects are offered",
+      "alt_questions": [
+        "total subject count",
+        "number of active subjects",
+        "count of subjects",
+        "how many subjects"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM subjects\nWHERE subjects.status ILIKE 'active'\nAND subjects.deleted_at IS NULL\nLIMIT 100",
+      "primary_table": "subjects",
+      "intent": "AGGREGATION",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "subject-count-by-category",
+      "question": "count subjects by category",
+      "alt_questions": [
+        "subject breakdown by category",
+        "how many subjects in each category",
+        "subject category distribution"
+      ],
+      "sql": "SELECT subjects.category, COUNT(*) AS subject_count\nFROM subjects\nWHERE subjects.deleted_at IS NULL\nGROUP BY subjects.category\nORDER BY subjects.category ASC\nLIMIT 100",
+      "primary_table": "subjects",
+      "intent": "AGGREGATION",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "subject-list-active",
+      "question": "show all active subjects",
+      "alt_questions": [
+        "list active subjects",
+        "currently active subjects",
+        "available subjects"
+      ],
+      "sql": "SELECT subjects.name, subjects.code, subjects.category, subjects.assessment_type\nFROM subjects\nWHERE subjects.status ILIKE 'active'\nAND subjects.deleted_at IS NULL\nORDER BY subjects.name ASC\nLIMIT 100",
+      "primary_table": "subjects",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "subject-list-by-class",
+      "question": "what subjects does a class have",
+      "alt_questions": [
+        "subjects in class 8",
+        "list subjects for a class",
+        "which subjects are taught in a class"
+      ],
+      "sql": "SELECT subjects.name, subjects.code, subjects.category, class_subjects.periods_per_week, class_subjects.is_elective\nFROM subjects\nLEFT JOIN class_subjects ON class_subjects.subject_id = subjects.id\nLEFT JOIN classes ON classes.id = class_subjects.class_id\nWHERE classes.name ILIKE '%placeholder%'\nAND subjects.deleted_at IS NULL\nORDER BY subjects.name ASC\nLIMIT 100",
+      "primary_table": "subjects",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": true
+    },
+    {
+      "id": "academic-year-current",
+      "question": "what is the current academic year",
+      "alt_questions": [
+        "current academic year",
+        "which academic year is active",
+        "current school year"
+      ],
+      "sql": "SELECT academic_years.name, academic_years.start_date, academic_years.end_date, academic_years.status\nFROM academic_years\nWHERE academic_years.is_current = true\nLIMIT 100",
+      "primary_table": "academic_years",
+      "intent": "TEMPORAL",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "academic-year-list",
+      "question": "list all academic years",
+      "alt_questions": [
+        "show all academic years",
+        "all school years",
+        "academic year history"
+      ],
+      "sql": "SELECT academic_years.name, academic_years.start_date, academic_years.end_date, academic_years.status, academic_years.is_current\nFROM academic_years\nORDER BY academic_years.start_date DESC\nLIMIT 100",
+      "primary_table": "academic_years",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "academic-year-active",
+      "question": "show active academic years",
+      "alt_questions": [
+        "list active academic years",
+        "currently active academic years",
+        "which academic years are active"
+      ],
+      "sql": "SELECT academic_years.name, academic_years.start_date, academic_years.end_date, academic_years.is_current\nFROM academic_years\nWHERE academic_years.status ILIKE 'active'\nORDER BY academic_years.start_date DESC\nLIMIT 100",
+      "primary_table": "academic_years",
+      "intent": "FILTERED_LIST",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "academic-year-count",
+      "question": "how many academic years are configured",
+      "alt_questions": [
+        "total academic year count",
+        "number of academic years",
+        "how many school years"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM academic_years\nLIMIT 100",
+      "primary_table": "academic_years",
+      "intent": "AGGREGATION",
+      "domain": "academics",
+      "has_variables": false
+    },
+    {
+      "id": "admission-count-total",
+      "question": "how many admission applications are there",
+      "alt_questions": [
+        "total admissions",
+        "number of admission applications",
+        "admission application count"
+      ],
+      "sql": "SELECT COUNT(*) AS total\nFROM admission_applications\nLIMIT 100",
+      "primary_table": "admission_applications",
+      "intent": "AGGREGATION",
+      "domain": "admissions",
+      "has_variables": false
+    },
+    {
+      "id": "admission-count-by-status",
+      "question": "count admissions by status",
+      "alt_questions": [
+        "admission status breakdown",
+        "how many admissions in each status",
+        "admissions grouped by status"
+      ],
+      "sql": "SELECT admission_applications.status, COUNT(*) AS application_count\nFROM admission_applications\nGROUP BY admission_applications.status\nORDER BY admission_applications.status ASC\nLIMIT 100",
+      "primary_table": "admission_applications",
+      "intent": "AGGREGATION",
+      "domain": "admissions",
+      "has_variables": false
+    },
+    {
+      "id": "admission-list-inquiry",
+      "question": "show pending admission applications",
+      "alt_questions": [
+        "list inquiry admissions",
+        "applications pending review",
+        "new admission inquiries",
+        "show admission inquiries"
+      ],
+      "sql": "SELECT admission_applications.student_name, admission_applications.class_applied, admission_applications.parent_name, admission_applications.parent_phone, admission_applications.status, admission_applications.created_at\nFROM admission_applications\nWHERE admission_applications.status ILIKE 'inquiry'\nORDER BY admission_applications.created_at DESC\nLIMIT 100",
+      "primary_table": "admission_applications",
+      "intent": "FILTERED_LIST",
+      "domain": "admissions",
+      "has_variables": false
+    }
+  ],
+  "corpus": [
+    {
+      "tokens": [
+        "many",
+        "students",
+        "enrolled"
+      ],
+      "entry_id": "student-count-total"
+    },
+    {
+      "tokens": [
+        "total",
+        "student",
+        "count"
+      ],
+      "entry_id": "student-count-total"
+    },
+    {
+      "tokens": [
+        "number",
+        "students"
+      ],
+      "entry_id": "student-count-total"
+    },
+    {
+      "tokens": [
+        "many",
+        "students",
+        "we",
+        "have"
+      ],
+      "entry_id": "student-count-total"
+    },
+    {
+      "tokens": [
+        "total",
+        "students",
+        "enrolled"
+      ],
+      "entry_id": "student-count-total"
+    },
+    {
+      "tokens": [
+        "many",
+        "active",
+        "students",
+        "there"
+      ],
+      "entry_id": "student-count-active"
+    },
+    {
+      "tokens": [
+        "count",
+        "active",
+        "students"
+      ],
+      "entry_id": "student-count-active"
+    },
+    {
+      "tokens": [
+        "active",
+        "student",
+        "count"
+      ],
+      "entry_id": "student-count-active"
+    },
+    {
+      "tokens": [
+        "number",
+        "currently",
+        "active",
+        "students"
+      ],
+      "entry_id": "student-count-active"
+    },
+    {
+      "tokens": [
+        "many",
+        "students",
+        "each",
+        "class"
+      ],
+      "entry_id": "student-count-by-class"
+    },
+    {
+      "tokens": [
+        "student",
+        "count",
+        "per",
+        "class"
+      ],
+      "entry_id": "student-count-by-class"
+    },
+    {
+      "tokens": [
+        "number",
+        "students",
+        "each",
+        "class"
+      ],
+      "entry_id": "student-count-by-class"
+    },
+    {
+      "tokens": [
+        "students",
+        "per",
+        "class"
+      ],
+      "entry_id": "student-count-by-class"
+    },
+    {
+      "tokens": [
+        "many",
+        "students",
+        "each",
+        "category"
+      ],
+      "entry_id": "student-count-by-category"
+    },
+    {
+      "tokens": [
+        "student",
+        "count",
+        "caste",
+        "category"
+      ],
+      "entry_id": "student-count-by-category"
+    },
+    {
+      "tokens": [
+        "students",
+        "per",
+        "category"
+      ],
+      "entry_id": "student-count-by-category"
+    },
+    {
+      "tokens": [
+        "category",
+        "wise",
+        "student",
+        "count"
+      ],
+      "entry_id": "student-count-by-category"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "students"
+      ],
+      "entry_id": "student-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "students"
+      ],
+      "entry_id": "student-list-all"
+    },
+    {
+      "tokens": [
+        "display",
+        "all",
+        "students"
+      ],
+      "entry_id": "student-list-all"
+    },
+    {
+      "tokens": [
+        "get",
+        "all",
+        "students"
+      ],
+      "entry_id": "student-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "student",
+        "list"
+      ],
+      "entry_id": "student-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "active",
+        "students"
+      ],
+      "entry_id": "student-list-active"
+    },
+    {
+      "tokens": [
+        "list",
+        "active",
+        "students"
+      ],
+      "entry_id": "student-list-active"
+    },
+    {
+      "tokens": [
+        "active",
+        "students"
+      ],
+      "entry_id": "student-list-active"
+    },
+    {
+      "tokens": [
+        "currently",
+        "active",
+        "students"
+      ],
+      "entry_id": "student-list-active"
+    },
+    {
+      "tokens": [
+        "display",
+        "active",
+        "students"
+      ],
+      "entry_id": "student-list-active"
+    },
+    {
+      "tokens": [
+        "show",
+        "students",
+        "class"
+      ],
+      "entry_id": "student-list-by-class"
+    },
+    {
+      "tokens": [
+        "list",
+        "students",
+        "class"
+      ],
+      "entry_id": "student-list-by-class"
+    },
+    {
+      "tokens": [
+        "students",
+        "class"
+      ],
+      "entry_id": "student-list-by-class"
+    },
+    {
+      "tokens": [
+        "students",
+        "class"
+      ],
+      "entry_id": "student-list-by-class"
+    },
+    {
+      "tokens": [
+        "show",
+        "students",
+        "class"
+      ],
+      "entry_id": "student-list-by-class"
+    },
+    {
+      "tokens": [
+        "list",
+        "students",
+        "section"
+      ],
+      "entry_id": "student-list-by-section"
+    },
+    {
+      "tokens": [
+        "students",
+        "section"
+      ],
+      "entry_id": "student-list-by-section"
+    },
+    {
+      "tokens": [
+        "show",
+        "students",
+        "section"
+      ],
+      "entry_id": "student-list-by-section"
+    },
+    {
+      "tokens": [
+        "students",
+        "section"
+      ],
+      "entry_id": "student-list-by-section"
+    },
+    {
+      "tokens": [
+        "show",
+        "withdrawn",
+        "students"
+      ],
+      "entry_id": "student-list-withdrawn"
+    },
+    {
+      "tokens": [
+        "list",
+        "withdrawn",
+        "students"
+      ],
+      "entry_id": "student-list-withdrawn"
+    },
+    {
+      "tokens": [
+        "students",
+        "have",
+        "withdrawn"
+      ],
+      "entry_id": "student-list-withdrawn"
+    },
+    {
+      "tokens": [
+        "withdrawn",
+        "student",
+        "records"
+      ],
+      "entry_id": "student-list-withdrawn"
+    },
+    {
+      "tokens": [
+        "count",
+        "students",
+        "blood",
+        "group"
+      ],
+      "entry_id": "student-count-by-blood-group"
+    },
+    {
+      "tokens": [
+        "many",
+        "students",
+        "each",
+        "blood",
+        "group"
+      ],
+      "entry_id": "student-count-by-blood-group"
+    },
+    {
+      "tokens": [
+        "student",
+        "blood",
+        "group",
+        "distribution"
+      ],
+      "entry_id": "student-count-by-blood-group"
+    },
+    {
+      "tokens": [
+        "blood",
+        "group",
+        "count",
+        "students"
+      ],
+      "entry_id": "student-count-by-blood-group"
+    },
+    {
+      "tokens": [
+        "find",
+        "student",
+        "name"
+      ],
+      "entry_id": "student-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "look",
+        "up",
+        "student",
+        "name"
+      ],
+      "entry_id": "student-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "find",
+        "student",
+        "named"
+      ],
+      "entry_id": "student-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "search",
+        "student",
+        "name"
+      ],
+      "entry_id": "student-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "details",
+        "specific",
+        "student"
+      ],
+      "entry_id": "student-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "many",
+        "students",
+        "joined",
+        "this",
+        "year"
+      ],
+      "entry_id": "student-count-new-this-year"
+    },
+    {
+      "tokens": [
+        "new",
+        "student",
+        "admissions",
+        "this",
+        "year"
+      ],
+      "entry_id": "student-count-new-this-year"
+    },
+    {
+      "tokens": [
+        "students",
+        "enrolled",
+        "this",
+        "academic",
+        "year"
+      ],
+      "entry_id": "student-count-new-this-year"
+    },
+    {
+      "tokens": [
+        "recently",
+        "joined",
+        "students",
+        "count"
+      ],
+      "entry_id": "student-count-new-this-year"
+    },
+    {
+      "tokens": [
+        "students",
+        "not",
+        "assigned",
+        "any",
+        "class"
+      ],
+      "entry_id": "student-list-no-class"
+    },
+    {
+      "tokens": [
+        "students",
+        "without",
+        "class"
+      ],
+      "entry_id": "student-list-no-class"
+    },
+    {
+      "tokens": [
+        "unassigned",
+        "students"
+      ],
+      "entry_id": "student-list-no-class"
+    },
+    {
+      "tokens": [
+        "students",
+        "no",
+        "class",
+        "assignment"
+      ],
+      "entry_id": "student-list-no-class"
+    },
+    {
+      "tokens": [
+        "many",
+        "students",
+        "have",
+        "withdrawn"
+      ],
+      "entry_id": "student-count-withdrawn"
+    },
+    {
+      "tokens": [
+        "count",
+        "withdrawn",
+        "students"
+      ],
+      "entry_id": "student-count-withdrawn"
+    },
+    {
+      "tokens": [
+        "total",
+        "withdrawn",
+        "students"
+      ],
+      "entry_id": "student-count-withdrawn"
+    },
+    {
+      "tokens": [
+        "withdrawal",
+        "count"
+      ],
+      "entry_id": "student-count-withdrawn"
+    },
+    {
+      "tokens": [
+        "find",
+        "student",
+        "registration",
+        "number"
+      ],
+      "entry_id": "student-lookup-by-registration"
+    },
+    {
+      "tokens": [
+        "look",
+        "up",
+        "student",
+        "registration",
+        "number"
+      ],
+      "entry_id": "student-lookup-by-registration"
+    },
+    {
+      "tokens": [
+        "student",
+        "registration",
+        "number"
+      ],
+      "entry_id": "student-lookup-by-registration"
+    },
+    {
+      "tokens": [
+        "find",
+        "student",
+        "registration"
+      ],
+      "entry_id": "student-lookup-by-registration"
+    },
+    {
+      "tokens": [
+        "many",
+        "staff",
+        "members",
+        "there"
+      ],
+      "entry_id": "staff-count-total"
+    },
+    {
+      "tokens": [
+        "total",
+        "staff",
+        "count"
+      ],
+      "entry_id": "staff-count-total"
+    },
+    {
+      "tokens": [
+        "number",
+        "teachers"
+      ],
+      "entry_id": "staff-count-total"
+    },
+    {
+      "tokens": [
+        "many",
+        "teachers"
+      ],
+      "entry_id": "staff-count-total"
+    },
+    {
+      "tokens": [
+        "total",
+        "number",
+        "staff"
+      ],
+      "entry_id": "staff-count-total"
+    },
+    {
+      "tokens": [
+        "many",
+        "active",
+        "staff",
+        "there"
+      ],
+      "entry_id": "staff-count-active"
+    },
+    {
+      "tokens": [
+        "active",
+        "staff",
+        "count"
+      ],
+      "entry_id": "staff-count-active"
+    },
+    {
+      "tokens": [
+        "number",
+        "active",
+        "teachers"
+      ],
+      "entry_id": "staff-count-active"
+    },
+    {
+      "tokens": [
+        "count",
+        "active",
+        "staff",
+        "members"
+      ],
+      "entry_id": "staff-count-active"
+    },
+    {
+      "tokens": [
+        "total",
+        "active",
+        "employees"
+      ],
+      "entry_id": "staff-count-active"
+    },
+    {
+      "tokens": [
+        "many",
+        "male",
+        "and",
+        "female",
+        "staff",
+        "there"
+      ],
+      "entry_id": "staff-count-by-gender"
+    },
+    {
+      "tokens": [
+        "staff",
+        "count",
+        "gender"
+      ],
+      "entry_id": "staff-count-by-gender"
+    },
+    {
+      "tokens": [
+        "gender",
+        "distribution",
+        "staff"
+      ],
+      "entry_id": "staff-count-by-gender"
+    },
+    {
+      "tokens": [
+        "male",
+        "female",
+        "staff",
+        "count"
+      ],
+      "entry_id": "staff-count-by-gender"
+    },
+    {
+      "tokens": [
+        "staff",
+        "gender",
+        "breakdown"
+      ],
+      "entry_id": "staff-count-by-gender"
+    },
+    {
+      "tokens": [
+        "count",
+        "staff",
+        "category"
+      ],
+      "entry_id": "staff-count-by-category"
+    },
+    {
+      "tokens": [
+        "staff",
+        "breakdown",
+        "category"
+      ],
+      "entry_id": "staff-count-by-category"
+    },
+    {
+      "tokens": [
+        "many",
+        "staff",
+        "each",
+        "category"
+      ],
+      "entry_id": "staff-count-by-category"
+    },
+    {
+      "tokens": [
+        "staff",
+        "category",
+        "distribution"
+      ],
+      "entry_id": "staff-count-by-category"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "staff",
+        "members"
+      ],
+      "entry_id": "staff-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "staff"
+      ],
+      "entry_id": "staff-list-all"
+    },
+    {
+      "tokens": [
+        "display",
+        "all",
+        "staff"
+      ],
+      "entry_id": "staff-list-all"
+    },
+    {
+      "tokens": [
+        "get",
+        "all",
+        "staff"
+      ],
+      "entry_id": "staff-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "staff",
+        "list"
+      ],
+      "entry_id": "staff-list-all"
+    },
+    {
+      "tokens": [
+        "all",
+        "employees"
+      ],
+      "entry_id": "staff-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "active",
+        "staff",
+        "members"
+      ],
+      "entry_id": "staff-list-active"
+    },
+    {
+      "tokens": [
+        "list",
+        "active",
+        "staff"
+      ],
+      "entry_id": "staff-list-active"
+    },
+    {
+      "tokens": [
+        "active",
+        "staff",
+        "members"
+      ],
+      "entry_id": "staff-list-active"
+    },
+    {
+      "tokens": [
+        "currently",
+        "active",
+        "teachers"
+      ],
+      "entry_id": "staff-list-active"
+    },
+    {
+      "tokens": [
+        "all",
+        "active",
+        "employees"
+      ],
+      "entry_id": "staff-list-active"
+    },
+    {
+      "tokens": [
+        "list",
+        "staff",
+        "designation"
+      ],
+      "entry_id": "staff-list-by-designation"
+    },
+    {
+      "tokens": [
+        "all",
+        "principals"
+      ],
+      "entry_id": "staff-list-by-designation"
+    },
+    {
+      "tokens": [
+        "all",
+        "vice",
+        "principals"
+      ],
+      "entry_id": "staff-list-by-designation"
+    },
+    {
+      "tokens": [
+        "show",
+        "teachers",
+        "specific",
+        "designation"
+      ],
+      "entry_id": "staff-list-by-designation"
+    },
+    {
+      "tokens": [
+        "staff",
+        "designation"
+      ],
+      "entry_id": "staff-list-by-designation"
+    },
+    {
+      "tokens": [
+        "list",
+        "staff",
+        "department"
+      ],
+      "entry_id": "staff-list-by-department"
+    },
+    {
+      "tokens": [
+        "staff",
+        "science",
+        "department"
+      ],
+      "entry_id": "staff-list-by-department"
+    },
+    {
+      "tokens": [
+        "show",
+        "department",
+        "staff"
+      ],
+      "entry_id": "staff-list-by-department"
+    },
+    {
+      "tokens": [
+        "employees",
+        "department"
+      ],
+      "entry_id": "staff-list-by-department"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "contract",
+        "staff"
+      ],
+      "entry_id": "staff-list-contract"
+    },
+    {
+      "tokens": [
+        "show",
+        "contract",
+        "employees"
+      ],
+      "entry_id": "staff-list-contract"
+    },
+    {
+      "tokens": [
+        "contract",
+        "teachers"
+      ],
+      "entry_id": "staff-list-contract"
+    },
+    {
+      "tokens": [
+        "staff",
+        "on",
+        "contract"
+      ],
+      "entry_id": "staff-list-contract"
+    },
+    {
+      "tokens": [
+        "contract",
+        "based",
+        "employees"
+      ],
+      "entry_id": "staff-list-contract"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "female",
+        "staff",
+        "members"
+      ],
+      "entry_id": "staff-list-female"
+    },
+    {
+      "tokens": [
+        "show",
+        "female",
+        "teachers"
+      ],
+      "entry_id": "staff-list-female"
+    },
+    {
+      "tokens": [
+        "all",
+        "female",
+        "staff"
+      ],
+      "entry_id": "staff-list-female"
+    },
+    {
+      "tokens": [
+        "women",
+        "teachers"
+      ],
+      "entry_id": "staff-list-female"
+    },
+    {
+      "tokens": [
+        "female",
+        "employees"
+      ],
+      "entry_id": "staff-list-female"
+    },
+    {
+      "tokens": [
+        "teachers",
+        "have",
+        "tet",
+        "certification"
+      ],
+      "entry_id": "staff-list-tet-certified"
+    },
+    {
+      "tokens": [
+        "tet",
+        "certified",
+        "staff"
+      ],
+      "entry_id": "staff-list-tet-certified"
+    },
+    {
+      "tokens": [
+        "staff",
+        "tet",
+        "certificate"
+      ],
+      "entry_id": "staff-list-tet-certified"
+    },
+    {
+      "tokens": [
+        "teachers",
+        "tet"
+      ],
+      "entry_id": "staff-list-tet-certified"
+    },
+    {
+      "tokens": [
+        "show",
+        "tet",
+        "certified",
+        "teachers"
+      ],
+      "entry_id": "staff-list-tet-certified"
+    },
+    {
+      "tokens": [
+        "list",
+        "staff",
+        "specific",
+        "qualification"
+      ],
+      "entry_id": "staff-list-with-qualification"
+    },
+    {
+      "tokens": [
+        "staff",
+        "ed",
+        "qualification"
+      ],
+      "entry_id": "staff-list-with-qualification"
+    },
+    {
+      "tokens": [
+        "teachers",
+        "sc",
+        "degree"
+      ],
+      "entry_id": "staff-list-with-qualification"
+    },
+    {
+      "tokens": [
+        "staff",
+        "qualification",
+        "search"
+      ],
+      "entry_id": "staff-list-with-qualification"
+    },
+    {
+      "tokens": [
+        "show",
+        "staff",
+        "qualifications"
+      ],
+      "entry_id": "staff-list-with-qualification"
+    },
+    {
+      "tokens": [
+        "find",
+        "staff",
+        "member",
+        "name"
+      ],
+      "entry_id": "staff-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "look",
+        "up",
+        "teacher",
+        "name"
+      ],
+      "entry_id": "staff-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "search",
+        "staff",
+        "name"
+      ],
+      "entry_id": "staff-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "find",
+        "teacher",
+        "named"
+      ],
+      "entry_id": "staff-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "details",
+        "specific",
+        "teacher"
+      ],
+      "entry_id": "staff-lookup-by-name"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "class",
+        "teachers"
+      ],
+      "entry_id": "staff-list-class-teachers"
+    },
+    {
+      "tokens": [
+        "list",
+        "class",
+        "teachers"
+      ],
+      "entry_id": "staff-list-class-teachers"
+    },
+    {
+      "tokens": [
+        "class",
+        "teachers"
+      ],
+      "entry_id": "staff-list-class-teachers"
+    },
+    {
+      "tokens": [
+        "teachers",
+        "assigned",
+        "as",
+        "class",
+        "teacher"
+      ],
+      "entry_id": "staff-list-class-teachers"
+    },
+    {
+      "tokens": [
+        "class",
+        "teacher",
+        "list"
+      ],
+      "entry_id": "staff-list-class-teachers"
+    },
+    {
+      "tokens": [
+        "many",
+        "teaching",
+        "staff",
+        "versus",
+        "non",
+        "teaching",
+        "staff"
+      ],
+      "entry_id": "staff-count-teaching-vs-nonteaching"
+    },
+    {
+      "tokens": [
+        "teaching",
+        "vs",
+        "non",
+        "teaching",
+        "count"
+      ],
+      "entry_id": "staff-count-teaching-vs-nonteaching"
+    },
+    {
+      "tokens": [
+        "teaching",
+        "and",
+        "non",
+        "teaching",
+        "staff",
+        "breakdown"
+      ],
+      "entry_id": "staff-count-teaching-vs-nonteaching"
+    },
+    {
+      "tokens": [
+        "count",
+        "teaching",
+        "and",
+        "administrative",
+        "staff"
+      ],
+      "entry_id": "staff-count-teaching-vs-nonteaching"
+    },
+    {
+      "tokens": [
+        "many",
+        "classes",
+        "there"
+      ],
+      "entry_id": "class-count-total"
+    },
+    {
+      "tokens": [
+        "total",
+        "number",
+        "classes"
+      ],
+      "entry_id": "class-count-total"
+    },
+    {
+      "tokens": [
+        "count",
+        "classes"
+      ],
+      "entry_id": "class-count-total"
+    },
+    {
+      "tokens": [
+        "many",
+        "classes",
+        "school"
+      ],
+      "entry_id": "class-count-total"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "classes"
+      ],
+      "entry_id": "class-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "classes"
+      ],
+      "entry_id": "class-list-all"
+    },
+    {
+      "tokens": [
+        "display",
+        "all",
+        "classes"
+      ],
+      "entry_id": "class-list-all"
+    },
+    {
+      "tokens": [
+        "get",
+        "list",
+        "classes"
+      ],
+      "entry_id": "class-list-all"
+    },
+    {
+      "tokens": [
+        "what",
+        "classes",
+        "there"
+      ],
+      "entry_id": "class-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "active",
+        "classes"
+      ],
+      "entry_id": "class-list-active"
+    },
+    {
+      "tokens": [
+        "list",
+        "active",
+        "classes"
+      ],
+      "entry_id": "class-list-active"
+    },
+    {
+      "tokens": [
+        "currently",
+        "active",
+        "classes"
+      ],
+      "entry_id": "class-list-active"
+    },
+    {
+      "tokens": [
+        "classes",
+        "that",
+        "active"
+      ],
+      "entry_id": "class-list-active"
+    },
+    {
+      "tokens": [
+        "many",
+        "sections",
+        "each",
+        "class",
+        "have"
+      ],
+      "entry_id": "class-section-count"
+    },
+    {
+      "tokens": [
+        "section",
+        "count",
+        "per",
+        "class"
+      ],
+      "entry_id": "class-section-count"
+    },
+    {
+      "tokens": [
+        "number",
+        "sections",
+        "each",
+        "class"
+      ],
+      "entry_id": "class-section-count"
+    },
+    {
+      "tokens": [
+        "sections",
+        "per",
+        "class",
+        "breakdown"
+      ],
+      "entry_id": "class-section-count"
+    },
+    {
+      "tokens": [
+        "class",
+        "has",
+        "most",
+        "students"
+      ],
+      "entry_id": "class-most-students"
+    },
+    {
+      "tokens": [
+        "class",
+        "highest",
+        "student",
+        "count"
+      ],
+      "entry_id": "class-most-students"
+    },
+    {
+      "tokens": [
+        "largest",
+        "class",
+        "students"
+      ],
+      "entry_id": "class-most-students"
+    },
+    {
+      "tokens": [
+        "class",
+        "has",
+        "highest",
+        "number",
+        "students"
+      ],
+      "entry_id": "class-most-students"
+    },
+    {
+      "tokens": [
+        "class",
+        "has",
+        "fewest",
+        "students"
+      ],
+      "entry_id": "class-fewest-students"
+    },
+    {
+      "tokens": [
+        "class",
+        "lowest",
+        "student",
+        "count"
+      ],
+      "entry_id": "class-fewest-students"
+    },
+    {
+      "tokens": [
+        "smallest",
+        "class",
+        "students"
+      ],
+      "entry_id": "class-fewest-students"
+    },
+    {
+      "tokens": [
+        "class",
+        "fewest",
+        "enrolled",
+        "students"
+      ],
+      "entry_id": "class-fewest-students"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "sections",
+        "class"
+      ],
+      "entry_id": "class-section-list"
+    },
+    {
+      "tokens": [
+        "sections",
+        "class"
+      ],
+      "entry_id": "class-section-list"
+    },
+    {
+      "tokens": [
+        "show",
+        "sections",
+        "class"
+      ],
+      "entry_id": "class-section-list"
+    },
+    {
+      "tokens": [
+        "what",
+        "sections",
+        "class"
+      ],
+      "entry_id": "class-section-list"
+    },
+    {
+      "tokens": [
+        "number",
+        "students",
+        "each",
+        "class",
+        "and",
+        "section"
+      ],
+      "entry_id": "class-student-count-each"
+    },
+    {
+      "tokens": [
+        "student",
+        "count",
+        "class",
+        "and",
+        "section"
+      ],
+      "entry_id": "class-student-count-each"
+    },
+    {
+      "tokens": [
+        "section",
+        "wise",
+        "student",
+        "count"
+      ],
+      "entry_id": "class-student-count-each"
+    },
+    {
+      "tokens": [
+        "students",
+        "per",
+        "section"
+      ],
+      "entry_id": "class-student-count-each"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "subjects"
+      ],
+      "entry_id": "subject-list-all"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "subjects"
+      ],
+      "entry_id": "subject-list-all"
+    },
+    {
+      "tokens": [
+        "display",
+        "all",
+        "subjects"
+      ],
+      "entry_id": "subject-list-all"
+    },
+    {
+      "tokens": [
+        "what",
+        "subjects",
+        "there"
+      ],
+      "entry_id": "subject-list-all"
+    },
+    {
+      "tokens": [
+        "get",
+        "subject",
+        "list"
+      ],
+      "entry_id": "subject-list-all"
+    },
+    {
+      "tokens": [
+        "many",
+        "subjects",
+        "offered"
+      ],
+      "entry_id": "subject-count-total"
+    },
+    {
+      "tokens": [
+        "total",
+        "subject",
+        "count"
+      ],
+      "entry_id": "subject-count-total"
+    },
+    {
+      "tokens": [
+        "number",
+        "active",
+        "subjects"
+      ],
+      "entry_id": "subject-count-total"
+    },
+    {
+      "tokens": [
+        "count",
+        "subjects"
+      ],
+      "entry_id": "subject-count-total"
+    },
+    {
+      "tokens": [
+        "many",
+        "subjects"
+      ],
+      "entry_id": "subject-count-total"
+    },
+    {
+      "tokens": [
+        "count",
+        "subjects",
+        "category"
+      ],
+      "entry_id": "subject-count-by-category"
+    },
+    {
+      "tokens": [
+        "subject",
+        "breakdown",
+        "category"
+      ],
+      "entry_id": "subject-count-by-category"
+    },
+    {
+      "tokens": [
+        "many",
+        "subjects",
+        "each",
+        "category"
+      ],
+      "entry_id": "subject-count-by-category"
+    },
+    {
+      "tokens": [
+        "subject",
+        "category",
+        "distribution"
+      ],
+      "entry_id": "subject-count-by-category"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "active",
+        "subjects"
+      ],
+      "entry_id": "subject-list-active"
+    },
+    {
+      "tokens": [
+        "list",
+        "active",
+        "subjects"
+      ],
+      "entry_id": "subject-list-active"
+    },
+    {
+      "tokens": [
+        "currently",
+        "active",
+        "subjects"
+      ],
+      "entry_id": "subject-list-active"
+    },
+    {
+      "tokens": [
+        "available",
+        "subjects"
+      ],
+      "entry_id": "subject-list-active"
+    },
+    {
+      "tokens": [
+        "what",
+        "subjects",
+        "class",
+        "have"
+      ],
+      "entry_id": "subject-list-by-class"
+    },
+    {
+      "tokens": [
+        "subjects",
+        "class"
+      ],
+      "entry_id": "subject-list-by-class"
+    },
+    {
+      "tokens": [
+        "list",
+        "subjects",
+        "class"
+      ],
+      "entry_id": "subject-list-by-class"
+    },
+    {
+      "tokens": [
+        "subjects",
+        "taught",
+        "class"
+      ],
+      "entry_id": "subject-list-by-class"
+    },
+    {
+      "tokens": [
+        "what",
+        "current",
+        "academic",
+        "year"
+      ],
+      "entry_id": "academic-year-current"
+    },
+    {
+      "tokens": [
+        "current",
+        "academic",
+        "year"
+      ],
+      "entry_id": "academic-year-current"
+    },
+    {
+      "tokens": [
+        "academic",
+        "year",
+        "active"
+      ],
+      "entry_id": "academic-year-current"
+    },
+    {
+      "tokens": [
+        "current",
+        "school",
+        "year"
+      ],
+      "entry_id": "academic-year-current"
+    },
+    {
+      "tokens": [
+        "list",
+        "all",
+        "academic",
+        "years"
+      ],
+      "entry_id": "academic-year-list"
+    },
+    {
+      "tokens": [
+        "show",
+        "all",
+        "academic",
+        "years"
+      ],
+      "entry_id": "academic-year-list"
+    },
+    {
+      "tokens": [
+        "all",
+        "school",
+        "years"
+      ],
+      "entry_id": "academic-year-list"
+    },
+    {
+      "tokens": [
+        "academic",
+        "year",
+        "history"
+      ],
+      "entry_id": "academic-year-list"
+    },
+    {
+      "tokens": [
+        "show",
+        "active",
+        "academic",
+        "years"
+      ],
+      "entry_id": "academic-year-active"
+    },
+    {
+      "tokens": [
+        "list",
+        "active",
+        "academic",
+        "years"
+      ],
+      "entry_id": "academic-year-active"
+    },
+    {
+      "tokens": [
+        "currently",
+        "active",
+        "academic",
+        "years"
+      ],
+      "entry_id": "academic-year-active"
+    },
+    {
+      "tokens": [
+        "academic",
+        "years",
+        "active"
+      ],
+      "entry_id": "academic-year-active"
+    },
+    {
+      "tokens": [
+        "many",
+        "academic",
+        "years",
+        "configured"
+      ],
+      "entry_id": "academic-year-count"
+    },
+    {
+      "tokens": [
+        "total",
+        "academic",
+        "year",
+        "count"
+      ],
+      "entry_id": "academic-year-count"
+    },
+    {
+      "tokens": [
+        "number",
+        "academic",
+        "years"
+      ],
+      "entry_id": "academic-year-count"
+    },
+    {
+      "tokens": [
+        "many",
+        "school",
+        "years"
+      ],
+      "entry_id": "academic-year-count"
+    },
+    {
+      "tokens": [
+        "many",
+        "admission",
+        "applications",
+        "there"
+      ],
+      "entry_id": "admission-count-total"
+    },
+    {
+      "tokens": [
+        "total",
+        "admissions"
+      ],
+      "entry_id": "admission-count-total"
+    },
+    {
+      "tokens": [
+        "number",
+        "admission",
+        "applications"
+      ],
+      "entry_id": "admission-count-total"
+    },
+    {
+      "tokens": [
+        "admission",
+        "application",
+        "count"
+      ],
+      "entry_id": "admission-count-total"
+    },
+    {
+      "tokens": [
+        "count",
+        "admissions",
+        "status"
+      ],
+      "entry_id": "admission-count-by-status"
+    },
+    {
+      "tokens": [
+        "admission",
+        "status",
+        "breakdown"
+      ],
+      "entry_id": "admission-count-by-status"
+    },
+    {
+      "tokens": [
+        "many",
+        "admissions",
+        "each",
+        "status"
+      ],
+      "entry_id": "admission-count-by-status"
+    },
+    {
+      "tokens": [
+        "admissions",
+        "grouped",
+        "status"
+      ],
+      "entry_id": "admission-count-by-status"
+    },
+    {
+      "tokens": [
+        "show",
+        "pending",
+        "admission",
+        "applications"
+      ],
+      "entry_id": "admission-list-inquiry"
+    },
+    {
+      "tokens": [
+        "list",
+        "inquiry",
+        "admissions"
+      ],
+      "entry_id": "admission-list-inquiry"
+    },
+    {
+      "tokens": [
+        "applications",
+        "pending",
+        "review"
+      ],
+      "entry_id": "admission-list-inquiry"
+    },
+    {
+      "tokens": [
+        "new",
+        "admission",
+        "inquiries"
+      ],
+      "entry_id": "admission-list-inquiry"
+    },
+    {
+      "tokens": [
+        "show",
+        "admission",
+        "inquiries"
+      ],
+      "entry_id": "admission-list-inquiry"
+    }
+  ],
+  "max_self_score": 18.668459257973094
+}
