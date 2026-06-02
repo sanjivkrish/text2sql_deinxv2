@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text-to-SQL v2 – Debug UI</title>
+  <style>
+    body { font-family: monospace; padding: 20px; max-width: 960px; margin: 0 auto; }
+    textarea, input { width: 100%; box-sizing: border-box; margin: 4px 0; }
+    label { display: block; margin: 6px 0; }
+    button { margin: 4px; padding: 8px 16px; cursor: pointer; }
+    .panel { background: #f4f4f4; padding: 12px; margin: 8px 0; border-radius: 4px; }
+    pre { overflow: auto; max-height: 400px; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .err { color: red; }
+    .ok { color: green; }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 0; margin-top: 16px; border-bottom: 2px solid #ccc; }
+    .tab-btn {
+      padding: 8px 18px; cursor: pointer; border: 1px solid #ccc;
+      border-bottom: none; background: #eee; margin-right: 2px;
+      border-radius: 4px 4px 0 0; font-family: monospace; font-size: 14px;
+    }
+    .tab-btn.active { background: #fff; border-bottom: 2px solid #fff; margin-bottom: -2px; font-weight: bold; }
+    .tab-pane { display: none; padding: 12px; background: #fff; border: 1px solid #ccc; border-top: none; }
+    .tab-pane.active { display: block; }
+    #tabs-container { display: none; }
+
+    .loading { color: #888; font-style: italic; padding: 12px 0; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-left: 6px; }
+    .badge-warn { background: #ffe0b2; color: #e65100; }
+    .badge-ok { background: #c8e6c9; color: #1b5e20; }
+  </style>
+</head>
+<body>
+  <h2>Text-to-SQL v2 — Debug UI</h2>
+
+  <label>Query:
+    <textarea id="q" rows="3" placeholder="e.g. how many students are in each class"></textarea>
+  </label>
+  <label>School ID (UUID):
+    <input id="sid" value="00000000-0000-4000-a000-000000000001" />
+  </label>
+  <label>Limit:
+    <input id="lim" type="number" value="10" />
+  </label>
+
+  <div>
+    <button onclick="run('plan')">Plan Only</button>
+    <button onclick="run('query')">Full Query</button>
+    <button onclick="run('health')">Health Check</button>
+  </div>
+
+  <div id="loading" class="loading" style="display:none">Running…</div>
+  <div id="error-box" class="panel err" style="display:none"></div>
+
+  <div id="tabs-container">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('summary')">Summary</button>
+      <button class="tab-btn" onclick="switchTab('sql')" id="tab-btn-sql">SQL</button>
+      <button class="tab-btn" onclick="switchTab('cost')">Token Cost</button>
+      <button class="tab-btn" onclick="switchTab('raw')">Raw JSON</button>
+    </div>
+    <div id="pane-summary" class="tab-pane active">
+      <div id="summary-text"></div>
+      <div id="warnings-box" style="display:none;margin-top:8px;"></div>
+    </div>
+    <div id="pane-sql" class="tab-pane">
+      <pre id="sql-text" style="background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:4px;"></pre>
+    </div>
+    <div id="pane-cost" class="tab-pane">
+      <pre id="cost-text"></pre>
+    </div>
+    <div id="pane-raw" class="tab-pane">
+      <pre id="raw-text"></pre>
+    </div>
+  </div>
+
+  <script>
+    let activeTab = 'summary';
+
+    function switchTab(name) {
+      activeTab = name;
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('pane-' + name).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    async function run(mode) {
+      const q   = document.getElementById('q').value.trim();
+      const sid = document.getElementById('sid').value.trim();
+      const lim = parseInt(document.getElementById('lim').value) || 10;
+
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('error-box').style.display = 'none';
+      document.getElementById('tabs-container').style.display = 'none';
+
+      const body = mode === 'health' ? null
+                 : JSON.stringify({ query: q, school_id: sid, limit: lim });
+      const url  = mode === 'health' ? '/proxy/health'
+                 : mode === 'plan'   ? '/proxy/query/plan'
+                 : '/proxy/query';
+      const method = mode === 'health' ? 'GET' : 'POST';
+
+      let data;
+      try {
+        const resp = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body,
+        });
+        data = await resp.json();
+      } catch (e) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error-box').style.display = 'block';
+        document.getElementById('error-box').textContent = 'Network error: ' + e.message;
+        return;
+      }
+
+      document.getElementById('loading').style.display = 'none';
+
+      // Show error panel for API errors
+      if (data.detail || data.error) {
+        document.getElementById('error-box').style.display = 'block';
+        document.getElementById('error-box').innerHTML =
+          '<b>Error</b><pre>' + escHtml(JSON.stringify(data, null, 2)) + '</pre>';
+        return;
+      }
+
+      // Populate tabs
+      // Summary
+      document.getElementById('summary-text').innerHTML =
+        data.summary ? `<p style="white-space:pre-wrap">${escHtml(data.summary)}</p>`
+                     : '<p style="color:#888">No summary (plan-only mode)</p>';
+
+      const wbox = document.getElementById('warnings-box');
+      if (data.warnings && data.warnings.length) {
+        wbox.style.display = 'block';
+        wbox.innerHTML = '<span class="badge badge-warn">⚠ Warnings</span><ul>' +
+          data.warnings.map(w => `<li>${escHtml(w)}</li>`).join('') + '</ul>';
+      } else {
+        wbox.style.display = 'none';
+      }
+
+      // SQL
+      const sqlBtn = document.getElementById('tab-btn-sql');
+      if (data.sql) {
+        document.getElementById('sql-text').textContent = data.sql;
+        sqlBtn.textContent = 'SQL';
+        sqlBtn.classList.remove('err');
+      } else if (mode === 'plan' && data.intent) {
+        // Plan-only: synthesize SQL preview from intent
+        const sp = data.intent.structural_plan || {};
+        const tables = (sp.tables || []).join(', ');
+        const joins  = (sp.join_conditions || []).map(j => 'LEFT JOIN ... ON ' + j).join('\n');
+        const filters = (data.intent.filters || []).map(f =>
+          `${f.table}.${f.column} ${f.operator} ${f.value}`).join('\n  AND ');
+        const preview = [
+          'SELECT ' + (sp.select_columns || ['*']).join(', '),
+          'FROM ' + tables,
+          joins,
+          filters ? 'WHERE ' + filters : '',
+        ].filter(Boolean).join('\n');
+        document.getElementById('sql-text').textContent = preview + '\n\n-- (plan preview — not executed)';
+        sqlBtn.textContent = 'SQL (preview)';
+      } else {
+        document.getElementById('sql-text').textContent = '-- SQL not available for this response';
+        sqlBtn.textContent = 'SQL';
+      }
+
+      // Token cost
+      document.getElementById('cost-text').textContent =
+        data.token_usage ? JSON.stringify(data.token_usage, null, 2) : 'N/A';
+
+      // Raw JSON
+      document.getElementById('raw-text').textContent = JSON.stringify(data, null, 2);
+
+      // Show tabs, restore last active or default to summary
+      document.getElementById('tabs-container').style.display = 'block';
+      // Keep the user on whatever tab they were on if it exists
+      const pane = document.getElementById('pane-' + activeTab);
+      if (pane) {
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        pane.classList.add('active');
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          if (b.textContent.toLowerCase().startsWith(activeTab)) b.classList.add('active');
+        });
+      }
+    }
+  </script>
+</body>
+</html>

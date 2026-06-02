@@ -57,6 +57,8 @@ def run_query(req: QueryRequest):
     plan = state.get("query_plan")
     sql_result = state.get("sql_result")
 
+    run_result = state.get("run_result")
+
     return QueryResponse(
         query=req.query,
         school_id=req.school_id,
@@ -65,6 +67,7 @@ def run_query(req: QueryRequest):
         confidence=plan.confidence if plan else 0.0,
         warnings=sql_result.warnings if sql_result else [],
         timing={"total_ms": total_ms},
+        sql=run_result.sql if run_result else (sql_result.sql if sql_result else None),
     )
 
 

@@ -20,6 +20,7 @@ class QueryResponse(BaseModel):
     confidence: float
     warnings: list[str]
     timing: dict[str, float]
+    sql: str | None = None  # school_id-injected SQL that executed; None for plan-only
 
     @field_validator('confidence')
     @classmethod

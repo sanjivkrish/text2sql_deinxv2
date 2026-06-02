@@ -65,11 +65,13 @@ class SQLClauseBuilder:
         for agg in intent.aggregations:
             try:
                 _safe_ident(agg.table)
-                _safe_ident(agg.column)
+                if agg.column != "*":
+                    _safe_ident(agg.column)
             except ValueError as e:
                 warnings.append(str(e))
                 continue
-            agg_col = f"{agg.function}({agg.table}.{agg.column})"
+            # COUNT(*) is standard; COUNT(table.*) is invalid SQL
+            agg_col = f"{agg.function}(*)" if agg.column == "*" else f"{agg.function}({agg.table}.{agg.column})"
             if agg_col not in select_parts:
                 if f"{agg.table}.*" in select_parts:
                     select_parts = [agg_col if s == f"{agg.table}.*" else s for s in select_parts]
@@ -118,7 +120,7 @@ class SQLClauseBuilder:
                 warnings.append(str(e))
                 continue
 
-            # Fix 1: validate numeric and bool values
+            # validate and format filter value by type
             if f.value_type in ("string", "text", "name"):
                 val = _quote_string(f.value)
             elif f.value_type in ("int", "integer", "number"):
@@ -133,6 +135,19 @@ class SQLClauseBuilder:
                     continue
                 else:
                     val = f.value.strip().lower()
+            elif f.value_type == "date":
+                # ISO date literal — quote as string, PostgreSQL casts automatically
+                val = _quote_string(f.value.strip())
+            elif f.value_type == "expression":
+                # Safe SQL expressions: only allow CURRENT_DATE arithmetic and intervals
+                raw = f.value.strip()
+                if not re.fullmatch(
+                    r"CURRENT_DATE(\s*[-+]\s*INTERVAL\s*'\d+\s+\w+')?",
+                    raw, re.IGNORECASE
+                ):
+                    warnings.append(f"Unsafe expression rejected for {f.table}.{f.column}: {raw!r}")
+                    continue
+                val = raw
             else:
                 val = _quote_string(f.value)
 
