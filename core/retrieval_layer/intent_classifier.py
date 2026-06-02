@@ -36,7 +36,12 @@ def _rule_classify(query: str) -> tuple[str, float] | None:
         return "FILTERED_LIST", 0.80
     return None
 
-def _llm_classify(query: str, plan: QueryPlan, intent_hint: tuple[str, float] | None = None) -> QueryIntentJSON:
+def _llm_classify(
+    query: str,
+    plan: QueryPlan,
+    intent_hint: tuple[str, float] | None = None,
+    few_shot_examples: list[dict] | None = None,
+) -> QueryIntentJSON:
     """LLM classification with optional rule-based intent hint."""
     import litellm, os
     from core.schema_layer.graph_store import GraphStore
@@ -87,12 +92,22 @@ def _llm_classify(query: str, plan: QueryPlan, intent_hint: tuple[str, float] | 
     if intent_hint:
         hint_line = f"Hint: rule pre-classifier detected intent '{intent_hint[0]}' (confidence {intent_hint[1]}). Use this as a strong prior.\n"
 
+    few_shot_block = ""
+    if few_shot_examples:
+        lines = ["Verified examples from FAQ cache (use as structural reference):"]
+        for ex in few_shot_examples[:3]:
+            lines.append(
+                f'  - "{ex.get("question", "")}" → intent: {ex.get("intent", "")}, '
+                f'tables: {ex.get("tables", [])}'
+            )
+        few_shot_block = "\n".join(lines) + "\n\n"
+
     prompt = f"""You are classifying a school ERP natural-language query.
 
 Today's date: {today}
 Query: "{query}"
 Tables likely involved: {plan.recommended_tables}
-{hint_line}{schema_hint}{joins_hint}Intent types:
+{hint_line}{few_shot_block}{schema_hint}{joins_hint}Intent types:
 - POINT_LOOKUP: query about a specific named person or record (e.g. "find student Amudha", "details about teacher Ravi")
 - FILTERED_LIST: list filtered by one or more conditions (e.g. "all active students in grade 5")
 - AGGREGATION: count, sum, or average (e.g. "how many students", "total staff")
@@ -215,9 +230,12 @@ Return valid JSON only:
     )
 
 class IntentClassifier:
-    def classify(self, query: str, plan: QueryPlan) -> QueryIntentJSON:
-        # Always use LLM for full detail extraction (filters, aggregations, ordering).
-        # Rule pre-classifier provides a high-confidence hint to bias the LLM.
+    def classify(
+        self,
+        query: str,
+        plan: QueryPlan,
+        few_shot_examples: list[dict] | None = None,
+    ) -> QueryIntentJSON:
         rule_result = _rule_classify(query)
-        return _llm_classify(query, plan, intent_hint=rule_result)
+        return _llm_classify(query, plan, intent_hint=rule_result, few_shot_examples=few_shot_examples)
 

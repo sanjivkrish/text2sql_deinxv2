@@ -52,7 +52,11 @@ def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
 
     def classifier_node(state: PipelineState) -> PipelineState:
         try:
-            intent = classifier.classify(state["query"], state["query_plan"])
+            intent = classifier.classify(
+                state["query"],
+                state["query_plan"],
+                few_shot_examples=state.get("few_shot_examples"),
+            )
             return {**state, "intent": intent}
         except Exception as e:
             return {**state, "error": str(e)}
