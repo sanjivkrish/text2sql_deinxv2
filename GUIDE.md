@@ -153,7 +153,7 @@ Copy `.env.example` to `.env` and set:
 |----------|----------|-------------|
 | `DB_URL` | Yes | PostgreSQL connection string (`postgresql://user:pass@host/db`) |
 | `LLM_MODEL` | Yes | LiteLLM model string, e.g. `openai/gpt-4o-mini` |
-| `OPENAI_API_KEY` | Yes* | API key for your LLM provider (*or equivalent) |
+| `GROQ_API_KEY` / `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | Yes* | API key matching your `LLM_MODEL` provider |
 | `INTERNAL_SECRET` | Yes | Shared secret between Worker and FastAPI |
 | `SCHEMA_PATH` | No | Path to schema graph JSON; default `db/schema_index.json` |
 | `DEBUG` | No | Set `true` to enable the debug UI server; **never set in production** |

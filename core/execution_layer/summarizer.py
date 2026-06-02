@@ -3,9 +3,9 @@ import os
 import litellm
 from core.models.result import QueryRunResult, TokenUsage
 
-# Cost per 1M tokens (approximate, update when model changes)
-_COST_PER_INPUT_TOKEN = 3.0 / 1_000_000   # $3/M input
-_COST_PER_OUTPUT_TOKEN = 15.0 / 1_000_000  # $15/M output
+# Cost per 1M tokens — groq/llama-3.3-70b-versatile pricing (update when model changes)
+_COST_PER_INPUT_TOKEN = 0.59 / 1_000_000   # $0.59/M input
+_COST_PER_OUTPUT_TOKEN = 0.79 / 1_000_000  # $0.79/M output
 
 
 class ResultSummarizer:
