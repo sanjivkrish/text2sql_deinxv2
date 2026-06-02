@@ -55,3 +55,44 @@ def test_school_id_injection_rejects_invalid_uuid():
     sql = "SELECT * FROM students\nLIMIT 10"
     with pytest.raises(ValueError, match="school_id"):
         runner._inject_school_id(sql, "not-a-uuid", "students")
+
+
+# --- ResultSummarizer tests ---
+
+from unittest.mock import MagicMock, patch
+from core.execution_layer.summarizer import ResultSummarizer
+from core.models.result import QueryRunResult, TokenUsage
+
+SAMPLE_RUN = QueryRunResult(
+    rows=[{"full_name": "Alice", "school_id": "uuid-1"}, {"full_name": "Bob", "school_id": "uuid-1"}],
+    row_count=2,
+    execution_time_ms=42.0,
+    sql="SELECT * FROM students WHERE students.school_id = 'uuid-1'\nLIMIT 10",
+)
+
+def test_summarizer_returns_string_and_token_usage():
+    with patch("litellm.completion") as mock_llm:
+        mock_resp = MagicMock()
+        mock_resp.choices[0].message.content = "There are 2 students."
+        mock_resp.usage.prompt_tokens = 100
+        mock_resp.usage.completion_tokens = 20
+        mock_resp.usage.total_tokens = 120
+        mock_llm.return_value = mock_resp
+        summarizer = ResultSummarizer()
+        summary, usage = summarizer.summarize("show all students", SAMPLE_RUN)
+        assert "2" in summary or "students" in summary.lower()
+        assert usage.total_tokens == 120
+
+def test_summarizer_empty_rows():
+    with patch("litellm.completion") as mock_llm:
+        mock_resp = MagicMock()
+        mock_resp.choices[0].message.content = "No students found."
+        mock_resp.usage.prompt_tokens = 50
+        mock_resp.usage.completion_tokens = 10
+        mock_resp.usage.total_tokens = 60
+        mock_llm.return_value = mock_resp
+        summarizer = ResultSummarizer()
+        run = QueryRunResult(rows=[], row_count=0, execution_time_ms=10.0, sql="SELECT *")
+        summary, usage = summarizer.summarize("show students", run)
+        assert isinstance(summary, str)
+        assert usage.total_tokens > 0
