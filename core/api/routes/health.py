@@ -33,7 +33,7 @@ def health():
     db_ok = False
     try:
         import psycopg
-        with psycopg.connect(_db_url, connect_timeout=2, prepare_threshold=0) as conn:
+        with psycopg.connect(_db_url, connect_timeout=2, prepare_threshold=None) as conn:
             conn.execute("SELECT 1")
         db_ok = True
     except Exception:
