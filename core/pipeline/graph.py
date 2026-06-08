@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import TypedDict, NamedTuple
 from langgraph.graph import StateGraph, END
 from core.models.query import QueryPlan
 from core.models.intent import QueryIntentJSON
@@ -25,6 +25,13 @@ class PipelineState(TypedDict, total=False):
     summary: str | None
     token_usage: TokenUsage | None
     error: str | None
+    few_shot_examples: list[dict] | None
+
+
+class PipelineParts(NamedTuple):
+    graph: object
+    runner: "SQLRunner"
+    summarizer: "ResultSummarizer"
 
 
 def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
@@ -45,7 +52,11 @@ def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
 
     def classifier_node(state: PipelineState) -> PipelineState:
         try:
-            intent = classifier.classify(state["query"], state["query_plan"])
+            intent = classifier.classify(
+                state["query"],
+                state["query_plan"],
+                few_shot_examples=state.get("few_shot_examples"),
+            )
             return {**state, "intent": intent}
         except Exception as e:
             return {**state, "error": str(e)}
@@ -116,4 +127,4 @@ def build_pipeline(schema_path: str = "db/schema_index.json", db_url: str = ""):
     sg.add_edge("summarizer", END)
     sg.add_edge("error_node", END)
 
-    return sg.compile()
+    return PipelineParts(graph=sg.compile(), runner=runner, summarizer=summarizer)

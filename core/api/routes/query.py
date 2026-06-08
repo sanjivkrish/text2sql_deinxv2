@@ -8,6 +8,7 @@ from core.schema_layer.graph_store import GraphStore
 router = APIRouter()
 _pipeline = None
 _store: GraphStore | None = None
+_rag = None
 
 # Destructive / adversarial tokens that have no place in a read-only NL query interface
 _DESTRUCTIVE_TOKENS = frozenset({
@@ -36,10 +37,13 @@ def _has_destructive_intent(query: str) -> bool:
     return False
 
 
-def init(pipeline, store: GraphStore):
-    global _pipeline, _store
+def init(pipeline, store: GraphStore, runner=None, summarizer=None):
+    global _pipeline, _store, _rag
+    from rag.interceptor import RAGInterceptor
     _pipeline = pipeline
     _store = store
+    if runner is not None and summarizer is not None:
+        _rag = RAGInterceptor(runner=runner, summarizer=summarizer)
 
 
 class QueryRequest(BaseModel):
@@ -60,11 +64,17 @@ def run_query(req: QueryRequest):
     from core.api.routes import health as health_routes
     t0 = time.monotonic()
     try:
-        state = _pipeline.invoke({
-            "query": req.query,
-            "school_id": req.school_id,
-            "limit": req.limit,
-        })
+        if _rag is not None:
+            state = _rag.intercept(
+                req.query, req.school_id, req.limit,
+                _pipeline,
+            )
+        else:
+            state = _pipeline.invoke({
+                "query": req.query,
+                "school_id": req.school_id,
+                "limit": req.limit,
+            })
     except Exception as e:
         total_ms = (time.monotonic() - t0) * 1000
         health_routes.record(success=False, latency_ms=total_ms)

@@ -9,13 +9,14 @@ A microservice that translates natural-language questions into PostgreSQL SQL, e
 1. [Prerequisites](#1-prerequisites)
 2. [Project Structure](#2-project-structure)
 3. [Architecture Overview](#3-architecture-overview)
-4. [First-time Setup](#4-first-time-setup)
-5. [Environment Variables](#5-environment-variables)
-6. [Running the API Locally](#6-running-the-api-locally)
-7. [Using the Debug UI](#7-using-the-debug-ui)
-8. [Running Tests](#8-running-tests)
-9. [Cloudflare Worker (Edge)](#9-cloudflare-worker-edge)
-10. [Useful Scripts](#10-useful-scripts)
+4. [RAG BM25 Cache](#4-rag-bm25-cache)
+5. [First-time Setup](#5-first-time-setup)
+6. [Environment Variables](#6-environment-variables)
+7. [Running the API Locally](#7-running-the-api-locally)
+8. [Using the Debug UI](#8-using-the-debug-ui)
+9. [Running Tests](#9-running-tests)
+10. [Cloudflare Worker (Edge)](#10-cloudflare-worker-edge)
+11. [Useful Scripts](#11-useful-scripts)
 
 ---
 
@@ -61,9 +62,19 @@ text-sql-v2/
 │   ├── wrangler.toml     # Worker config
 │   └── package.json
 │
+├── rag/
+│   ├── models.py          # FAQEntry, CorpusDoc, FAQIndex, MatchResult (Pydantic)
+│   ├── indexer.py         # tokenize() + build_index(): faq.jsonl → faq_index.json
+│   ├── retriever.py       # RAGRetriever: BM25 search, 3-tier result
+│   ├── interceptor.py     # RAGInterceptor: wraps pipeline.invoke()
+│   ├── faq.jsonl          # 50 hand-verified NL → SQL FAQ entries
+│   └── faq_index.json     # Pre-built BM25 index (committed; rebuild via scripts/)
+│
 ├── scripts/
-│   ├── build_graph.py    # Introspects live DB → writes db/schema_index.json
-│   └── seed_db.py        # Seeds test data
+│   ├── build_graph.py     # Introspects live DB → writes db/schema_index.json
+│   ├── build_faq_index.py # Builds BM25 index from rag/faq.jsonl
+│   ├── test_faq_sql.py    # Validates every FAQ SQL against live DB (pass/fail)
+│   └── seed_db.py         # Seeds test data
 │
 ├── tests/
 │   ├── unit/             # Layer-isolated tests (mock DB + LLM)
@@ -99,12 +110,18 @@ FastAPI  (core/api/)
   • InProcessRateLimitMiddleware → failsafe in-process rate limit
         │
         ▼
+RAG BM25 Cache  (rag/interceptor.py)          ← NEW
+  DIRECT hit → execute FAQ SQL directly (0 classifier tokens)
+  FEW_SHOT   → inject top-k examples into pipeline state
+  MISS       → fall through to full pipeline unchanged
+        │
+        ▼
 LangGraph Pipeline  (core/pipeline/graph.py)
   planner → classifier → generator → validator → executor → summarizer
         │
         ▼
 PostgreSQL (Neon)
-  All queries have AND institute_id = '<school_id>' injected at execution time
+  All queries have AND {primary_table}.school_id = '<uuid>' injected at execution time
 ```
 
 ### Security invariants
@@ -116,7 +133,59 @@ PostgreSQL (Neon)
 
 ---
 
-## 4. First-time Setup
+## 4. RAG BM25 Cache
+
+A modular FAQ cache that intercepts common queries before they reach the LLM, reducing Groq token usage on repetitive school ERP questions.
+
+### How it works
+
+1. **Query-time:** `RAGRetriever.search(query)` tokenizes the query and scores it against the pre-built BM25 corpus (`rag/faq_index.json`). Each score is normalized against the best-matching corpus document's self-score.
+2. **Three tiers:**
+   | Tier | Score | Behaviour |
+   |------|-------|-----------|
+   | `DIRECT` | ≥ 0.85 | Execute FAQ SQL directly — no classifier, no generator. Only the summarizer runs (LLM cost: summarizer only). |
+   | `FEW_SHOT` | 0.60 – 0.85 | Inject top-3 FAQ matches as few-shot examples into the LLM classifier prompt, improving intent accuracy. |
+   | `MISS` | < 0.60 | Pass through to the full LangGraph pipeline unchanged. |
+3. **Parameterized entries** (`has_variables: true`) are capped at `FEW_SHOT` regardless of score — their SQL uses `%placeholder%` that can't be executed directly.
+4. **School scoping** — FAQ SQL contains no `school_id` literals; `SQLRunner._inject_school_id()` injects it at runtime, identical to the normal pipeline path.
+
+### FAQ corpus
+
+`rag/faq.jsonl` contains 50 hand-verified NL → SQL pairs across four domains:
+
+| Domain | Entries | Examples |
+|--------|---------|---------|
+| Student management | 15 | enrollment counts, lists by class/section, withdrawn students |
+| Staff management | 15 | active staff, gender breakdown, TET certification, class teachers |
+| Classes & subjects | 13 | section counts, subjects per class, class student distribution |
+| Academics & admissions | 7 | current academic year, admission status breakdown |
+
+### Rebuilding the FAQ index
+
+Only needed when `rag/faq.jsonl` is edited:
+
+```bash
+uv run python scripts/build_faq_index.py
+# Output:
+#   Built index → rag/faq_index.json
+#   Entries:       50
+#   Corpus docs:   222
+#   max_self_score: 18.6685
+git add rag/faq_index.json
+git commit -m "chore: rebuild FAQ BM25 index"
+```
+
+### Validating FAQ SQL against the live DB
+
+```bash
+# Requires DB_URL and TEST_SCHOOL_ID in .env (or as env vars)
+TEST_SCHOOL_ID=<uuid> uv run python scripts/test_faq_sql.py
+# Reports PASS / FAIL / SKIP (parameterized) per entry
+```
+
+---
+
+## 5. First-time Setup
 
 ```bash
 # 1. Clone and enter the repo
@@ -145,7 +214,7 @@ uv run python scripts/build_graph.py
 
 ---
 
-## 5. Environment Variables
+## 6. Environment Variables
 
 Copy `.env.example` to `.env` and set:
 
@@ -162,7 +231,7 @@ Copy `.env.example` to `.env` and set:
 
 ---
 
-## 6. Running the API Locally
+## 7. Running the API Locally
 
 ```bash
 # Start FastAPI with hot-reload on port 8000
@@ -207,7 +276,7 @@ curl -X POST http://localhost:8000/query/plan \
 
 ---
 
-## 7. Using the Debug UI
+## 8. Using the Debug UI
 
 The debug UI is a local single-file HTTP server that provides a browser form for testing the pipeline without writing curl commands.
 
@@ -240,7 +309,7 @@ The debug server proxies all calls through `/proxy/*` to the local FastAPI, auto
 
 ---
 
-## 8. Running Tests
+## 9. Running Tests
 
 ```bash
 # All tests
@@ -263,14 +332,14 @@ TEST_SCHOOL_ID=<uuid> uv run pytest tests/e2e/ -v --tb=short
 
 | Suite | What it tests | DB / LLM |
 |-------|--------------|----------|
-| `tests/unit/` | Each layer in isolation | Mocked |
+| `tests/unit/` | Each layer in isolation, including RAG models/indexer/retriever/interceptor | Mocked |
 | `tests/integration/test_pipeline.py` | Full LangGraph pipeline | Mocked |
 | `tests/integration/test_api_routes.py` | All 5 API routes + auth + rate limit | Mocked |
 | `tests/e2e/` | 40+ NL questions, full round-trip | Live |
 
 ---
 
-## 9. Cloudflare Worker (Edge)
+## 10. Cloudflare Worker (Edge)
 
 The Worker sits in front of the FastAPI backend. It handles public-facing auth, rate limiting, and CORS so the backend only needs to validate `X-Internal-Token`.
 
@@ -324,7 +393,7 @@ wrangler deploy
 
 ---
 
-## 10. Useful Scripts
+## 11. Useful Scripts
 
 ### Rebuild the schema graph
 
@@ -345,6 +414,25 @@ uv run python scripts/seed_db.py
 ```
 
 Inserts a test school and sample rows for unit/integration testing.
+
+### Rebuild the FAQ BM25 index
+
+Run after editing `rag/faq.jsonl`:
+
+```bash
+uv run python scripts/build_faq_index.py
+git add rag/faq_index.json
+git commit -m "chore: rebuild FAQ BM25 index"
+```
+
+### Validate FAQ SQL against live DB
+
+```bash
+# Set TEST_SCHOOL_ID to any valid UUID from your DB
+TEST_SCHOOL_ID=<uuid> uv run python scripts/test_faq_sql.py
+```
+
+Runs each non-parameterized FAQ entry through the production `SQLRunner` (with school_id injection) and reports PASS / FAIL / SKIP per entry. Exits 1 if any entry fails.
 
 ### Generate a fresh requirements.txt
 
