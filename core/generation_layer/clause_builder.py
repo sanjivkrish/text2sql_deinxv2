@@ -57,9 +57,15 @@ class SQLClauseBuilder:
 
         # SELECT clause — re-anchor a single wildcard to the resolved primary table
         # so SELECT doesn't reference a table that was never added to the FROM chain.
-        select_parts = sp.select_columns if sp.select_columns else [f"{primary_table}.*"]
-        if len(select_parts) == 1 and select_parts[0].endswith(".*"):
-            select_parts = [f"{primary_table}.*"]
+        # For pure aggregation queries drop any raw column selections — they would
+        # bleed into GROUP BY and produce invalid "GROUP BY table.id" on a COUNT(*).
+        is_pure_agg = bool(intent.aggregations) and not intent.ordering
+        if is_pure_agg:
+            select_parts = []
+        else:
+            select_parts = sp.select_columns if sp.select_columns else [f"{primary_table}.*"]
+            if len(select_parts) == 1 and select_parts[0].endswith(".*"):
+                select_parts = [f"{primary_table}.*"]
 
         # Fix 3: inject aggregations — replace wildcard if present, otherwise prepend
         for agg in intent.aggregations:

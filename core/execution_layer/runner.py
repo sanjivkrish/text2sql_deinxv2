@@ -52,7 +52,16 @@ class SQLRunner:
             sep = "\n"
             limit_part = None
 
-        if re.search(r'\bWHERE\b', before_limit, re.IGNORECASE):
+        # Insert school_id before GROUP BY / ORDER BY, not after — invalid SQL otherwise
+        group_match = re.search(r'\n(GROUP BY|ORDER BY)\b', before_limit, re.IGNORECASE)
+        if group_match:
+            pre_group = before_limit[:group_match.start()]
+            post_group = before_limit[group_match.start():]
+            if re.search(r'\bWHERE\b', pre_group, re.IGNORECASE):
+                injected_body = pre_group + f"\n  AND {condition}" + post_group
+            else:
+                injected_body = pre_group + f"\nWHERE {condition}" + post_group
+        elif re.search(r'\bWHERE\b', before_limit, re.IGNORECASE):
             injected_body = before_limit + f"\n  AND {condition}"
         else:
             injected_body = before_limit + f"\nWHERE {condition}"
