@@ -26,12 +26,76 @@ class SQLClauseBuilder:
     def __init__(self, schema: dict):
         self._schema = schema
 
+    def _build_multi_table_agg(self, intent: QueryIntentJSON, warnings: list[str]) -> SQLResult | None:
+        """
+        When aggregations span multiple unrelated tables (e.g. COUNT students + COUNT staff),
+        joining them produces a cartesian product. Use scalar subqueries instead.
+        Triggered when: pure aggregation, 2+ aggregations on distinct tables, no shared FK chain.
+        """
+        agg_tables = [a.table for a in intent.aggregations]
+        if len(set(agg_tables)) < 2:
+            return None  # single-table agg — use normal path
+
+        # Only trigger when every aggregation table has school_id (can be independently scoped)
+        for t in set(agg_tables):
+            info = self._schema["tables"].get(t)
+            if not info or not info.get("has_school_id"):
+                return None
+
+        _ALLOWED_AGG = {"COUNT", "SUM", "AVG", "MIN", "MAX"}
+        subqueries = []
+        for agg in intent.aggregations:
+            if agg.function.upper() not in _ALLOWED_AGG:
+                warnings.append(f"Unsupported aggregation '{agg.function}' skipped")
+                continue
+            try:
+                tbl = _safe_ident(agg.table)
+            except ValueError as e:
+                warnings.append(str(e))
+                continue
+
+            agg_expr = "COUNT(*)" if agg.column == "*" else f"{agg.function}({tbl}.{agg.column})"
+            alias = f"{tbl}_{agg.function.lower()}"
+
+            # Per-table filters
+            tbl_filters = [f for f in intent.filters if f.table == agg.table]
+            where_parts = []
+            for f in tbl_filters:
+                val = _quote_string(f.value) if f.value_type in ("string", "text", "name") else f.value
+                op = f.operator.strip().upper()
+                if op in _ALLOWED_OPERATORS:
+                    where_parts.append(f"{tbl}.{f.column} {op} {val}")
+
+            # Soft-delete guard
+            info = self._schema["tables"].get(tbl, {})
+            if info.get("has_soft_delete"):
+                where_parts.append(f"{tbl}.deleted_at IS NULL")
+
+            # school_id is injected by the runner; include as a placeholder column filter
+            where_parts.insert(0, f"{tbl}.school_id = '__SCHOOL_ID__'")
+            where_clause = "WHERE " + " AND ".join(where_parts)
+
+            subqueries.append(f"  (SELECT {agg_expr} FROM {tbl} {where_clause}) AS {alias}")
+
+        if not subqueries:
+            return None
+
+        sql = "SELECT\n" + ",\n".join(subqueries)
+        return SQLResult(sql=sql, confidence_score=0.85, warnings=warnings, value_extractions={})
+
     def build(self, intent: QueryIntentJSON, limit: int = 100) -> SQLResult:
         warnings: list[str] = []
         sp = intent.structural_plan
         tables = sp.tables
         if not tables:
             return SQLResult(sql="", confidence_score=0.0, warnings=["No tables resolved"], value_extractions={})
+
+        # Multi-table aggregation — use scalar subqueries to avoid cartesian products
+        is_pure_agg = bool(intent.aggregations) and not intent.ordering
+        if is_pure_agg and len({a.table for a in intent.aggregations}) >= 2:
+            result = self._build_multi_table_agg(intent, warnings)
+            if result is not None:
+                return result
 
         # Prefer a primary table that participates in at least one join condition.
         # This avoids an orphaned FROM table when the planner/LLM returns an
@@ -59,7 +123,6 @@ class SQLClauseBuilder:
         # so SELECT doesn't reference a table that was never added to the FROM chain.
         # For pure aggregation queries drop any raw column selections — they would
         # bleed into GROUP BY and produce invalid "GROUP BY table.id" on a COUNT(*).
-        is_pure_agg = bool(intent.aggregations) and not intent.ordering
         if is_pure_agg:
             select_parts = []
         else:

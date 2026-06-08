@@ -38,6 +38,10 @@ class SQLRunner:
             raise ValueError(f"Invalid school_id format: {school_id!r}")
         if not _IDENT_RE.match(primary_table):
             raise ValueError(f"Unsafe table identifier: {primary_table!r}")
+
+        # Scalar subquery path — replace all __SCHOOL_ID__ placeholders
+        if "__SCHOOL_ID__" in sql:
+            return sql.replace("'__SCHOOL_ID__'", f"'{school_id}'")
         condition = f"{primary_table}.school_id = '{school_id}'"
 
         # Clause builder always emits LIMIT as the last line ("\nLIMIT n")

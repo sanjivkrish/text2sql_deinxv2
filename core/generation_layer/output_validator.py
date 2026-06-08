@@ -33,9 +33,11 @@ class OutputValidator:
         if "FROM" not in sql.upper():
             issues.append("Rule 2: SQL must contain FROM clause")
 
-        # Rule 3: Must have LIMIT as a clause keyword (not inside a string literal)
+        # Rule 3: Must have LIMIT — waived for scalar subquery style (no top-level FROM)
         stripped_for_limit = re.sub(r"'[^']*'", "", sql)
-        if not re.search(r'\bLIMIT\s+\d+', stripped_for_limit, re.IGNORECASE):
+        is_scalar_subquery = not re.search(r'^\s*SELECT\b.*\bFROM\b', sql, re.IGNORECASE | re.DOTALL) or \
+            re.match(r'\s*SELECT\s*\n\s*\(SELECT\b', sql, re.IGNORECASE)
+        if not is_scalar_subquery and not re.search(r'\bLIMIT\s+\d+', stripped_for_limit, re.IGNORECASE):
             issues.append("Rule 3: SQL must contain LIMIT clause")
 
         # Rule 4: No semicolons (prevent statement stacking)
