@@ -36,3 +36,6 @@ edge/dist/
 
 # Generated — rebuild via scripts/build_graph.py
 # db/schema_index.json is intentionally COMMITTED, not ignored
+.vercel
+.wrangler/
+.claude/
