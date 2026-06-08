@@ -1,5 +1,18 @@
 import psycopg
 
+# Tables excluded from the schema graph — internal/auth tables the LLM should never reference
+_EXCLUDED_TABLES = {
+    "profiles",
+    "school_admin_credentials_mvp",
+    "school_memberships",
+    "role_feature_permissions",
+    "feature_catalog",
+    "school_feature_settings",
+    "parent_form_tokens",
+    "staff_audit_log",
+    "staff_employee_id_sequence",
+}
+
 _TABLES_SQL = """
     SELECT table_name
     FROM information_schema.tables
@@ -41,6 +54,8 @@ class SchemaExtractor:
             table_rows = cur.fetchall()
 
             for (table_name,) in table_rows:
+                if table_name in _EXCLUDED_TABLES:
+                    continue
                 cur.execute(_COLUMNS_SQL, (table_name,), prepare=False)
                 col_rows = cur.fetchall()
                 columns = [
@@ -60,6 +75,7 @@ class SchemaExtractor:
         foreign_keys = [
             {"from_table": ft, "from_column": fc, "to_table": tt, "to_column": tc}
             for ft, fc, tt, tc in fk_rows
+            if ft not in _EXCLUDED_TABLES and tt not in _EXCLUDED_TABLES
         ]
 
         return {"tables": tables, "foreign_keys": foreign_keys}

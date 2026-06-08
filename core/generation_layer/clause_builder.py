@@ -67,8 +67,13 @@ class SQLClauseBuilder:
             if len(select_parts) == 1 and select_parts[0].endswith(".*"):
                 select_parts = [f"{primary_table}.*"]
 
+        _ALLOWED_AGG = {"COUNT", "SUM", "AVG", "MIN", "MAX"}
+
         # Fix 3: inject aggregations — replace wildcard if present, otherwise prepend
         for agg in intent.aggregations:
+            if agg.function.upper() not in _ALLOWED_AGG:
+                warnings.append(f"Unsupported aggregation '{agg.function}' skipped")
+                continue
             try:
                 _safe_ident(agg.table)
                 if agg.column != "*":

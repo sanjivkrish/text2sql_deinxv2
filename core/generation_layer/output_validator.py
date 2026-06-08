@@ -6,6 +6,19 @@ FORBIDDEN_KEYWORDS = {
     "alter", "create", "grant", "revoke", "union",
 }
 
+# Internal/auth tables that must never appear in user-facing queries
+BLOCKED_TABLES = {
+    "profiles",
+    "school_admin_credentials_mvp",
+    "school_memberships",
+    "role_feature_permissions",
+    "feature_catalog",
+    "school_feature_settings",
+    "parent_form_tokens",
+    "staff_audit_log",
+    "staff_employee_id_sequence",
+}
+
 class OutputValidator:
     def validate(self, result: SQLResult) -> dict:
         sql = result.sql.strip()
@@ -45,6 +58,13 @@ class OutputValidator:
         # The students table has no 'class' column; class-based queries must join through class_sections → classes
         if re.search(r'\bstudents\s*\.\s*class\b', sql, re.IGNORECASE):
             issues.append("Rule 8: students.class is invalid — 'class' is a reserved SQL keyword and not a column on students; join through class_sections and classes instead")
+
+        # Rule 9: No internal/auth tables
+        sql_no_literals = re.sub(r"'[^']*'", "", sql)
+        referenced_tables = set(re.findall(r'\b([a-z_][a-z0-9_]*)\b', sql_no_literals.lower()))
+        blocked_hit = referenced_tables & BLOCKED_TABLES
+        if blocked_hit:
+            issues.append(f"Rule 9: Query references internal tables not allowed in user queries: {blocked_hit}")
 
         # Rule 7: Low confidence warning (non-blocking)
         if result.confidence_score < 0.5:
