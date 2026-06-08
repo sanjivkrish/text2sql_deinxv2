@@ -11,7 +11,7 @@ from core.schema_layer.graph_store import GraphStore
 def main():
     db_url = os.environ["DB_URL"]
     output = os.environ.get("SCHEMA_OUTPUT", "db/schema_index.json")
-    with psycopg.connect(db_url) as conn:
+    with psycopg.connect(db_url, prepare_threshold=0) as conn:
         schema = SchemaExtractor(conn).extract()
     graph = GraphBuilder(schema).build()
     GraphStore(output).save(graph, schema)

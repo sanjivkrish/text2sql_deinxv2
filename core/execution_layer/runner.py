@@ -65,7 +65,7 @@ class SQLRunner:
         self._safety_check(result.sql)
         scoped_sql = self._inject_school_id(result.sql, school_id, primary_table)
         start = time.monotonic()
-        with psycopg.connect(self._db_url) as conn:
+        with psycopg.connect(self._db_url, prepare_threshold=0) as conn:
             with conn.cursor(row_factory=psycopg.rows.dict_row) as cur:
                 cur.execute(scoped_sql)
                 rows = cur.fetchall()

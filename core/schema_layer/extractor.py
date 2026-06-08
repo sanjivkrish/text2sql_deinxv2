@@ -37,11 +37,11 @@ class SchemaExtractor:
     def extract(self) -> dict:
         tables: dict[str, dict] = {}
         with self._conn.cursor() as cur:
-            cur.execute(_TABLES_SQL)
+            cur.execute(_TABLES_SQL, prepare=False)
             table_rows = cur.fetchall()
 
             for (table_name,) in table_rows:
-                cur.execute(_COLUMNS_SQL, (table_name,))
+                cur.execute(_COLUMNS_SQL, (table_name,), prepare=False)
                 col_rows = cur.fetchall()
                 columns = [
                     {"name": name, "type": dtype, "nullable": nullable}
@@ -54,7 +54,7 @@ class SchemaExtractor:
                     "has_school_id": "school_id" in col_names,
                 }
 
-            cur.execute(_FKS_SQL)
+            cur.execute(_FKS_SQL, prepare=False)
             fk_rows = cur.fetchall()
 
         foreign_keys = [
