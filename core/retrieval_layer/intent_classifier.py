@@ -116,11 +116,12 @@ Tables likely involved: {plan.recommended_tables}
 
 Rules:
 - Use ONLY column names from the schema above — never invent column names.
+- CRITICAL: The students table has NO "class" column. To filter students by class name, you MUST join through class_sections and classes: include join_conditions ["class_sections.id = students.class_section_id", "classes.id = class_sections.class_id"] and add a filter on classes.name (not students.class).
 - If the query involves certifications/qualifications/experience, use the dedicated sub-table (e.g. staff_certifications, staff_qualifications) — NOT a column on the parent table.
 - For POINT_LOOKUP: always include a filter on the person's name column using ILIKE with %name% pattern.
 - For FILTERED_LIST: include filters for any explicit conditions mentioned.
 - filters must have: table, column (exact name from schema), operator (=, ILIKE, >, <, etc.), value, value_type (string/int/bool/date/expression).
-- For categorical string columns (gender, status, designation, employment_type, staff_category, etc.): use operator "ILIKE" with the lowercase value (e.g. value "male", not "Male") for case-insensitive exact matching.
+- For ALL string filters on names, class names, designations, categories, or status values: always use operator "ILIKE" (never bare "=") so matching is case-insensitive. Use the user's exact wording as the value.
 - For age filters on dob columns: larger age = earlier date.
   "above age N" / "older than N" → operator "<", value "CURRENT_DATE - INTERVAL 'N years'", value_type "expression"
   "below age N" / "younger than N" → operator ">", value "CURRENT_DATE - INTERVAL 'N years'", value_type "expression"
@@ -173,7 +174,10 @@ Return valid JSON only:
         except (KeyError, TypeError):
             continue
 
-    # SELECT: primary table.* + any columns from joined tables that appear in filters
+    # SELECT: primary table.* + any columns from joined tables that appear in filters.
+    # For AGGREGATION, only anchor to primary.id — the clause builder replaces it with
+    # COUNT(*)/SUM/etc. This prevents filter columns (e.g. classes.name) from leaking
+    # into the SELECT and triggering an unintended GROUP BY on every display column.
     primary = tables[0] if tables else "students"
     extra_cols: list[str] = []
     seen: set[str] = set()
@@ -183,7 +187,10 @@ Return valid JSON only:
             if ref not in seen:
                 extra_cols.append(ref)
                 seen.add(ref)
-    select_columns = [f"{primary}.*"] + extra_cols
+    if intent_str == "AGGREGATION":
+        select_columns = [f"{primary}.id"]
+    else:
+        select_columns = [f"{primary}.*"] + extra_cols
 
     raw_aggs = data.get("aggregations") or []
     aggregations: list[Aggregation] = []
